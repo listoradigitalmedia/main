@@ -2142,31 +2142,39 @@ a {
 }
 
 @media (max-width: 767px) {
+
     .timelinepro-section {
         flex-direction: column;
-        min-height: auto;
+        min-height: auto !important;
         overflow: visible;
         padding-bottom: 56px;
     }
 
     .timelinepro-left {
         width: 100%;
-        position: relative;
-        top: auto;
-        height: auto;
-        margin-left: 0;
+        position: relative !important;
+        top: auto !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin-left: 0 !important;
         padding: 40px 20px 28px;
         display: block;
     }
 
+    .timelinepro-badge {
+        margin-bottom: 18px;
+    }
+
     .timelinepro-heading {
         font-size: clamp(28px, 7.5vw, 40px);
+        line-height: 1.12;
         margin-bottom: 22px;
+        letter-spacing: -0.3px;
     }
 
     .timelinepro-card {
         max-width: 100%;
-        min-height: unset;
+        min-height: unset !important;
         padding: 18px 16px;
         gap: 14px;
         border-radius: 16px;
@@ -2177,6 +2185,7 @@ a {
         width: 48px;
         height: 48px;
         border-radius: 12px;
+        flex-shrink: 0;
     }
 
     .timelinepro-card-icon-wrap svg {
@@ -2186,6 +2195,7 @@ a {
 
     .timelinepro-card-title {
         font-size: 16px;
+        font-weight: 800;
     }
 
     .timelinepro-card-divider {
@@ -2195,6 +2205,7 @@ a {
 
     .timelinepro-card-desc {
         font-size: 13px;
+        line-height: 1.6;
     }
 
     .timelinepro-dots {
@@ -2203,32 +2214,45 @@ a {
 
     .timelinepro-right {
         width: 100%;
-        min-height: auto;
+        min-height: auto !important;
         padding: 16px 20px 0;
         overflow: visible;
     }
 
+    .timelinepro-track {
+        position: absolute;
+        width: 2px;
+    }
+
     .timelinepro-steps {
         --tp-step-gap: 36px;
-        padding: 6px 0;
+        padding-top: 6px;
+        padding-bottom: 6px;
     }
 
     .timelinepro-step {
         grid-template-columns: 28px var(--tp-node-size) 1fr;
         gap: 0 14px;
+        align-items: flex-start;
     }
 
     .timelinepro-step-num {
         font-size: 11px;
+        font-weight: 600;
+        line-height: var(--tp-node-size);
+        padding-top: 1px;
     }
 
     .timelinepro-step-title {
         font-size: 15px;
+        font-weight: 800;
+        line-height: 1.25;
     }
 
     .timelinepro-step-desc {
         max-width: none;
         font-size: 12.5px;
+        line-height: 1.55;
     }
 }
 
@@ -5078,12 +5102,56 @@ body.drawer-open {
 
 @media (max-width: 768px) {
 
-    /* ── Larger tap target on node-wrap ── */
+    /* ── Step grid: align-items:center prevents any grid cell from
+          stretching to the row height — this is the single rule that
+          keeps the node perfectly circular (equal w × h = 22px).   ── */
+    .timelinepro-step {
+        grid-template-columns: 28px 22px 1fr;
+        gap: 0 14px;
+        align-items: center;
+    }
+
+    /* ── Node-wrap: fixed 22×22, never stretch ── */
     .timelinepro-node-wrap {
-        padding: 10px;
-        margin: -10px;
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+        min-height: 22px;
+        max-width: 22px;
+        max-height: 22px;
+        align-self: center;
+        flex-shrink: 0;
+        position: relative;
         cursor: pointer;
         -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Invisible tap-area without affecting layout */
+    .timelinepro-node-wrap::before {
+        content: '';
+        position: absolute;
+        inset: -12px;
+        border-radius: 50%;
+        z-index: 3;
+    }
+
+    /* ── Node: fixed 22×22 circle, no stretching possible ── */
+    .timelinepro-node {
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+        min-height: 22px;
+        max-width: 22px;
+        max-height: 22px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        align-self: center;
+        display: block;
+    }
+
+    .timelinepro-node::after {
+        border-radius: 50%;
     }
 
     /* ── Step content also tappable ── */
@@ -5110,7 +5178,6 @@ body.drawer-open {
         transform: scale(0.45);
     }
 
-    /* ── Manual-active step number and title ── */
     .timelinepro-step.tp-manual-active .timelinepro-step-num {
         color: var(--tp-orange);
         font-weight: 700;
@@ -5125,12 +5192,12 @@ body.drawer-open {
         opacity: 0.9;
     }
 
-    /* ── Smooth fill bar transition on manual jump ── */
+    /* ── Fill bar smooth transition on manual jump ── */
     .timelinepro-track-fill {
         transition: height 0.55s cubic-bezier(0.22, 1, 0.36, 1) !important;
     }
 
-    /* ── Card body fade transition — same as desktop ── */
+    /* ── Card body fade ── */
     .timelinepro-card-body {
         transition: opacity 0.3s ease, transform 0.3s ease;
     }
