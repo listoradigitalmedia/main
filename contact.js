@@ -489,3 +489,79 @@
         });
     });
 })();
+
+
+/* ==========================================================
+   GLOBAL CONTENT PROTECTION
+   Works on any website
+   ========================================================== */
+
+(function () {
+
+    // Disable right click
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+
+    // Disable copy
+    document.addEventListener('copy', function (e) {
+        e.preventDefault();
+    });
+
+    // Disable cut
+    document.addEventListener('cut', function (e) {
+        e.preventDefault();
+    });
+
+    // Disable drag
+    document.addEventListener('dragstart', function (e) {
+        e.preventDefault();
+    });
+
+    // Disable text selection
+    document.addEventListener('selectstart', function (e) {
+        e.preventDefault();
+    });
+
+    // Disable common shortcuts
+    document.addEventListener('keydown', function (e) {
+
+        const key = e.key.toLowerCase();
+
+        if (
+            (e.ctrlKey || e.metaKey) &&
+            (
+                key === 'c' ||
+                key === 'x' ||
+                key === 'a' ||
+                key === 'u' ||
+                key === 's' ||
+                key === 'p'
+            )
+        ) {
+            e.preventDefault();
+        }
+
+        // F12
+        if (e.key === 'F12') {
+            e.preventDefault();
+        }
+
+        // Ctrl+Shift+I
+        if (e.ctrlKey && e.shiftKey && key === 'i') {
+            e.preventDefault();
+        }
+
+        // Ctrl+Shift+J
+        if (e.ctrlKey && e.shiftKey && key === 'j') {
+            e.preventDefault();
+        }
+
+        // Ctrl+Shift+C
+        if (e.ctrlKey && e.shiftKey && key === 'c') {
+            e.preventDefault();
+        }
+
+    });
+
+})();

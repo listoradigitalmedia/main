@@ -4796,3 +4796,100 @@ section#packages .pkg-feat-icon {
         transition: none !important;
     }
 }
+
+/* ==========================================================
+   GLOBAL CONTENT PROTECTION
+   Works on any website
+   ========================================================== */
+
+/* Disable text selection */
+html,
+body,
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Remove text cursor */
+body,
+p,
+span,
+div,
+li,
+ul,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+section,
+article,
+main,
+header,
+footer {
+    cursor: default;
+}
+
+/* Clickable elements */
+a,
+button,
+.btn,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+    cursor: pointer !important;
+}
+
+/* Forms remain editable */
+input,
+textarea,
+select {
+    user-select: text !important;
+    cursor: text !important;
+}
+
+/* Disable image drag */
+img {
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+
+
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Disable text highlight */
+::selection {
+    background: transparent;
+}
+
+::-moz-selection {
+    background: transparent;
+}
+
+/* Mobile */
+html {
+    -webkit-touch-callout: none;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent accidental drag */
+img,
+svg,
+video {
+    pointer-events: none;
+}
+
+/* Allow linked images */
+a img,
+button img {
+    pointer-events: auto;
+}
