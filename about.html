@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="About Listora Digital Media — Smart Marketing Agency for Real Estate Professionals. Learn our story, mission, values, and how we help realtors grow.">
+    <title>About | Listora Digital Media</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="drawer.css">
+    <link rel="stylesheet" href="about.css">
+
+    <!-- ── UNIFIED NAVBAR STYLES (contact.html reference) ── -->
+    <style>
+        .ct-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .ct-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            padding: 20px 5% 20px 2%;
+            background: transparent;
+            transition: background .35s ease, box-shadow .35s ease, padding .35s ease;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .ct-nav.scrolled {
+            background: rgba(255, 255, 255, .97);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 2px 24px rgba(3, 43, 102, .08);
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+
+        .ct-nav__logo img {
+            width: 62px;
+            height: auto;
+            transition: opacity .3s ease;
+        }
+
+        .ct-nav__links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-left: auto;
+            list-style: none;
+        }
+
+        .ct-nav__links a {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            color: #032B66;
+            padding: 8px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background .25s ease, color .25s ease;
+        }
+
+        .ct-nav__links a:hover {
+            background: #e8eef8;
+            color: #032B66;
+        }
+
+        .ct-nav__links a.active {
+            color: #FF6600;
+            font-weight: 700;
+        }
+
+        .ct-nav.scrolled .ct-nav__links a {
+            color: #032B66;
+        }
+
+        .ct-nav.scrolled .ct-nav__links a:hover {
+            background: #e8eef8;
+        }
+
+        .ct-nav.scrolled .ct-nav__links a.active {
+            color: #FF6600;
+        }
+
+        .ct-nav__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 24px;
+            background: #FF6600;
+            color: #fff;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            text-decoration: none;
+            white-space: nowrap;
+            box-shadow: 0 4px 18px rgba(255, 102, 0, .30);
+            transition: background .3s ease, transform .4s cubic-bezier(.22, 1, .36, 1), box-shadow .4s ease;
+        }
+
+        .ct-nav__cta:hover {
+            background: #e05500;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 26px rgba(255, 102, 0, .40);
+        }
+
+        .ct-nav__burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 6px 4px;
+            border-radius: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .ct-nav__burger span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: #032B66;
+            border-radius: 20px;
+            transition: transform .3s ease, opacity .3s ease;
+        }
+
+        .ct-nav__burger[aria-expanded="true"] span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .ct-nav__burger[aria-expanded="true"] span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .ct-nav__burger[aria-expanded="true"] span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Push hero content below fixed nav */
+        .about-hero {
+            padding-top: 0;
+        }
+
+        .about-hero .navbar {
+            display: none !important;
+        }
+
+        @media (max-width: 991px) {
+
+            .ct-nav__links,
+            .ct-nav__cta {
+                display: none;
+            }
+
+            .ct-nav__burger {
+                display: flex;
+                margin-left: auto;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .ct-nav__logo img {
+                width: 52px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════
+         OVERLAY
+    ═══════════════════════════════════════════ -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- ═══════════════════════════════════════════
+         MOBILE DRAWER
+    ═══════════════════════════════════════════ -->
+    <nav class="nav-drawer" id="navDrawer" aria-label="Mobile navigation" aria-hidden="true">
+
+        <div class="drawer-header">
+            <a href="index.html" class="drawer-logo">
+                <img src="logo.png" alt="Listora">
+            </a>
+            <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close navigation">
+                <span class="drawer-close-icon">
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+        </div>
+
+        <ul class="drawer-links" role="list">
+            <li class="drawer-link-item" style="--i:0">
+                <a href="index.html" class="drawer-link">
+                    <span class="drawer-link-num">01</span>
+                    <span class="drawer-link-text">Home</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:1">
+                <a href="about.html" class="drawer-link active">
+                    <span class="drawer-link-num">02</span>
+                    <span class="drawer-link-text">About</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:2">
+                <a href="service.html" class="drawer-link">
+                    <span class="drawer-link-num">03</span>
+                    <span class="drawer-link-text">Services</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:3">
+                <a href="portfolio.html" class="drawer-link">
+                    <span class="drawer-link-num">04</span>
+                    <span class="drawer-link-text">Portfolio</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:3">
+                <a href="casestudies.html" class="drawer-link">
+                    <span class="drawer-link-num">05</span>
+                    <span class="drawer-link-text">Case Studies</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:4">
+                <a href="contact.html" class="drawer-link">
+                    <span class="drawer-link-num">06</span>
+                    <span class="drawer-link-text">Contact</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+
+        <div class="drawer-cta-wrap" style="--i:5">
+            <a href="contact.html" class="drawer-cta-btn">
+                <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>
+                GET A GROWTH PLAN
+            </a>
+        </div>
+
+        <div class="drawer-footer" style="--i:6">
+            <p class="drawer-footer-text">Smart Marketing Agency for Real Estate Professionals</p>
+            <div class="drawer-social-links">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+        <div class="drawer-accent" aria-hidden="true"></div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+         ABOUT HERO (header wrapper — white bg, no bg image)
+    ═══════════════════════════════════════════ -->
+
+    <!-- UNIFIED NAVBAR -->
+    <header class="ct-header">
+        <nav class="ct-nav" id="ctNav" aria-label="Primary navigation">
+            <a href="index.html" class="ct-nav__logo">
+                <img src="logo.png" alt="Listora home">
+            </a>
+            <ul class="ct-nav__links" role="list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active" aria-current="page">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="casestudies.html">Case Studies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="ct-nav__cta">
+                <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>
+                GET A GROWTH PLAN
+            </a>
+            <button class="ct-nav__burger" id="menuBtn" aria-label="Open navigation" aria-expanded="false"
+                aria-controls="navDrawer">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <header class="about-hero">
+
+        <!-- NAVBAR (hidden — replaced by unified navbar above) -->
+        <nav class="navbar" aria-label="Primary navigation" aria-hidden="true" style="display:none!important">
+        </nav>
+
+        <!-- HERO CONTENT -->
+        <section class="hero-section" id="hero">
+            <div class="container hero-inner">
+
+                <!-- Left: Text Content -->
+                <div class="hero-content">
+
+                    <h1 class="hero-heading">
+                        About Listora<br>Digital Media
+                    </h1>
+
+                    <div class="orange-line"></div>
+
+                    <p class="hero-subtext">
+                        We help real estate professionals generate more leads,
+                        streamline their systems, and scale their business with
+                        powerful marketing and CRM solutions.
+                    </p>
+
+                    <a href="contact.html" class="btn btn-primary">
+                        Book a Consultation <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <!-- Right: Hero Image -->
+                <div class="hero-image-wrap">
+                    <img src="s5.png" alt="Luxury real estate property" class="hero-img ab-img-reveal" />
+                </div>
+
+            </div>
+        </section>
+
+    </header>
+
+    <!-- ═══════════════════════════════════════════
+         MAIN CONTENT
+    ═══════════════════════════════════════════ -->
+    <main>
+
+        <!-- ============================================================
+             WHO WE ARE SECTION
+        ============================================================ -->
+        <section class="about-section" id="about">
+            <div class="container about-inner">
+
+                <!-- Left: Image -->
+                <div class="about-images">
+                    <img src="s6.png" alt="Listora office interior" class="about-img-top ab-img-reveal" />
+                </div>
+
+                <!-- Right: Text Content -->
+                <div class="about-content">
+                    <p class="section-label ab-badge">
+                        <i class="fa-solid fa-building-user" aria-hidden="true"></i> WHO WE ARE
+                    </p>
+                    <h2 class="section-heading ab-heading">
+                        A Growth Partner for<br>Real Estate Professionals
+                    </h2>
+                    <p class="section-text ab-para">
+                        At Listora Digital Media, we help real estate professionals build a stronger online presence,
+                        generate high-quality leads, and create scalable systems that support long-term business growth.
+                    </p>
+                    <p class="section-text ab-para">
+                        From attracting the right audience and nurturing leads to managing follow-ups, organizing client
+                        data, and optimizing your sales pipeline, we ensure every part of your marketing and client
+                        acquisition system works together seamlessly.
+                    </p>
+                    <p class="section-text ab-para">
+                        Our approach is designed specifically for the real estate industry. We understand the challenges
+                        agents, brokers, and real estate teams face in today's competitive market, which is why we focus
+                        on building efficient systems that save time, improve lead conversion, and create a more
+                        predictable flow of business.
+                    </p>
+                    <p class="section-text ab-para">
+                        You focus on building relationships and closing deals. We'll handle the marketing, systems, and
+                        processes that help your business thrive.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================================
+             OUR STORY SECTION
+        ============================================================ -->
+        <section class="story-section" id="story">
+            <div class="container story-inner">
+
+                <!-- Left: Text Content -->
+                <div class="story-content">
+                    <p class="section-label ab-badge">
+                        <i class="fa-solid fa-book-open" aria-hidden="true"></i> OUR STORY
+                    </p>
+                    <h2 class="section-heading ab-heading">
+                        Built to Solve Real<br>Problems in Real Estate
+                    </h2>
+                    <p class="section-text ab-para">
+                        We started Listora Digital Media after seeing the same challenges
+                        repeated across the real estate industry—unpredictable lead flow,
+                        disorganized systems, and time-consuming tasks keeping agents and
+                        teams from growing.
+                    </p>
+                    <p class="section-text ab-para">We built Listora to change that.</p>
+                    <p class="section-text ab-para">
+                        Our goal is simple: help realtors implement proven marketing
+                        strategies and CRM systems that create consistent leads, stronger
+                        relationships, and long-term growth.
+                    </p>
+
+                    <!-- Pull Quote -->
+                    <blockquote class="story-quote ab-card">
+                        <i class="fa-solid fa-quote-left quote-fa-icon" aria-hidden="true"></i>
+                        <p class="ab-para">
+                            We built Listora because most realtors
+                            don't need more complexity, they need
+                            better systems.
+                        </p>
+                    </blockquote>
+                </div>
+
+                <!-- Right: Story Image -->
+                <div class="story-image-wrap">
+                    <img src="s7.png" alt="Modern city skyline from a luxury terrace" class="story-img ab-img-reveal" />
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================================
+             MISSION & VISION SECTION
+        ============================================================ -->
+        <section class="mission-section" id="mission">
+            <div class="container mission-inner">
+
+                <!-- Mission Block -->
+                <div class="mission-block ab-card">
+                    <div class="mission-icon">
+                        <i class="fa-solid fa-crosshairs" aria-hidden="true"></i>
+                    </div>
+                    <p class="mission-label ab-badge">MISSION</p>
+                    <h3 class="mission-heading ab-heading">Empower Realtors to Grow</h3>
+                    <p class="mission-text ab-para">
+                        Help realtors grow through smart marketing and powerful CRM systems
+                        that create predictable results and long-term success.
+                    </p>
+                </div>
+
+                <!-- Divider line -->
+                <div class="mission-divider" aria-hidden="true"></div>
+
+                <!-- Vision Block -->
+                <div class="mission-block ab-card">
+                    <div class="mission-icon">
+                        <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                    </div>
+                    <p class="mission-label ab-badge">VISION</p>
+                    <h3 class="mission-heading ab-heading">Global Real Estate Growth Partner</h3>
+                    <p class="mission-text ab-para">
+                        Become a trusted digital growth partner for real estate professionals
+                        and teams worldwide, delivering systems, support, and results.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================================
+             ECOSYSTEM SECTION
+        ============================================================ -->
+        <section class="logo-section">
+
+            <!-- Section header -->
+            <div class="section-header">
+                <h2 class="section-title ab-heading">
+                    <i class="fa-solid fa-network-wired" aria-hidden="true"></i> Our Ecosystem
+                </h2>
+            </div>
+
+            <!-- SVG canvas for dashed connection lines -->
+            <svg class="logo-lines" id="ecosystemLines" aria-hidden="true"></svg>
+
+            <!-- Ecosystem grid wrapper -->
+            <div class="logo-grid" id="ecosystemGrid">
+
+                <!-- Logo Center -->
+                <div class="logo-center" id="logoCenter">
+                    <div class="logo-glow" aria-hidden="true"></div>
+                    <img src="logo.png" alt="Listora Digital Media Logo" class="logo-img" />
+                    <p class="logo-tagline">Listora Digital Media</p>
+                </div>
+
+                <!-- Card 1 — Growth (Top Left) -->
+                <div class="logo-card ab-card" data-position="top-left" id="card-1">
+                    <div class="card-number">01</div>
+                    <div class="card-fa-icon"><i class="fa-solid fa-rocket" aria-hidden="true"></i></div>
+                    <h3 class="card-title">Growth</h3>
+                    <p class="card-text">Helping realtors scale through proven systems, strategic marketing, and
+                        measurable results.</p>
+                    <div class="card-accent" aria-hidden="true"></div>
+                </div>
+
+                <!-- Card 2 — Real Estate (Top Right) -->
+                <div class="logo-card ab-card" data-position="top-right" id="card-2">
+                    <div class="card-number">02</div>
+                    <div class="card-fa-icon"><i class="fa-solid fa-house-chimney" aria-hidden="true"></i></div>
+                    <h3 class="card-title">Real Estate</h3>
+                    <p class="card-text">Built exclusively for real estate professionals who are ready to dominate their
+                        market.</p>
+                    <div class="card-accent" aria-hidden="true"></div>
+                </div>
+
+                <!-- Card 3 — Innovation (Middle Left) -->
+                <div class="logo-card ab-card" data-position="mid-left" id="card-3">
+                    <div class="card-number">03</div>
+                    <div class="card-fa-icon"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></div>
+                    <h3 class="card-title">Innovation</h3>
+                    <p class="card-text">Modern tools, automation, and CRM solutions that keep you ahead of the
+                        competition.</p>
+                    <div class="card-accent" aria-hidden="true"></div>
+                </div>
+
+                <!-- Card 4 — Trust (Middle Right) -->
+                <div class="logo-card ab-card" data-position="mid-right" id="card-4">
+                    <div class="card-number">04</div>
+                    <div class="card-fa-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></div>
+                    <h3 class="card-title">Trust</h3>
+                    <p class="card-text">Long-term partnerships built on full transparency, integrity, and shared
+                        success.</p>
+                    <div class="card-accent" aria-hidden="true"></div>
+                </div>
+
+                <!-- Card 5 — Connection (Bottom Left) -->
+                <div class="logo-card ab-card" data-position="bottom-left" id="card-5">
+                    <div class="card-number">05</div>
+                    <div class="card-fa-icon"><i class="fa-solid fa-link" aria-hidden="true"></i></div>
+                    <h3 class="card-title">Connection</h3>
+                    <p class="card-text">Bridging leads, systems, and opportunities into one seamless growth pipeline.
+                    </p>
+                    <div class="card-accent" aria-hidden="true"></div>
+                </div>
+
+                <!-- Card 6 — Digital Systems (Bottom Right) -->
+                <div class="logo-card ab-card" data-position="bottom-right" id="card-6">
+                    <div class="card-number">06</div>
+                    <div class="card-fa-icon"><i class="fa-solid fa-gears" aria-hidden="true"></i></div>
+                    <h3 class="card-title">Digital Systems</h3>
+                    <p class="card-text">Creating predictable, scalable growth through smart automation and digital
+                        infrastructure.</p>
+                    <div class="card-accent" aria-hidden="true"></div>
+                </div>
+
+            </div><!-- /logo-grid -->
+
+        </section>
+
+        <!-- ============================================================
+             WHY REALTORS CHOOSE LISTORA
+        ============================================================ -->
+        <section class="why-section" id="why-us">
+            <div class="container why-inner">
+
+                <!-- Left: Text Content -->
+                <div class="why-content">
+                    <h2 class="section-heading ab-heading">
+                        More Than a Service.<br>We're Your Growth Partner.
+                    </h2>
+
+                    <p class="section-label ab-badge" data-ab-delay="300" style="transition-delay:0.18s">
+                        <i class="fa-solid fa-star" aria-hidden="true"></i> WHY REALTORS CHOOSE LISTORA
+                    </p>
+
+                    <!-- Two-column checklist -->
+                    <div class="why-checklist ab-para" data-ab-delay="550">
+                        <ul class="checklist-col">
+                            <li><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i> Real Estate
+                                Focused</li>
+                            <li><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i> CRM &amp;
+                                Automation Experts</li>
+                            <li><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i> Affordable
+                                Offshore Support</li>
+                        </ul>
+                        <ul class="checklist-col">
+                            <li><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i> Transparent
+                                Communication</li>
+                            <li><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i> Long-Term Growth
+                                Strategy</li>
+                            <li><i class="fa-solid fa-circle-check check-icon" aria-hidden="true"></i> Customized
+                                Solutions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right: Team Photo -->
+                <div class="why-image-wrap">
+                    <img src="s8.png" alt="Listora team in a meeting" class="why-img ab-img-reveal" />
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================================
+             CORE VALUES SECTION
+        ============================================================ -->
+        <section class="values-section" id="values">
+            <div class="container2">
+
+                <p class="section-label centered ab-badge">
+                    <i class="fa-solid fa-gem" aria-hidden="true"></i> OUR CORE VALUES
+                </p>
+                <div class="orange-line centered" aria-hidden="true"></div>
+
+                <div class="values-grid">
+
+                    <!-- Value 1 -->
+                    <div class="value-block ab-card">
+                        <span class="value-number" aria-hidden="true">01</span>
+                        <div class="value-fa-icon"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></div>
+                        <h4 class="value-title ab-heading">Integrity</h4>
+                        <p class="value-text ab-para">
+                            We do what's right, always. Honesty and transparency are at the
+                            core of everything we do.
+                        </p>
+                    </div>
+
+                    <!-- Value 2 -->
+                    <div class="value-block ab-card">
+                        <span class="value-number" aria-hidden="true">02</span>
+                        <div class="value-fa-icon"><i class="fa-solid fa-repeat" aria-hidden="true"></i></div>
+                        <h4 class="value-title ab-heading">Consistency</h4>
+                        <p class="value-text ab-para">
+                            We show up every day and deliver quality work our clients can
+                            rely on.
+                        </p>
+                    </div>
+
+                    <!-- Value 3 -->
+                    <div class="value-block ab-card">
+                        <span class="value-number" aria-hidden="true">03</span>
+                        <div class="value-fa-icon"><i class="fa-solid fa-flask" aria-hidden="true"></i></div>
+                        <h4 class="value-title ab-heading">Innovation</h4>
+                        <p class="value-text ab-para">
+                            We evolve, adapt, and continuously improve to bring the best
+                            results.
+                        </p>
+                    </div>
+
+                    <!-- Value 4 -->
+                    <div class="value-block ab-card">
+                        <span class="value-number" aria-hidden="true">04</span>
+                        <div class="value-fa-icon"><i class="fa-solid fa-trophy" aria-hidden="true"></i></div>
+                        <h4 class="value-title ab-heading">Client Success</h4>
+                        <p class="value-text ab-para">
+                            Your success is our mission. We grow when you grow.
+                        </p>
+                    </div>
+
+                </div><!-- /.values-grid -->
+
+            </div>
+        </section>
+
+        <!-- ============================================================
+             HOW WE HELP REALTORS GROW (Process Timeline)
+        ============================================================ -->
+        <section class="process-section" id="process">
+            <div class="container2">
+
+                <p class="section-label centered ab-badge">
+                    <i class="fa-solid fa-chart-bar" aria-hidden="true"></i> HOW WE HELP REALTORS GROW
+                </p>
+                <div class="orange-line centered" aria-hidden="true"></div>
+
+                <div class="process-timeline">
+
+                    <!-- Step 1 -->
+                    <div class="process-step ab-card">
+                        <div class="process-icon">
+                            <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+                        </div>
+                        <div class="process-connector" aria-hidden="true"></div>
+                        <span class="process-number" aria-hidden="true">01</span>
+                        <h5 class="process-title ab-heading">Understand Your Goals</h5>
+                        <p class="process-text ab-para">
+                            We learn your business, your audience, and your objectives.
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="process-step ab-card">
+                        <div class="process-icon">
+                            <i class="fa-solid fa-map" aria-hidden="true"></i>
+                        </div>
+                        <div class="process-connector" aria-hidden="true"></div>
+                        <span class="process-number" aria-hidden="true">02</span>
+                        <h5 class="process-title ab-heading">Build Your Digital Strategy</h5>
+                        <p class="process-text ab-para">
+                            We create a customized marketing &amp; CRM plan just for you.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="process-step ab-card">
+                        <div class="process-icon">
+                            <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+                        </div>
+                        <div class="process-connector" aria-hidden="true"></div>
+                        <span class="process-number" aria-hidden="true">03</span>
+                        <h5 class="process-title ab-heading">Implement CRM Systems</h5>
+                        <p class="process-text ab-para">
+                            We set up automations, pipelines, and systems that work.
+                        </p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="process-step ab-card">
+                        <div class="process-icon">
+                            <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                        </div>
+                        <div class="process-connector" aria-hidden="true"></div>
+                        <span class="process-number" aria-hidden="true">04</span>
+                        <h5 class="process-title ab-heading">Generate &amp; Nurture Leads</h5>
+                        <p class="process-text ab-para">
+                            We attract, engage, and nurture leads through proven strategies.
+                        </p>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="process-step ab-card">
+                        <div class="process-icon">
+                            <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                        </div>
+                        <span class="process-number" aria-hidden="true">05</span>
+                        <h5 class="process-title ab-heading">Optimize &amp; Scale</h5>
+                        <p class="process-text ab-para">
+                            We analyze, optimize, and scale what's working for maximum growth.
+                        </p>
+                    </div>
+
+                </div><!-- /.process-timeline -->
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER — exact copy from index.html
+    ═══════════════════════════════════════════ -->
+    <footer class="footer" aria-label="Site footer">
+        <div class="footer-inner">
+            <div class="footer-col footer-col--brand">
+                <a href="#" class="brand-logo" aria-label="Listora home">
+                    <img src="logo 2.png" alt="Listora">
+                </a>
+                <p class="footer-tagline">Smart Marketing Agency for Real Estate Professionals</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="casestudies.html">Case Studies <i
+                                class="fa-solid fa-arrow-up-right-from-square footer-arrow" aria-hidden="true"></i></a>
+                    </li>
+                    <li><a href="portfolio.html">Portfolio <i
+                                class="fa-solid fa-arrow-up-right-from-square footer-arrow" aria-hidden="true"></i></a>
+                    </li>
+                    <li><a href="contact.html">Contact Us <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                                aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Real Estate Marketing <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="#">Lead Generation <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="#">CRM Management <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="#">Social Media Management <i
+                                class="fa-solid fa-arrow-up-right-from-square footer-arrow" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-col footer-col--newsletter">
+                <h4>Free Marketing Audit</h4>
+                <p class="newsletter-desc">Receive a personalised audit with expert recommendations to improve
+                    visibility, lead generation, and business growth.</p>
+                <div class="newsletter" role="group" aria-label="Email newsletter signup">
+                    <label for="email" class="sr-only">Your email address</label>
+                    <input type="email" id="email" placeholder="Enter your email..." autocomplete="email">
+                    <button id="sub-btn" aria-label="Subscribe">
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <p class="newsletter-msg" id="msg" role="status" aria-live="polite"></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Listora Digital Media &nbsp;&middot;&nbsp; All rights reserved</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="about.js"></script>
+
+    <!-- Unified navbar scroll + drawer handler -->
+    <script>
+        (function () {
+            var nav = document.getElementById('ctNav');
+            var burger = document.querySelector('.ct-nav__burger');
+            var drawer = document.getElementById('navDrawer');
+            var overlay = document.getElementById('navOverlay');
+            var closeBtn = document.getElementById('drawerCloseBtn');
+
+            /* Scroll state */
+            if (nav) {
+                function onScroll() {
+                    nav.classList.toggle('scrolled', window.scrollY > 50);
+                }
+                window.addEventListener('scroll', onScroll, { passive: true });
+                onScroll();
+            }
+
+            /* Drawer open / close */
+            function openDrawer() {
+                if (!drawer) return;
+                drawer.classList.add('is-open');
+                if (overlay) overlay.classList.add('is-open');
+                drawer.setAttribute('aria-hidden', 'false');
+                if (burger) burger.setAttribute('aria-expanded', 'true');
+                document.body.classList.add('drawer-open');
+            }
+
+            function closeDrawer() {
+                if (!drawer) return;
+                drawer.classList.remove('is-open');
+                if (overlay) overlay.classList.remove('is-open');
+                drawer.setAttribute('aria-hidden', 'true');
+                if (burger) burger.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('drawer-open');
+            }
+
+            if (burger) burger.addEventListener('click', openDrawer);
+            if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+            if (overlay) overlay.addEventListener('click', closeDrawer);
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeDrawer();
+            });
+        }());
+    </script>
+
+</body>
+
+</html>

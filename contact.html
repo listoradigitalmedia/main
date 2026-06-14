@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contact Listora Digital Media — Book a free consultation for lead generation, CRM automation, social media, SEO, and real estate marketing.">
+    <title>Contact Us | Listora Digital Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+
+    <!-- OVERLAY -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- MOBILE DRAWER -->
+    <nav class="nav-drawer" id="navDrawer" aria-label="Mobile navigation" aria-hidden="true">
+        <div class="drawer-header">
+            <a href="index.html" class="drawer-logo"><img src="logo.png" alt="Listora"></a>
+            <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close navigation">
+                <span class="drawer-close-icon"><span></span><span></span></span>
+            </button>
+        </div>
+        <ul class="drawer-links" role="list">
+            <li class="drawer-link-item" style="--i:0">
+                <a href="index.html" class="drawer-link">
+                    <span class="drawer-link-num">01</span>
+                    <span class="drawer-link-text">Home</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:1">
+                <a href="about.html" class="drawer-link">
+                    <span class="drawer-link-num">02</span>
+                    <span class="drawer-link-text">About</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:2">
+                <a href="service.html" class="drawer-link">
+                    <span class="drawer-link-num">03</span>
+                    <span class="drawer-link-text">Services</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:3">
+                <a href="portfolio.html" class="drawer-link">
+                    <span class="drawer-link-num">04</span>
+                    <span class="drawer-link-text">Portfolio</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:4">
+                <a href="casestudies.html" class="drawer-link">
+                    <span class="drawer-link-num">05</span>
+                    <span class="drawer-link-text">Case Studies</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:5">
+                <a href="contact.html" class="drawer-link active">
+                    <span class="drawer-link-num">06</span>
+                    <span class="drawer-link-text">Contact</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+        <div class="drawer-cta-wrap" style="--i:6">
+            <a href="contact.html" class="drawer-cta-btn">
+                <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>GET A GROWTH PLAN
+            </a>
+        </div>
+        <div class="drawer-footer" style="--i:7">
+            <p class="drawer-footer-text">Smart Marketing Agency for Real Estate Professionals</p>
+            <div class="drawer-social-links">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="drawer-accent" aria-hidden="true"></div>
+    </nav>
+
+    <!-- NAVBAR -->
+    <header class="ct-header">
+        <nav class="ct-nav" id="ctNav" aria-label="Primary navigation">
+            <a href="index.html" class="ct-nav__logo">
+                <img src="logo 2.png" alt="Listora home" id="navLogo">
+            </a>
+            <ul class="ct-nav__links" role="list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="casestudies.html">Case Studies</a></li>
+                <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+            </ul>
+            <a href="#contact-form" class="ct-nav__cta">
+                <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>GET A GROWTH PLAN
+            </a>
+            <button class="ct-nav__burger" id="menuBtn" aria-label="Open navigation" aria-expanded="false"
+                aria-controls="navDrawer">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ══════════════════════════════════
+         HERO — dark navy
+        ══════════════════════════════════ -->
+        <section class="ct-hero" id="hero" aria-labelledby="hero-heading">
+            <div class="ct-hero__bg" aria-hidden="true">
+                <div class="ct-hero__mesh"></div>
+                <div class="ct-orb ct-orb--1"></div>
+                <div class="ct-orb ct-orb--2"></div>
+                <div class="ct-orb ct-orb--3"></div>
+                <div class="ct-hero__grid"></div>
+            </div>
+
+            <div class="ct-hero__inner">
+                <!-- Left: Content -->
+                <div class="ct-hero__content">
+
+                    <h1 class="ct-hero__headline" id="hero-heading" aria-label="Let's Build Your Growth Engine">
+                        <span class="ct-word-wrap" aria-hidden="true"></span>
+                    </h1>
+
+                    <p class="ct-hero__sub" id="heroSub">
+                        Whether you need qualified leads, virtual support, CRM automation, websites,
+                        SEO, or full marketing support — Listora Digital Media is ready to build your
+                        growth engine.
+                    </p>
+
+                    <div class="ct-hero__actions" id="heroActions">
+                        <a href="#contact-info" class="ct-btn ct-btn--glass ct-btn--lg ct-btn--magnetic">
+                            See How We Work
+                            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                        </a>
+                    </div>
+
+                    <div class="ct-hero__trust" aria-hidden="true">
+                        <span><i class="fa-solid fa-shield-halved"></i> No obligation</span>
+                        <span><i class="fa-solid fa-clock"></i> 24h response</span>
+                        <span><i class="fa-solid fa-star"></i> 98% satisfaction</span>
+                    </div>
+                </div>
+
+                <!-- Right: Glassmorphism stat cards -->
+                <div class="ct-hero__glass" aria-hidden="true">
+                    <div class="ct-glass-card">
+                        <div class="ct-glass-card__icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div class="ct-glass-card__text">
+                            <strong>340% Lead Increase</strong>
+                            <span>Average client result in 90 days</span>
+                        </div>
+                        <div class="ct-glass-card__arrow">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                        </div>
+                    </div>
+
+                    <div class="ct-glass-card ct-glass-card--accent">
+                        <div class="ct-glass-card__icon ct-glass-card__icon--orange">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div class="ct-glass-card__text">
+                            <strong>500+ Projects</strong>
+                            <span>Delivered for realtors globally</span>
+                        </div>
+                        <div class="ct-glass-card__dot" aria-hidden="true"></div>
+                    </div>
+
+                    <div class="ct-glass-card">
+                        <div class="ct-glass-card__icon">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <div class="ct-glass-card__text">
+                            <strong>24h Response</strong>
+                            <span>Fast-action team, always ready</span>
+                        </div>
+                        <div class="ct-glass-card__badge">Live</div>
+                    </div>
+
+                    <!-- Floating mini-badge -->
+                    <div class="ct-hero__float-badge">
+                        <i class="fa-solid fa-rocket"></i>
+                        <span>Growth Starts Here</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════
+         BENTO GRID — contact channels
+        ══════════════════════════════════ -->
+        <section class="ct-bento-section" id="contact-info" aria-labelledby="bento-heading">
+            <div class="ct-container">
+                <div class="ct-section-header ct-reveal">
+                    <span class="ct-badge">
+                        <i class="fa-solid fa-address-book" aria-hidden="true"></i> Get In Touch
+                    </span>
+                    <h2 class="ct-section-title" id="bento-heading">Multiple Ways To Reach Us</h2>
+                    <p class="ct-section-sub">Choose the channel that works best for you. We're available,
+                        responsive, and always ready to talk growth.</p>
+                </div>
+
+                <div class="ct-bento-grid">
+
+                    <!-- Email — large -->
+                    <div class="ct-bento-card ct-bento-card--email ct-reveal" data-delay="0" role="article"
+                        aria-label="Email us">
+                        <div class="ct-bento-card__glow" aria-hidden="true"></div>
+                        <div class="ct-bento-card__tag">Most popular</div>
+                        <div class="ct-bento-card__icon ct-icon--orange">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="ct-bento-card__title">Email Us</h3>
+                        <p class="ct-bento-card__desc">Drop us a message any time. We respond within
+                            24 hours on business days with a tailored reply.</p>
+                        <a href="mailto:hello@listora.com" class="ct-bento-card__link">
+                            hello@listora.com
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <div class="ct-bento-card__bar" aria-hidden="true"></div>
+                    </div>
+
+                    <!-- Call -->
+                    <div class="ct-bento-card ct-reveal" data-delay="80" role="article" aria-label="Call us">
+                        <div class="ct-bento-card__glow" aria-hidden="true"></div>
+                        <div class="ct-bento-card__icon ct-icon--navy">
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="ct-bento-card__title">Call Us</h3>
+                        <p class="ct-bento-card__desc">Speak directly with our growth team. Real humans, no bots.</p>
+                        <a href="tel:+1234567890" class="ct-bento-card__link">
+                            +1 (234) 567-890
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <div class="ct-bento-card__bar" aria-hidden="true"></div>
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <div class="ct-bento-card ct-reveal" data-delay="160" role="article" aria-label="WhatsApp chat">
+                        <div class="ct-bento-card__glow" aria-hidden="true"></div>
+                        <div class="ct-bento-card__icon ct-icon--green">
+                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="ct-bento-card__title">WhatsApp</h3>
+                        <p class="ct-bento-card__desc">Quick questions or project updates — chat with us instantly.</p>
+                        <a href="https://wa.me/1234567890" class="ct-bento-card__link" target="_blank"
+                            rel="noopener noreferrer">
+                            Start Chat
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <div class="ct-bento-card__bar" aria-hidden="true"></div>
+                    </div>
+
+                    <!-- Schedule — dark card, largue -->
+                    <div class="ct-bento-card ct-bento-card--dark ct-bento-card--schedule ct-reveal" data-delay="240"
+                        role="article" aria-label="Schedule a meeting">
+                        <div class="ct-bento-card__glow" aria-hidden="true"></div>
+                        <div class="ct-bento-card__icon ct-icon--light">
+                            <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="ct-bento-card__title ct-bento-card__title--light">
+                            Schedule a Meeting
+                        </h3>
+                        <p class="ct-bento-card__desc ct-bento-card__desc--light">
+                            Book a free 30-minute strategy call with our experts at a time that works for you.
+                            No pressure, just real insights.
+                        </p>
+                        <a href="#contact-form" class="ct-bento-card__link ct-bento-card__link--light">
+                            Book Now
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <div class="ct-bento-card__bar" aria-hidden="true"></div>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div class="ct-bento-card ct-reveal" data-delay="320" role="article" aria-label="Business hours">
+                        <div class="ct-bento-card__glow" aria-hidden="true"></div>
+                        <div class="ct-bento-card__icon ct-icon--orange">
+                            <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="ct-bento-card__title">Business Hours</h3>
+                        <p class="ct-bento-card__desc">
+                            Mon – Fri: 9 AM – 6 PM EST<br>
+                            <span class="ct-bento-available">● Available now</span>
+                        </p>
+                        <div class="ct-bento-card__bar" aria-hidden="true"></div>
+                    </div>
+
+                    <!-- Location -->
+                    <div class="ct-bento-card ct-reveal" data-delay="400" role="article" aria-label="Location">
+                        <div class="ct-bento-card__glow" aria-hidden="true"></div>
+                        <div class="ct-bento-card__icon ct-icon--navy">
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="ct-bento-card__title">Location</h3>
+                        <p class="ct-bento-card__desc">Remote-first agency. Serving clients in US, Canada, Australia
+                            &amp; worldwide.</p>
+                        <div class="ct-bento-card__bar" aria-hidden="true"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════
+         SERVICES SELECTOR
+        ══════════════════════════════════ -->
+        <section class="ct-services-section" id="services-select" aria-labelledby="svc-select-heading">
+            <div class="ct-container">
+                <div class="ct-section-header ct-reveal">
+                    <span class="ct-badge">
+                        <i class="fa-solid fa-layer-group" aria-hidden="true"></i> Our Services
+                    </span>
+                    <h2 class="ct-section-title" id="svc-select-heading">What Do You Need Help With?</h2>
+                    <p class="ct-section-sub">Click a service to pre-fill your inquiry. Select as many as you need —
+                        most clients combine 2–3 services.</p>
+                </div>
+
+                <div class="ct-svc-grid" role="group" aria-label="Service selection">
+
+                    <button class="ct-svc-card ct-reveal" data-delay="0" data-service="Lead Generation"
+                        aria-pressed="false" type="button">
+                        <div class="ct-svc-card__glow" aria-hidden="true"></div>
+                        <div class="ct-svc-card__icon">
+                            <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+                        </div>
+                        <h3>Lead Generation</h3>
+                        <div class="ct-svc-card__check" aria-hidden="true">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </button>
+
+                    <button class="ct-svc-card ct-reveal" data-delay="60" data-service="Transaction Coordination"
+                        aria-pressed="false" type="button">
+                        <div class="ct-svc-card__glow" aria-hidden="true"></div>
+                        <div class="ct-svc-card__icon">
+                            <i class="fa-solid fa-file-signature" aria-hidden="true"></i>
+                        </div>
+                        <h3>Transaction Coordination</h3>
+                        <div class="ct-svc-card__check" aria-hidden="true">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </button>
+
+                    <button class="ct-svc-card ct-reveal" data-delay="120" data-service="Real Estate Virtual Assistant"
+                        aria-pressed="false" type="button">
+                        <div class="ct-svc-card__glow" aria-hidden="true"></div>
+                        <div class="ct-svc-card__icon">
+                            <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+                        </div>
+                        <h3>Real Estate Virtual Assistant</h3>
+                        <div class="ct-svc-card__check" aria-hidden="true">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </button>
+
+                    <button class="ct-svc-card ct-reveal" data-delay="180" data-service="Social Media Management"
+                        aria-pressed="false" type="button">
+                        <div class="ct-svc-card__glow" aria-hidden="true"></div>
+                        <div class="ct-svc-card__icon">
+                            <i class="fa-solid fa-hashtag" aria-hidden="true"></i>
+                        </div>
+                        <h3>Social Media Management</h3>
+                        <div class="ct-svc-card__check" aria-hidden="true">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </button>
+
+                    <button class="ct-svc-card ct-reveal" data-delay="240" data-service="Video Editing &amp; Reels"
+                        aria-pressed="false" type="button">
+                        <div class="ct-svc-card__glow" aria-hidden="true"></div>
+                        <div class="ct-svc-card__icon">
+                            <i class="fa-solid fa-video" aria-hidden="true"></i>
+                        </div>
+                        <h3>Video Editing &amp; Reels</h3>
+                        <div class="ct-svc-card__check" aria-hidden="true">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </button>
+
+                    <button class="ct-svc-card ct-reveal" data-delay="300"
+                        data-service="Website Design &amp; Landing Pages" aria-pressed="false" type="button">
+                        <div class="ct-svc-card__glow" aria-hidden="true"></div>
+                        <div class="ct-svc-card__icon">
+                            <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+                        </div>
+                        <h3>Website Design &amp; Landing Pages</h3>
+                        <div class="ct-svc-card__check" aria-hidden="true">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </button>
+
+                    <button class="ct-svc-card ct-reveal" data-delay="360"
+                        data-service="CRM Management &amp; Automation" aria-pressed="false" type="button">
+                        <div class="ct-svc-card__glow" aria-hidden="true"></div>
+                        <div class="ct-svc-card__icon">
+                            <i class="fa-solid fa-gears" aria-hidden="true"></i>
+                        </div>
+                        <h3>CRM Management &amp; Automation</h3>
+                        <div class="ct-svc-card__check" aria-hidden="true">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </button>
+
+                    <button class="ct-svc-card ct-reveal" data-delay="420" data-service="MLS Listing Management"
+                        aria-pressed="false" type="button">
+                        <div class="ct-svc-card__glow" aria-hidden="true"></div>
+                        <div class="ct-svc-card__icon">
+                            <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
+                        </div>
+                        <h3>MLS Listing Management</h3>
+                        <div class="ct-svc-card__check" aria-hidden="true">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </button>
+
+                    <button class="ct-svc-card ct-reveal" data-delay="480" data-service="Email Marketing"
+                        aria-pressed="false" type="button">
+                        <div class="ct-svc-card__glow" aria-hidden="true"></div>
+                        <div class="ct-svc-card__icon">
+                            <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
+                        </div>
+                        <h3>Email Marketing</h3>
+                        <div class="ct-svc-card__check" aria-hidden="true">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </button>
+
+                    <button class="ct-svc-card ct-reveal" data-delay="540" data-service="Local SEO &amp; GBP Management"
+                        aria-pressed="false" type="button">
+                        <div class="ct-svc-card__glow" aria-hidden="true"></div>
+                        <div class="ct-svc-card__icon">
+                            <i class="fa-brands fa-google" aria-hidden="true"></i>
+                        </div>
+                        <h3>Local SEO &amp; GBP Management</h3>
+                        <div class="ct-svc-card__check" aria-hidden="true">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </button>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════
+         CONTACT FORM SECTION
+        ══════════════════════════════════ -->
+        <section class="ct-form-section" id="contact-form" aria-labelledby="form-heading">
+            <div class="ct-container">
+                <div class="ct-form-grid">
+
+                    <!-- Left: Trust side -->
+                    <div class="ct-form-left ct-reveal">
+                        <span class="ct-badge">
+                            <i class="fa-solid fa-comments" aria-hidden="true"></i> Start a Conversation
+                        </span>
+                        <h2 class="ct-form-heading" id="form-heading">
+                            Tell Us About<br>
+                            <span class="ct-text-orange">Your Project</span>
+                        </h2>
+                        <p class="ct-form-copy">
+                            Share your goals and challenges — we'll build a custom growth strategy
+                            tailored to your real estate business. No pressure, no obligation.
+                        </p>
+
+                        <ul class="ct-trust-list">
+                            <li>
+                                <span class="ct-trust-icon">
+                                    <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                                </span>
+                                <div>
+                                    <strong>Fast Response</strong>
+                                    <span>Within 24 hours on business days</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="ct-trust-icon">
+                                    <i class="fa-solid fa-gift" aria-hidden="true"></i>
+                                </span>
+                                <div>
+                                    <strong>Free Consultation</strong>
+                                    <span>30-minute strategy session included</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="ct-trust-icon">
+                                    <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+                                </span>
+                                <div>
+                                    <strong>Custom Strategy</strong>
+                                    <span>Tailored to your specific market</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="ct-trust-icon">
+                                    <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                                </span>
+                                <div>
+                                    <strong>No Obligation</strong>
+                                    <span>Cancel anytime, no contracts</span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="ct-form-floats" aria-hidden="true">
+                            <div class="ct-float-badge ct-float-badge--1">
+                                <i class="fa-solid fa-star"></i> 98% Satisfaction
+                            </div>
+                            <div class="ct-float-badge ct-float-badge--2">
+                                <i class="fa-solid fa-trophy"></i> 500+ Projects
+                            </div>
+                            <div class="ct-float-badge ct-float-badge--3">
+                                <i class="fa-solid fa-globe"></i> Global Clients
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Form card -->
+                    <div class="ct-form-right ct-reveal" data-delay="100">
+                        <div class="ct-form-card">
+
+                            <div class="ct-form-card__header">
+                                <h3>Get Your Growth Plan</h3>
+                                <p>Fill in the details below — takes less than 2 minutes.</p>
+                            </div>
+
+                            <form class="ct-form" id="contactForm" novalidate aria-label="Contact form">
+
+                                <div class="ct-form-row">
+                                    <div class="ct-field">
+                                        <input type="text" id="fname" name="name" class="ct-input" placeholder=" "
+                                            autocomplete="name" required aria-required="true">
+                                        <label for="fname" class="ct-label">
+                                            Full Name <span aria-hidden="true">*</span>
+                                        </label>
+                                        <span class="ct-field-err" role="alert"></span>
+                                    </div>
+                                    <div class="ct-field">
+                                        <input type="text" id="company" name="company" class="ct-input" placeholder=" "
+                                            autocomplete="organization">
+                                        <label for="company" class="ct-label">Company Name</label>
+                                        <span class="ct-field-err" role="alert"></span>
+                                    </div>
+                                </div>
+
+                                <div class="ct-form-row">
+                                    <div class="ct-field">
+                                        <input type="email" id="email" name="email" class="ct-input" placeholder=" "
+                                            autocomplete="email" required aria-required="true">
+                                        <label for="email" class="ct-label">
+                                            Email Address <span aria-hidden="true">*</span>
+                                        </label>
+                                        <span class="ct-field-err" role="alert"></span>
+                                    </div>
+                                    <div class="ct-field">
+                                        <input type="tel" id="phone" name="phone" class="ct-input" placeholder=" "
+                                            autocomplete="tel">
+                                        <label for="phone" class="ct-label">Phone Number</label>
+                                        <span class="ct-field-err" role="alert"></span>
+                                    </div>
+                                </div>
+
+                                <div class="ct-form-row">
+                                    <div class="ct-field ct-field--select">
+                                        <select id="service" name="service" class="ct-select" required
+                                            aria-required="true">
+                                            <option value="" disabled selected></option>
+                                            <option value="Lead Generation">Lead Generation</option>
+                                            <option value="Transaction Coordination">Transaction Coordination</option>
+                                            <option value="Real Estate Virtual Assistant">Real Estate Virtual Assistant
+                                            </option>
+                                            <option value="Social Media Management">Social Media Management</option>
+                                            <option value="Video Editing &amp; Reels">Video Editing &amp; Reels</option>
+                                            <option value="Website Design &amp; Landing Pages">Website Design &amp;
+                                                Landing Pages</option>
+                                            <option value="CRM Management &amp; Automation">CRM Management &amp;
+                                                Automation</option>
+                                            <option value="MLS Listing Management">MLS Listing Management</option>
+                                            <option value="Email Marketing">Email Marketing</option>
+                                            <option value="Local SEO &amp; GBP Management">Local SEO &amp; GBP
+                                                Management</option>
+                                            <option value="Multiple Services">Multiple Services</option>
+                                        </select>
+                                        <label for="service" class="ct-label ct-label--select">
+                                            Service Needed <span aria-hidden="true">*</span>
+                                        </label>
+                                        <i class="fa-solid fa-chevron-down ct-select-arrow" aria-hidden="true"></i>
+                                        <span class="ct-field-err" role="alert"></span>
+                                    </div>
+                                    <div class="ct-field ct-field--select">
+                                        <select id="budget" name="budget" class="ct-select">
+                                            <option value="" disabled selected></option>
+                                            <option value="Under $500">Under $500 / month</option>
+                                            <option value="$500 - $1,000">$500 – $1,000 / month</option>
+                                            <option value="$1,000 - $2,000">$1,000 – $2,000 / month</option>
+                                            <option value="$2,000+">$2,000+ / month</option>
+                                            <option value="Not sure">Not sure yet</option>
+                                        </select>
+                                        <label for="budget" class="ct-label ct-label--select">Monthly Budget</label>
+                                        <i class="fa-solid fa-chevron-down ct-select-arrow" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+
+                                <div class="ct-field">
+                                    <textarea id="message" name="message" class="ct-input ct-textarea" placeholder=" "
+                                        rows="4" required aria-required="true"></textarea>
+                                    <label for="message" class="ct-label">
+                                        Your Message <span aria-hidden="true">*</span>
+                                    </label>
+                                    <span class="ct-field-err" role="alert"></span>
+                                </div>
+
+                                <div class="ct-selected-services-display" id="selectedServicesDisplay"
+                                    aria-live="polite"></div>
+
+                                <button type="submit" class="ct-submit-btn" id="submitBtn"
+                                    aria-label="Submit contact form">
+                                    <span class="ct-submit-btn__text">
+                                        Get My Growth Plan
+                                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                                    </span>
+                                    <span class="ct-submit-btn__loading" aria-hidden="true">
+                                        <i class="fa-solid fa-spinner fa-spin"></i> Sending…
+                                    </span>
+                                </button>
+
+                                <div class="ct-form-success" id="formSuccess" role="alert" aria-live="polite"
+                                    tabindex="-1">
+                                    <div class="ct-form-success__icon">
+                                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                                    </div>
+                                    <h3>Message Sent!</h3>
+                                    <p>Thank you! We'll review your inquiry and get back to you within 24 hours with a
+                                        custom growth plan.</p>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════
+         WHY LISTORA
+        ══════════════════════════════════ -->
+        <section class="ct-why-section" id="why-listora" aria-labelledby="why-heading">
+            <div class="ct-container">
+                <div class="ct-section-header ct-reveal">
+                    <span class="ct-badge">
+                        <i class="fa-solid fa-star" aria-hidden="true"></i> Why Listora
+                    </span>
+                    <h2 class="ct-section-title" id="why-heading">Why Businesses Choose Listora</h2>
+                    <p class="ct-section-sub">Built exclusively for real estate professionals who are serious about
+                        growth and long-term results.</p>
+                </div>
+
+                <div class="ct-why-grid">
+                    <div class="ct-why-card ct-reveal" data-delay="0">
+                        <div class="ct-why-card__icon">
+                            <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>
+                        </div>
+                        <h3>Lead Growth</h3>
+                        <p>Targeted campaigns that consistently deliver qualified buyers and sellers into your pipeline
+                            month after month.</p>
+                    </div>
+                    <div class="ct-why-card ct-reveal" data-delay="80">
+                        <div class="ct-why-card__icon">
+                            <i class="fa-solid fa-robot" aria-hidden="true"></i>
+                        </div>
+                        <h3>Smart Automation</h3>
+                        <p>CRM systems that follow up 24/7 so you never lose a deal to a slow response or forgotten
+                            follow-up.</p>
+                    </div>
+                    <div class="ct-why-card ct-reveal" data-delay="160">
+                        <div class="ct-why-card__icon">
+                            <i class="fa-solid fa-bullhorn" aria-hidden="true"></i>
+                        </div>
+                        <h3>Better Marketing</h3>
+                        <p>Data-driven content, social media, and video strategies that build authority and attract
+                            quality clients.</p>
+                    </div>
+                    <div class="ct-why-card ct-reveal" data-delay="240">
+                        <div class="ct-why-card__icon">
+                            <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+                        </div>
+                        <h3>Virtual Support</h3>
+                        <p>Dedicated VAs handle admin tasks so you can focus on showing homes, closing deals, and
+                            building relationships.</p>
+                    </div>
+                    <div class="ct-why-card ct-reveal" data-delay="320">
+                        <div class="ct-why-card__icon">
+                            <i class="fa-solid fa-globe" aria-hidden="true"></i>
+                        </div>
+                        <h3>Web Presence</h3>
+                        <p>High-converting websites and landing pages that work as your #1 lead generation machine
+                            around the clock.</p>
+                    </div>
+                    <div class="ct-why-card ct-reveal" data-delay="400">
+                        <div class="ct-why-card__icon">
+                            <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+                        </div>
+                        <h3>Scalability</h3>
+                        <p>Systems built to grow with you — from solo agent to top-producing team to full brokerage
+                            operation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- ══════════════════════════════════
+         FAQ
+        ══════════════════════════════════ -->
+        <section class="ct-faq-section" id="faq" aria-labelledby="faq-heading">
+            <div class="ct-container ct-container--narrow">
+                <div class="ct-section-header ct-reveal">
+                    <span class="ct-badge">
+                        <i class="fa-regular fa-circle-question" aria-hidden="true"></i> FAQ
+                    </span>
+                    <h2 class="ct-section-title" id="faq-heading">Frequently Asked Questions</h2>
+                    <p class="ct-section-sub">Everything you need to know before reaching out.</p>
+                </div>
+                <div class="ct-faq-list ct-reveal" data-delay="80">
+
+                    <div class="ct-faq-item">
+                        <button class="ct-faq-q" aria-expanded="false">
+                            <span>How quickly do you respond to enquiries?</span>
+                            <i class="fa-solid fa-plus ct-faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="ct-faq-a" role="region">
+                            <p>We respond to all inquiries within 24 hours on business days. For urgent requests,
+                                WhatsApp is the fastest way to reach us — we're typically available within a few hours
+                                during business hours.</p>
+                        </div>
+                    </div>
+
+                    <div class="ct-faq-item">
+                        <button class="ct-faq-q" aria-expanded="false">
+                            <span>Do you offer free consultations?</span>
+                            <i class="fa-solid fa-plus ct-faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="ct-faq-a" role="region">
+                            <p>Yes — every new client starts with a free 30-minute strategy call. We'll learn about your
+                                business, your goals, and your current challenges, then recommend the best services for
+                                your situation with zero obligation.</p>
+                        </div>
+                    </div>
+
+                    <div class="ct-faq-item">
+                        <button class="ct-faq-q" aria-expanded="false">
+                            <span>Can I request multiple services at once?</span>
+                            <i class="fa-solid fa-plus ct-faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="ct-faq-a" role="region">
+                            <p>Absolutely. Most clients use a combination of services — for example, lead generation +
+                                CRM automation + social media. Bundling services often improves results and typically
+                                costs less than managing separate providers.</p>
+                        </div>
+                    </div>
+
+                    <div class="ct-faq-item">
+                        <button class="ct-faq-q" aria-expanded="false">
+                            <span>Do you work with international clients?</span>
+                            <i class="fa-solid fa-plus ct-faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="ct-faq-a" role="region">
+                            <p>Yes. While we specialize in real estate marketing for the US, Canadian, and Australian
+                                markets, we work with real estate professionals globally. Our systems and strategies are
+                                fully adaptable to any market or region.</p>
+                        </div>
+                    </div>
+
+                    <div class="ct-faq-item">
+                        <button class="ct-faq-q" aria-expanded="false">
+                            <span>What happens after I submit the form?</span>
+                            <i class="fa-solid fa-plus ct-faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="ct-faq-a" role="region">
+                            <p>You'll receive an email confirmation immediately. A member of our team will review your
+                                inquiry and reach out within 24 hours to schedule your free strategy session. We'll come
+                                prepared with insights specific to your market.</p>
+                        </div>
+                    </div>
+
+                    <div class="ct-faq-item">
+                        <button class="ct-faq-q" aria-expanded="false">
+                            <span>How long does it take to see results?</span>
+                            <i class="fa-solid fa-plus ct-faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="ct-faq-a" role="region">
+                            <p>After your strategy call, we'll send a custom proposal. Once approved, onboarding takes
+                                5–7 business days. We'll set up all systems, configure your CRM, and launch your
+                                campaigns. Most clients see measurable results within the first two to four weeks.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="ct-footer" aria-label="Site footer">
+        <div class="ct-footer__inner">
+            <div class="ct-footer__col ct-footer__col--brand">
+                <a href="index.html" class="ct-footer__logo" aria-label="Listora home">
+                    <img src="logo 2.png" alt="Listora">
+                </a>
+                <p class="ct-footer__tagline">Smart Marketing Agency for Real Estate Professionals</p>
+                <div class="ct-footer__socials">
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a href="#" aria-label="X / Twitter">
+                        <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="ct-footer__col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us <i class="fa-solid fa-arrow-up-right-from-square"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="casestudies.html">Case Studies <i class="fa-solid fa-arrow-up-right-from-square"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="portfolio.html">Portfolio <i class="fa-solid fa-arrow-up-right-from-square"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="contact.html">Contact Us <i class="fa-solid fa-arrow-up-right-from-square"
+                                aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="ct-footer__col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="lead-generation.html">Lead Generation <i class="fa-solid fa-arrow-up-right-from-square"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="service.html">CRM Management <i class="fa-solid fa-arrow-up-right-from-square"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="service.html">Social Media <i class="fa-solid fa-arrow-up-right-from-square"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="real-estate-virtual-assistant.html">Virtual Assistant <i
+                                class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="ct-footer__col ct-footer__col--newsletter">
+                <h4>Free Marketing Audit</h4>
+                <p class="ct-footer__newsletter-desc">Receive a personalised audit with expert recommendations to
+                    improve visibility, lead generation, and business growth.</p>
+                <div class="ct-footer__newsletter">
+                    <label for="footerEmail" class="ct-sr-only">Your email address</label>
+                    <input type="email" id="footerEmail" placeholder="Enter your email…" autocomplete="email">
+                    <button aria-label="Subscribe">
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ct-footer__bottom">
+            <p>&copy; 2026 Listora Digital Media &nbsp;&middot;&nbsp; All rights reserved</p>
+        </div>
+    </footer>
+
+    <script src="contact.js"></script>
+</body>
+
+</html>
