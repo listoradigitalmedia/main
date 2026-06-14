@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Listora — Smart Marketing Agency for Real Estate Professionals. Lead generation, CRM automation, branding, and content systems.">
+    <title>Listora | Smart Marketing for Real Estate</title>
+
+    <!-- Fonts: Poppins only (single active family) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="drawer.css">
+
+    <!-- ── UNIFIED NAVBAR STYLES — matches about.html exactly ── -->
+    <style>
+        /* ── Fixed header wrapper ── */
+        .ct-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+        }
+
+        /* ── Nav row ── */
+        .ct-nav {
+            display: flex !important;
+            align-items: center;
+            gap: 32px;
+            padding: 20px 5% 20px 2%;
+            background: rgba(255, 255, 255, 0.0);
+            transition: background .35s ease, box-shadow .35s ease, padding .35s ease;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .ct-nav.scrolled {
+            background: rgba(255, 255, 255, .97) !important;
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 2px 24px rgba(3, 43, 102, .08);
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+
+        /* ── Logo ── */
+        .ct-nav__logo {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+            text-decoration: none;
+        }
+
+        .ct-nav__logo img {
+            width: 62px;
+            height: auto;
+            display: block;
+        }
+
+        /* ── Links ── */
+        .ct-nav__links {
+            display: flex !important;
+            align-items: center !important;
+            gap: 4px !important;
+            margin-left: auto !important;
+            list-style: none !important;
+            padding: 0 !important;
+            flex-direction: row !important;
+            position: static !important;
+            background: transparent !important;
+            max-height: none !important;
+        }
+
+        .ct-nav__links li {
+            width: auto !important;
+            text-align: left !important;
+            padding: 0 !important;
+            border: none !important;
+        }
+
+        .ct-nav__links a,
+        .ct-nav__links li a {
+            display: inline-block !important;
+            font-family: 'Poppins', sans-serif !important;
+            font-size: 15px !important;
+            font-weight: 500 !important;
+            color: #032B66 !important;
+            padding: 8px 15px !important;
+            border-radius: 8px !important;
+            text-decoration: none !important;
+            position: relative !important;
+            line-height: normal !important;
+            white-space: nowrap !important;
+            transition: background .25s ease, color .25s ease !important;
+        }
+
+        /* Kill the underline pseudo-element from style.css */
+        .ct-nav__links a::after,
+        .ct-nav__links li a::after {
+            display: none !important;
+            content: none !important;
+        }
+
+        .ct-nav__links a:hover,
+        .ct-nav__links li a:hover {
+            background: #e8eef8 !important;
+            color: #032B66 !important;
+        }
+
+        .ct-nav__links a.active,
+        .ct-nav__links li a.active {
+            color: #FF6600 !important;
+            font-weight: 700 !important;
+            background: transparent !important;
+        }
+
+        .ct-nav.scrolled .ct-nav__links a,
+        .ct-nav.scrolled .ct-nav__links li a {
+            color: #032B66 !important;
+        }
+
+        .ct-nav.scrolled .ct-nav__links a.active,
+        .ct-nav.scrolled .ct-nav__links li a.active {
+            color: #FF6600 !important;
+        }
+
+        /* ── CTA button ── */
+        .ct-nav__cta {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 8px;
+            padding: 11px 24px;
+            background: #FF6600 !important;
+            color: #fff !important;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            text-decoration: none !important;
+            white-space: nowrap;
+            flex-shrink: 0;
+            box-shadow: 0 4px 18px rgba(255, 102, 0, .30);
+            transition: background .3s ease, transform .4s cubic-bezier(.22, 1, .36, 1), box-shadow .4s ease;
+        }
+
+        .ct-nav__cta:hover {
+            background: #e05500 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 26px rgba(255, 102, 0, .40);
+        }
+
+        /* ── Burger ── */
+        .ct-nav__burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 6px 4px;
+            border-radius: 6px;
+            background: none !important;
+            border: none;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .ct-nav__burger span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: #032B66;
+            border-radius: 20px;
+            transition: transform .3s ease, opacity .3s ease;
+        }
+
+        .ct-nav__burger[aria-expanded="true"] span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .ct-nav__burger[aria-expanded="true"] span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .ct-nav__burger[aria-expanded="true"] span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* ── Hide the old navbar inside .hero ── */
+        .hero>.navbar,
+        .hero>nav.navbar {
+            display: none !important;
+        }
+
+        /* ── When drawer open, hide ct-header behind overlay ── */
+        body.drawer-open .ct-header {
+            z-index: 9997;
+        }
+
+        /* ── Responsive ── */
+        @media (min-width: 992px) {
+            .ct-nav__burger {
+                display: none !important;
+            }
+
+            .ct-nav__links {
+                display: flex !important;
+            }
+
+            .ct-nav__cta {
+                display: inline-flex !important;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .ct-nav__links {
+                display: none !important;
+            }
+
+            .ct-nav__cta {
+                display: none !important;
+            }
+
+            .ct-nav__burger {
+                display: flex !important;
+                margin-left: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ct-nav {
+                gap: 16px;
+                padding: 16px 4%;
+            }
+
+            .ct-nav__logo img {
+                width: 52px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════
+       OVERLAY
+  ═══════════════════════════════════════════ -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- ═══════════════════════════════════════════
+       MOBILE DRAWER
+  ═══════════════════════════════════════════ -->
+    <nav class="nav-drawer" id="navDrawer" aria-label="Mobile navigation" aria-hidden="true">
+
+        <div class="drawer-header">
+            <a href="index.html" class="drawer-logo">
+                <img src="logo.png" alt="Listora">
+            </a>
+            <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close navigation">
+                <span class="drawer-close-icon">
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+        </div>
+
+        <ul class="drawer-links" role="list">
+            <li class="drawer-link-item" style="--i:0">
+                <a href="index.html" class="drawer-link active">
+                    <span class="drawer-link-num">01</span>
+                    <span class="drawer-link-text">Home</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:1">
+                <a href="about.html" class="drawer-link">
+                    <span class="drawer-link-num">02</span>
+                    <span class="drawer-link-text">About</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:2">
+                <a href="service.html" class="drawer-link">
+                    <span class="drawer-link-num">03</span>
+                    <span class="drawer-link-text">Services</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:3">
+                <a href="portfolio.html" class="drawer-link">
+                    <span class="drawer-link-num">04</span>
+                    <span class="drawer-link-text">Portfolio</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:3">
+                <a href="casestudies.html" class="drawer-link">
+                    <span class="drawer-link-num">05</span>
+                    <span class="drawer-link-text">Case Studies</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:4">
+                <a href="contact.html" class="drawer-link">
+                    <span class="drawer-link-num">06</span>
+                    <span class="drawer-link-text">Contact</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+
+        <div class="drawer-cta-wrap" style="--i:5">
+            <a href="contact.html" class="drawer-cta-btn">
+                <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>
+                GET A GROWTH PLAN
+            </a>
+        </div>
+
+        <div class="drawer-footer" style="--i:6">
+            <p class="drawer-footer-text">Smart Marketing Agency for Real Estate Professionals</p>
+            <div class="drawer-social-links">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+        <div class="drawer-accent" aria-hidden="true"></div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+
+    <!-- UNIFIED NAVBAR -->
+    <header class="ct-header">
+        <nav class="ct-nav" id="ctNav" aria-label="Primary navigation">
+            <a href="index.html" class="ct-nav__logo">
+                <img src="logo.png" alt="Listora home">
+            </a>
+            <ul class="ct-nav__links" role="list">
+                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="casestudies.html">Case Studies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="ct-nav__cta">
+                <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>
+                GET A GROWTH PLAN
+            </a>
+            <button class="ct-nav__burger" id="menuBtn" aria-label="Open navigation" aria-expanded="false"
+                aria-controls="navDrawer">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <header class="hero">
+
+        <div class="hero-content">
+            <h1>
+                STOP GUESSING <br>START
+                <span class="typing-text" aria-live="polite"></span>
+            </h1>
+            <p>
+                Your brand deserves more than visibility—it deserves results. We combine creativity, technology, and
+                marketing expertise to help you stand out and scale faster.
+            </p>
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- ═══════════════════════════════════════════
+         PROBLEMS
+    ═══════════════════════════════════════════ -->
+        <section class="problems-section">
+            <div class="container">
+
+                <!-- ── Header ─────────────────────────────────────────── -->
+                <div class="section-header">
+
+                    <span class="section-tag">
+                        <span class="tag-dot"></span>
+                        <i class="fa-solid fa-chart-line"></i>
+                        Real Estate Growth Challenges
+                    </span>
+
+                    <h2>Does This Sound <span class="gradient-text">Familiar?</span></h2>
+
+                    <p>Scaling a real estate business shouldn't mean sacrificing your life.
+                        If you're hitting these walls, we can help.</p>
+
+                </div>
+
+                <!-- ── Grid ───────────────────────────────────────────── -->
+                <div class="cards-grid">
+
+                    <!-- Card 1 -->
+                    <article class="problem-card" data-index="0">
+
+                        <!-- TOP: navy accordion header (always visible) -->
+                        <div class="card-header" role="button" tabindex="0" aria-expanded="false"
+                            aria-controls="panel-0">
+                            <div class="header-left">
+                                <span class="card-num">01</span>
+                                <h3>Chained to the Phone</h3>
+                            </div>
+                            <span class="toggle-btn">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </div>
+
+                        <!-- MIDDLE: card body (hover fill target) -->
+                        <div class="card-body">
+                            <div class="icon-box">
+                                <i class="fas fa-phone-volume"></i>
+                            </div>
+                            <p class="card-desc">You're manually following up with leads all day,
+                                leaving zero time for high-value client face-time.</p>
+                        </div>
+
+                        <!-- BOTTOM: pain point panel (drops from top on click) -->
+                        <div class="pain-panel" id="panel-0" role="region" aria-hidden="true">
+                            <div class="pain-inner">
+                                <span class="pain-badge">
+                                    <i class="fas fa-triangle-exclamation"></i> Pain Point
+                                </span>
+                                <p>Leads slip through the cracks because follow-ups are inconsistent
+                                    and manual — costing you closings every single month.</p>
+                                <div class="stat-row">
+                                    <strong>73%</strong>
+                                    <span>of leads never receive a second follow-up</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="problem-card" data-index="1">
+                        <div class="card-header" role="button" tabindex="0" aria-expanded="false"
+                            aria-controls="panel-1">
+                            <div class="header-left">
+                                <span class="card-num">02</span>
+                                <h3>Leaky Sales Funnel</h3>
+                            </div>
+                            <span class="toggle-btn"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="card-body">
+                            <div class="icon-box"><i class="fas fa-filter-circle-dollar"></i></div>
+                            <p class="card-desc">Paid leads are pouring in, but 80% fall through
+                                the cracks because of poor CRM setup.</p>
+                        </div>
+                        <div class="pain-panel" id="panel-1" role="region" aria-hidden="true">
+                            <div class="pain-inner">
+                                <span class="pain-badge"><i class="fas fa-triangle-exclamation"></i> Pain Point</span>
+                                <p>Without a structured CRM pipeline, your ad spend generates interest
+                                    but not conversions — a silent drain on your budget.</p>
+                                <div class="stat-row">
+                                    <strong>80%</strong>
+                                    <span>of paid leads lost to poor follow-up systems</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="problem-card" data-index="2">
+                        <div class="card-header" role="button" tabindex="0" aria-expanded="false"
+                            aria-controls="panel-2">
+                            <div class="header-left">
+                                <span class="card-num">03</span>
+                                <h3>Weak Digital Identity</h3>
+                            </div>
+                            <span class="toggle-btn"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="card-body">
+                            <div class="icon-box"><i class="fas fa-globe"></i></div>
+                            <p class="card-desc">Your offline reputation is elite, but your social media
+                                and website look like they're from 2012.</p>
+                        </div>
+                        <div class="pain-panel" id="panel-2" role="region" aria-hidden="true">
+                            <div class="pain-inner">
+                                <span class="pain-badge"><i class="fas fa-triangle-exclamation"></i> Pain Point</span>
+                                <p>Prospects Google you before they call — an outdated digital presence
+                                    signals a lack of credibility and kills deals before they start.</p>
+                                <div class="stat-row">
+                                    <strong>94%</strong>
+                                    <span>of first impressions are design-related</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="problem-card" data-index="3">
+                        <div class="card-header" role="button" tabindex="0" aria-expanded="false"
+                            aria-controls="panel-3">
+                            <div class="header-left">
+                                <span class="card-num">04</span>
+                                <h3>Messy Workflows</h3>
+                            </div>
+                            <span class="toggle-btn"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="card-body">
+                            <div class="icon-box"><i class="fas fa-diagram-project"></i></div>
+                            <p class="card-desc">No standardized process for onboarding, nurturing,
+                                or post-close referrals. It's chaos.</p>
+                        </div>
+                        <div class="pain-panel" id="panel-3" role="region" aria-hidden="true">
+                            <div class="pain-inner">
+                                <span class="pain-badge"><i class="fas fa-triangle-exclamation"></i> Pain Point</span>
+                                <p>Inconsistent onboarding means you're leaving repeat business and
+                                    referrals — your highest-ROI channel — completely on the table.</p>
+                                <div class="stat-row">
+                                    <strong>5×</strong>
+                                    <span>more costly to acquire than retain a client</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 5 -->
+                    <article class="problem-card" data-index="4">
+                        <div class="card-header" role="button" tabindex="0" aria-expanded="false"
+                            aria-controls="panel-4">
+                            <div class="header-left">
+                                <span class="card-num">05</span>
+                                <h3>Inconsistent Marketing</h3>
+                            </div>
+                            <span class="toggle-btn"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="card-body">
+                            <div class="icon-box"><i class="fas fa-bullhorn"></i></div>
+                            <p class="card-desc">You post once every two weeks when you have a closing,
+                                but there's no strategic content engine.</p>
+                        </div>
+                        <div class="pain-panel" id="panel-4" role="region" aria-hidden="true">
+                            <div class="pain-inner">
+                                <span class="pain-badge"><i class="fas fa-triangle-exclamation"></i> Pain Point</span>
+                                <p>Sporadic posting destroys algorithmic reach — without a consistent
+                                    cadence, your brand stays invisible between transactions.</p>
+                                <div class="stat-row">
+                                    <strong>3×</strong>
+                                    <span>more leads generated through consistent content</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 6 -->
+                    <article class="problem-card" data-index="5">
+                        <div class="card-header" role="button" tabindex="0" aria-expanded="false"
+                            aria-controls="panel-5">
+                            <div class="header-left">
+                                <span class="card-num">06</span>
+                                <h3>Invisible ROI</h3>
+                            </div>
+                            <span class="toggle-btn"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="card-body">
+                            <div class="icon-box"><i class="fas fa-chart-line"></i></div>
+                            <p class="card-desc">You're spending on ads but have no idea what your
+                                Cost Per Acquisition or lead-to-close ratio is.</p>
+                        </div>
+                        <div class="pain-panel" id="panel-5" role="region" aria-hidden="true">
+                            <div class="pain-inner">
+                                <span class="pain-badge"><i class="fas fa-triangle-exclamation"></i> Pain Point</span>
+                                <p>Flying blind on spend means you can't scale what's working or cut
+                                    what isn't — your budget bleeds with no dashboard to stop it.</p>
+                                <div class="stat-row">
+                                    <strong>62%</strong>
+                                    <span>of ad spend wasted without proper tracking</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div><!-- /.cards-grid -->
+            </div><!-- /.container -->
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+         ECOSYSTEM
+    ═══════════════════════════════════════════ -->
+        <section class="ecosystem" aria-labelledby="ecosystem-heading">
+            <div class="container">
+
+                <div class="section-tag">
+                    <i class="fa-solid fa-circle-nodes" aria-hidden="true"></i>
+                    <span>Growth Ecosystem</span>
+                </div>
+
+                <h2 id="ecosystem-heading">We Build Ecosystems, Not Just Campaigns.</h2>
+
+                <!-- Card 1 -->
+                <article class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="number" aria-hidden="true">01</span>
+                            <div class="icon-box">
+                                <i class="fa-solid fa-fingerprint" aria-hidden="true"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Identity &amp; Branding</h3>
+                                <p>Visual narratives that establish authority in your local market.</p>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <i class="fa-solid fa-fingerprint" aria-hidden="true"></i>
+                            <h3>Identity &amp; Branding</h3>
+                            <p>We craft memorable brands, messaging, and visual identities that position your business
+                                as the obvious choice.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="number" aria-hidden="true">02</span>
+                            <div class="icon-box">
+                                <i class="fa-solid fa-video" aria-hidden="true"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Content Mastery</h3>
+                                <p>Consistent video, social and email content that keeps you top-of-mind.</p>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <i class="fa-solid fa-video" aria-hidden="true"></i>
+                            <h3>Content Mastery</h3>
+                            <p>Strategic content systems that attract, educate and convert your audience across multiple
+                                platforms.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="number" aria-hidden="true">03</span>
+                            <div class="icon-box">
+                                <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+                            </div>
+                            <div class="content">
+                                <h3>Lead Generation</h3>
+                                <p>Performance ads targeting high-intent buyers and sellers.</p>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+                            <h3>Lead Generation</h3>
+                            <p>Data-driven campaigns designed to generate qualified leads and maximize return on
+                                investment.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <span class="number" aria-hidden="true">04</span>
+                            <div class="icon-box">
+                                <i class="fa-solid fa-gears" aria-hidden="true"></i>
+                            </div>
+                            <div class="content">
+                                <h3>CRM Automation</h3>
+                                <p>Backend systems that transform data into predictable revenue.</p>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <i class="fa-solid fa-gears" aria-hidden="true"></i>
+                            <h3>CRM Automation</h3>
+                            <p>Automated follow-ups, lead nurturing, CRM integrations and sales workflows that close
+                                more deals.</p>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+         CORE REVENUE SERVICES
+    ═══════════════════════════════════════════ -->
+        <section class="featured-services" aria-labelledby="featured-heading">
+            <div class="container--wide">
+
+                <div class="section-header">
+                    <h2 id="featured-heading">Core Revenue Services</h2>
+                    <p>The core solutions real estate professionals trust to generate leads, streamline operations, and
+                        close more deals.</p>
+                </div>
+
+                <div class="services-grid">
+
+                    <article class="service-card">
+                        <div class="card-image">
+                            <img src="a1.png" alt="Lead Generation service">
+                        </div>
+                        <div class="card-content">
+                            <h3>Lead Generation</h3>
+                            <p>Generate qualified buyer and seller leads through targeted ad campaigns and
+                                conversion-focused funnels.</p>
+                            <a href="leadgeneration.html" class="learn-btn">Learn More <span
+                                    aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="card-image">
+                            <img src="a2.png" alt="Transaction Coordination service">
+                        </div>
+                        <div class="card-content">
+                            <h3>Transaction Coordination</h3>
+                            <p>Manage contracts, deadlines, paperwork, and communication from contract to close.</p>
+                            <a href="transactioncoordination.html" class="learn-btn">Learn More <span
+                                    aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="card-image">
+                            <img src="a3.png" alt="Real Estate Virtual Assistant service">
+                        </div>
+                        <div class="card-content">
+                            <h3>Real Estate Virtual Assistant</h3>
+                            <p>Handle administrative tasks, CRM updates, appointment scheduling, and client follow-ups.
+                            </p>
+                            <a href="virtualassistant.html" class="learn-btn">Learn More <span
+                                    aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="card-image">
+                            <img src="a4.png" alt="CRM Management and Automation service">
+                        </div>
+                        <div class="card-content">
+                            <h3>CRM Management &amp; Automation</h3>
+                            <p>Automate lead nurturing, follow-ups, and pipeline management to improve efficiency and
+                                increase conversions.</p>
+                            <a href="crmmanagement.html" class="learn-btn">Learn More <span
+                                    aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+         LISTORA ADVANTAGE
+    ═══════════════════════════════════════════ -->
+        <section class="listora-advantage-section" aria-labelledby="advantage-heading">
+            <div class="container">
+
+                <div class="listora-advantage-header">
+                    <span class="listora-advantage-badge">Why Choose Listora</span>
+                    <h2 id="advantage-heading">The Listora Advantage</h2>
+                    <p>Built exclusively for real estate professionals who want premium branding, predictable growth,
+                        and consistent lead generation.</p>
+                </div>
+
+                <div class="listora-advantage-grid">
+
+                    <article class="listora-advantage-card">
+                        <div class="listora-advantage-icon">
+                            <i class="fas fa-building" aria-hidden="true"></i>
+                        </div>
+                        <h3>Real Estate Focused</h3>
+                        <p>We don't serve every industry. We understand listings, showings, escrows, and real estate
+                            growth.</p>
+                    </article>
+
+                    <article class="listora-advantage-card">
+                        <div class="listora-advantage-icon">
+                            <i class="fas fa-chart-line" aria-hidden="true"></i>
+                        </div>
+                        <h3>Complete Growth System</h3>
+                        <p>Website, SEO, content, paid ads, CRM automation and lead nurturing — all under one roof.</p>
+                    </article>
+
+                    <article class="listora-advantage-card">
+                        <div class="listora-advantage-icon">
+                            <i class="fas fa-rocket" aria-hidden="true"></i>
+                        </div>
+                        <h3>Offshore Efficiency</h3>
+                        <p>World-class execution and support at a fraction of traditional agency pricing.</p>
+                    </article>
+
+                    <article class="listora-advantage-card">
+                        <div class="listora-advantage-icon">
+                            <i class="fas fa-handshake" aria-hidden="true"></i>
+                        </div>
+                        <h3>Consistent Execution</h3>
+                        <p>Dedicated support, weekly reporting, transparent communication, and dependable delivery.</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+         TIMELINE
+    ═══════════════════════════════════════════ -->
+        <section class="timelinepro-section" id="timelinepro-root" aria-labelledby="timeline-heading">
+
+            <div class="timelinepro-left" id="timelinepro-left-panel">
+
+                <div class="timelinepro-badge">
+                    <span class="timelinepro-badge-dot" aria-hidden="true"></span>
+                    GROWTH FRAMEWORK
+                </div>
+
+                <h2 class="timelinepro-heading" id="timeline-heading">Your Path<br>to Scaling</h2>
+
+                <div class="timelinepro-card" id="timelinepro-card" aria-live="polite">
+                    <div class="timelinepro-card-icon-wrap" id="timelinepro-card-icon" aria-hidden="true"></div>
+                    <div class="timelinepro-card-body">
+                        <h3 class="timelinepro-card-title" id="timelinepro-card-title"></h3>
+                        <div class="timelinepro-card-divider" aria-hidden="true"></div>
+                        <p class="timelinepro-card-desc" id="timelinepro-card-desc"></p>
+                    </div>
+                </div>
+
+                <div class="timelinepro-dots" aria-hidden="true">
+                    <div class="timelinepro-dots-grid"></div>
+                </div>
+
+            </div>
+
+            <div class="timelinepro-right" id="timelinepro-right-panel">
+
+                <div class="timelinepro-track" id="timelinepro-track" aria-hidden="true">
+                    <div class="timelinepro-track-bg" id="timelinepro-track-bg"></div>
+                    <div class="timelinepro-track-fill" id="timelinepro-track-fill"></div>
+                </div>
+
+                <ol class="timelinepro-steps" id="timelinepro-steps">
+                    <li class="timelinepro-step" data-step="0">
+                        <span class="timelinepro-step-num" aria-hidden="true">01</span>
+                        <div class="timelinepro-node-wrap" aria-hidden="true">
+                            <div class="timelinepro-node"></div>
+                        </div>
+                        <div class="timelinepro-step-content">
+                            <h4 class="timelinepro-step-title">Discovery</h4>
+                            <p class="timelinepro-step-desc">Audit brand and opportunities</p>
+                        </div>
+                    </li>
+                    <li class="timelinepro-step" data-step="1">
+                        <span class="timelinepro-step-num" aria-hidden="true">02</span>
+                        <div class="timelinepro-node-wrap" aria-hidden="true">
+                            <div class="timelinepro-node"></div>
+                        </div>
+                        <div class="timelinepro-step-content">
+                            <h4 class="timelinepro-step-title">Strategy</h4>
+                            <p class="timelinepro-step-desc">Create growth roadmap</p>
+                        </div>
+                    </li>
+                    <li class="timelinepro-step" data-step="2">
+                        <span class="timelinepro-step-num" aria-hidden="true">03</span>
+                        <div class="timelinepro-node-wrap" aria-hidden="true">
+                            <div class="timelinepro-node"></div>
+                        </div>
+                        <div class="timelinepro-step-content">
+                            <h4 class="timelinepro-step-title">Implementation</h4>
+                            <p class="timelinepro-step-desc">Launch campaigns and systems</p>
+                        </div>
+                    </li>
+                    <li class="timelinepro-step" data-step="3">
+                        <span class="timelinepro-step-num" aria-hidden="true">04</span>
+                        <div class="timelinepro-node-wrap" aria-hidden="true">
+                            <div class="timelinepro-node"></div>
+                        </div>
+                        <div class="timelinepro-step-content">
+                            <h4 class="timelinepro-step-title">Optimization</h4>
+                            <p class="timelinepro-step-desc">Refine and improve performance</p>
+                        </div>
+                    </li>
+                    <li class="timelinepro-step" data-step="4">
+                        <span class="timelinepro-step-num" aria-hidden="true">05</span>
+                        <div class="timelinepro-node-wrap" aria-hidden="true">
+                            <div class="timelinepro-node"></div>
+                        </div>
+                        <div class="timelinepro-step-content">
+                            <h4 class="timelinepro-step-title">Scale &amp; Dominate</h4>
+                            <p class="timelinepro-step-desc">Accelerate sustainable business growth</p>
+                        </div>
+                    </li>
+                </ol>
+
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+         GROWTH SERVICES
+    ═══════════════════════════════════════════ -->
+        <section class="growth-section" aria-labelledby="growth-heading">
+            <div class="container--wide">
+
+                <div class="section-header">
+                    <h2 id="growth-heading">Everything You Need To Grow</h2>
+                    <p>Tailored solutions for every stage of your real estate career.</p>
+                </div>
+
+                <div class="services-grid">
+
+                    <article class="service-card">
+                        <div class="card-image">
+                            <img src="b1.png" alt="Social Media Management service">
+                        </div>
+                        <div class="card-content">
+                            <h3>Social Media Management</h3>
+                            <p>Grow your online presence through content creation, scheduling, engagement, and platform
+                                management.</p>
+                            <a href="socialmanage.html" class="learn-btn">Learn More <span
+                                    aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="card-image">
+                            <img src="b2.png" alt="Video Editing and Reels service">
+                        </div>
+                        <div class="card-content">
+                            <h3>Video Editing &amp; Reels</h3>
+                            <p>Create compelling property tours, reels, shorts, and testimonial videos that capture
+                                attention.</p>
+                            <a href="videoedit.html" class="learn-btn">Learn More <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="card-image">
+                            <img src="b3.png" alt="Website Design and Landing Pages service">
+                        </div>
+                        <div class="card-content">
+                            <h3>Website Design &amp; Landing Pages</h3>
+                            <p>Build professional websites and landing pages designed to attract, engage, and convert
+                                leads.</p>
+                            <a href="websitelanding.html" class="learn-btn">Learn More <span
+                                    aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="card-image">
+                            <img src="b4.png" alt="Branding and Identity service">
+                        </div>
+                        <div class="card-content">
+                            <h3>Branding &amp; Identity</h3>
+                            <p>Develop a strong visual identity with custom branding, marketing assets, and professional
+                                designs.</p>
+                            <a href="#" class="learn-btn">Learn More <span aria-hidden="true">→</span></a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+         CTA
+    ═══════════════════════════════════════════ -->
+        <section class="ref-cta-section" aria-labelledby="cta-heading">
+            <div class="ref-cta-container">
+
+                <div class="ref-cta-glow ref-cta-glow-left" aria-hidden="true"></div>
+                <div class="ref-cta-glow ref-cta-glow-right" aria-hidden="true"></div>
+
+                <div class="ref-cta-content">
+                    <h2 class="ref-cta-title" id="cta-heading">
+                        Ready to Build a More Scalable
+                        <span>Real Estate Business?</span>
+                    </h2>
+                    <p class="ref-cta-description">
+                        Book a 1:1 Growth Audit with our experts. We'll audit your current digital presence and CRM,
+                        then build you a custom roadmap.
+                    </p>
+                    <a href="contact.html" class="ref-cta-button">Book My Strategy Call</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+         AFFILIATE
+    ═══════════════════════════════════════════ -->
+        <section class="affiliate-section" aria-labelledby="affiliate-heading">
+            <div class="affiliate-content">
+                <span class="affiliate-tag">Join the Listora Referral Network</span>
+                <h2 id="affiliate-heading">Join our Affiliate Program</h2>
+                <p>Refer Realtors, Brokers, and Agencies to Listora and earn up to 30% recurring commissions on every
+                    successful referral.</p>
+                <a href="#" class="affiliate-btn">Become an Affiliate &rarr;</a>
+            </div>
+            <div class="affiliate-image">
+                <img src="as.png" alt="Real estate professional using Listora marketing tools">
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+    <footer class="footer" aria-label="Site footer">
+        <div class="footer-inner">
+
+            <!-- Brand Column -->
+            <div class="footer-col footer-col--brand">
+                <a href="#" class="brand-logo" aria-label="Listora home">
+                    <img src="logo 2.png" alt="Listora">
+                </a>
+                <p class="footer-tagline">Smart Marketing Agency for Real Estate Professionals</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <!-- Company Column -->
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="-casestudies.html">Case Studies <i
+                                class="fa-solid fa-arrow-up-right-from-square footer-arrow" aria-hidden="true"></i></a>
+                    </li>
+                    <li><a href="portfolio.html">Portfolio <i
+                                class="fa-solid fa-arrow-up-right-from-square footer-arrow" aria-hidden="true"></i></a>
+                    </li>
+                    <li><a href="contact.html">Contact Us <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                                aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+
+            <!-- Services Column -->
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Real Estate Marketing <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="#">Lead Generation <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="#">CRM Management <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="#">Social Media Management <i
+                                class="fa-solid fa-arrow-up-right-from-square footer-arrow" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Newsletter Column -->
+            <div class="footer-col footer-col--newsletter">
+                <h4>Free Marketing Audit</h4>
+                <p class="newsletter-desc">Receive a personalised audit with expert recommendations to improve
+                    visibility, lead generation, and business growth.</p>
+                <div class="newsletter" role="group" aria-label="Email newsletter signup">
+                    <label for="email" class="sr-only">Your email address</label>
+                    <input type="email" id="email" placeholder="Enter your email..." autocomplete="email">
+                    <button id="sub-btn" aria-label="Subscribe">
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <p class="newsletter-msg" id="msg" role="status" aria-live="polite"></p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Listora Digital Media &nbsp;&middot;&nbsp; All rights reserved</p>
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Unified navbar scroll handler -->
+    <script>
+        (function () {
+            var nav = document.getElementById('ctNav');
+            if (!nav) return;
+
+            function onScroll() {
+                nav.classList.toggle('scrolled', window.scrollY > 50);
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        }());
+    </script>
+
+</body>
+
+</html>

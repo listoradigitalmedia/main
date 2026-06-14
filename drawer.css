@@ -1,0 +1,632 @@
+/* ============================================================
+   drawer.css
+   Right-slide mobile navigation drawer
+   Add AFTER style.css
+   ============================================================ */
+
+
+/* ── 1. CSS VARIABLES ──────────────────────────────────────── */
+
+:root {
+    --drawer-width: 70vw;
+    --drawer-bg: #f8f7f4;
+    --drawer-surface: #f0ede8;
+    --drawer-border: rgba(0, 0, 0, 0.08);
+    --drawer-orange: #FF6600;
+    --drawer-orange-dim: rgba(255, 102, 0, 0.08);
+    --drawer-text: #111827;
+    --drawer-text-muted: rgba(17, 24, 39, 0.50);
+    --drawer-num: rgba(255, 102, 0, 0.50);
+    --drawer-z: 9999;
+    --drawer-overlay-z: 9998;
+    --transition-drawer: 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-links: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* ── 2. OVERLAY ────────────────────────────────────────────── */
+
+.nav-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: var(--drawer-overlay-z);
+
+    background: rgba(17, 24, 39, 0.40);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+
+    transition:
+        opacity var(--transition-drawer),
+        visibility var(--transition-drawer);
+
+    will-change: opacity;
+}
+
+.nav-overlay.is-open {
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+}
+
+
+/* ── 3. DRAWER PANEL ───────────────────────────────────────── */
+
+.nav-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: var(--drawer-z);
+
+    width: var(--drawer-width);
+    max-width: 70vw;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--drawer-bg);
+
+    /* Subtle left border to separate from page */
+    border-left: 1px solid rgba(0, 0, 0, 0.06);
+
+    /* Right-side slide: starts off-screen to the right */
+    transform: translateX(100%);
+    visibility: hidden;
+
+    transition:
+        transform var(--transition-drawer),
+        visibility var(--transition-drawer);
+
+    will-change: transform;
+    contain: layout style;
+
+    /* Shadow when open */
+    box-shadow: -12px 0 48px rgba(0, 0, 0, 0.10);
+
+    /* Prevent overflow bleed */
+    overflow: hidden;
+
+    /* Safe area for notched devices */
+    padding-right: env(safe-area-inset-right, 0px);
+}
+
+.nav-drawer.is-open {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+
+/* ── 4. DRAWER HEADER ──────────────────────────────────────── */
+
+.drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 22px 24px 20px;
+
+    border-bottom: 1px solid var(--drawer-border);
+
+    background: #ffffff;
+
+    flex-shrink: 0;
+}
+
+.drawer-logo img {
+    width: 54px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    transition: opacity 0.2s ease;
+}
+
+.drawer-logo:hover img {
+    opacity: 0.75;
+}
+
+
+/* ── 5. CLOSE BUTTON ───────────────────────────────────────── */
+
+.drawer-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--drawer-border);
+    border-radius: 10px;
+
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+
+    transition:
+        background 0.22s ease,
+        border-color 0.22s ease,
+        transform 0.22s ease;
+
+    flex-shrink: 0;
+}
+
+.drawer-close-btn:hover {
+    background: var(--drawer-orange-dim);
+    border-color: rgba(255, 102, 0, 0.30);
+    transform: rotate(90deg);
+}
+
+.drawer-close-btn:focus-visible {
+    outline: 2px solid var(--drawer-orange);
+    outline-offset: 2px;
+}
+
+.drawer-close-icon {
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 18px;
+}
+
+.drawer-close-icon span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(17, 24, 39, 0.55);
+    border-radius: 2px;
+    transition: background 0.22s ease;
+}
+
+.drawer-close-icon span:first-child {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.drawer-close-icon span:last-child {
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.drawer-close-btn:hover .drawer-close-icon span {
+    background: var(--drawer-orange);
+}
+
+
+/* ── 6. NAV LINKS LIST ─────────────────────────────────────── */
+
+.drawer-links {
+    list-style: none;
+    padding: 12px 0 8px;
+    margin: 0;
+    flex-shrink: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background: var(--drawer-bg);
+}
+
+.drawer-link-item {
+    opacity: 0;
+    transform: translateX(24px);
+    transition:
+        opacity var(--transition-links),
+        transform var(--transition-links);
+    transition-delay: calc(var(--i) * 55ms + 60ms);
+}
+
+.nav-drawer.is-open .drawer-link-item {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.drawer-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 13px 24px;
+
+    text-decoration: none;
+    color: var(--drawer-text-muted);
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+
+    position: relative;
+
+    transition:
+        color var(--transition-links),
+        background var(--transition-links);
+
+    border-left: 3px solid transparent;
+    margin: 1px 0;
+}
+
+.drawer-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--drawer-orange-dim);
+    opacity: 0;
+    transition: opacity 0.22s ease;
+    pointer-events: none;
+}
+
+.drawer-link:hover,
+.drawer-link:focus-visible {
+    color: var(--drawer-text);
+    border-left-color: var(--drawer-orange);
+    outline: none;
+}
+
+.drawer-link:hover::before,
+.drawer-link:focus-visible::before {
+    opacity: 1;
+}
+
+.drawer-link.active {
+    color: var(--drawer-orange);
+    border-left-color: var(--drawer-orange);
+    font-weight: 600;
+}
+
+.drawer-link.active::before {
+    opacity: 1;
+}
+
+.drawer-link-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--drawer-num);
+    letter-spacing: 0.06em;
+    min-width: 22px;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.22s ease;
+}
+
+.drawer-link:hover .drawer-link-num,
+.drawer-link.active .drawer-link-num {
+    color: var(--drawer-orange);
+}
+
+.drawer-link-text {
+    flex: 1;
+    letter-spacing: 0.01em;
+}
+
+.drawer-link-arrow {
+    font-size: 11px;
+    color: rgba(17, 24, 39, 0.18);
+    opacity: 0;
+    transform: translateX(-6px);
+    transition:
+        opacity 0.22s ease,
+        transform 0.22s ease,
+        color 0.22s ease;
+}
+
+.drawer-link:hover .drawer-link-arrow,
+.drawer-link.active .drawer-link-arrow {
+    opacity: 1;
+    transform: translateX(0);
+    color: var(--drawer-orange);
+}
+
+
+/* ── 7. DIVIDER LINE ───────────────────────────────────────── */
+
+.drawer-divider {
+    height: 1px;
+    background: var(--drawer-border);
+    margin: 8px 24px;
+    flex-shrink: 0;
+}
+
+
+/* ── 8. DRAWER CTA BUTTON ──────────────────────────────────── */
+
+.drawer-cta-wrap {
+    padding: 16px 24px 8px;
+    background: var(--drawer-bg);
+
+    opacity: 0;
+    transform: translateX(24px);
+    transition:
+        opacity var(--transition-links),
+        transform var(--transition-links);
+    transition-delay: calc(var(--i) * 55ms + 60ms);
+}
+
+.nav-drawer.is-open .drawer-cta-wrap {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.drawer-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: 100%;
+
+    padding: 14px 20px;
+    border-radius: 50px;
+
+    background: var(--drawer-orange);
+    color: #fff;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+    box-shadow: 0 4px 20px rgba(255, 102, 0, 0.28);
+}
+
+.drawer-cta-btn:hover {
+    background: #e85a00;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(255, 102, 0, 0.38);
+}
+
+.drawer-cta-btn i {
+    font-size: 15px;
+}
+
+
+/* ── 9. DRAWER FOOTER ──────────────────────────────────────── */
+
+.drawer-footer {
+    margin-top: auto;
+    padding: 20px 24px 28px;
+
+    border-top: 1px solid var(--drawer-border);
+
+    background: #ffffff;
+
+    opacity: 0;
+    transform: translateX(24px);
+    transition:
+        opacity var(--transition-links),
+        transform var(--transition-links);
+    transition-delay: calc(var(--i) * 55ms + 60ms);
+}
+
+.nav-drawer.is-open .drawer-footer {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.drawer-footer-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11.5px;
+    line-height: 1.6;
+    color: var(--drawer-text-muted);
+    margin-bottom: 14px;
+}
+
+.drawer-social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.drawer-social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--drawer-border);
+
+    color: var(--drawer-text-muted);
+    font-size: 13px;
+
+    text-decoration: none;
+
+    transition:
+        background 0.22s ease,
+        color 0.22s ease,
+        border-color 0.22s ease,
+        transform 0.22s ease;
+}
+
+.drawer-social-links a:hover {
+    background: var(--drawer-orange-dim);
+    border-color: rgba(255, 102, 0, 0.35);
+    color: var(--drawer-orange);
+    transform: translateY(-2px);
+}
+
+.drawer-social-links a:focus-visible {
+    outline: 2px solid var(--drawer-orange);
+    outline-offset: 2px;
+}
+
+
+/* ── 10. DECORATIVE ACCENT ─────────────────────────────────── */
+
+.drawer-accent {
+    position: absolute;
+    top: -80px;
+    right: -80px;
+
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+
+    background: radial-gradient(circle,
+            rgba(255, 102, 0, 0.07) 0%,
+            transparent 65%);
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* ── 11. HAMBURGER BUTTON OVERRIDES ───────────────────────── */
+
+.menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 6px 4px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+.menu-btn:focus-visible {
+    outline: 2px solid #FF6600;
+    outline-offset: 2px;
+}
+
+.menu-btn span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #000;
+    border-radius: 20px;
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease,
+        background 0.3s ease;
+    transform-origin: center;
+}
+
+/* Animate hamburger → X when drawer is open */
+.menu-btn[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-btn[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.menu-btn[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 991px) {
+    .menu-btn span {
+        background: #000;
+    }
+
+    .hero .navbar .menu-btn span {
+        background: #000;
+    }
+}
+
+
+/* ── 12. BODY SCROLL LOCK ──────────────────────────────────── */
+
+body.drawer-open {
+    overflow: hidden;
+    padding-right: var(--scrollbar-width, 0px);
+}
+
+
+/* ── 13. DESKTOP — HIDE DRAWER ENTIRELY ───────────────────── */
+
+@media (min-width: 992px) {
+
+    .nav-overlay,
+    .nav-drawer {
+        display: none !important;
+    }
+
+    .nav-links {
+        display: flex !important;
+    }
+}
+
+
+/* ── 14. TABLET (768–991px) ────────────────────────────────── */
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .nav-drawer {
+        --drawer-width: 70vw;
+    }
+
+    .menu-btn {
+        display: flex;
+    }
+}
+
+
+/* ── 15. MOBILE (< 768px) ──────────────────────────────────── */
+
+@media (max-width: 767px) {
+    .nav-drawer {
+        --drawer-width: 70vw;
+    }
+
+    .menu-btn {
+        display: flex;
+    }
+
+    .drawer-link {
+        font-size: 15px;
+        padding: 13px 20px;
+    }
+
+    .drawer-header {
+        padding: 18px 20px 16px;
+    }
+
+    .drawer-cta-wrap {
+        padding: 14px 20px 8px;
+    }
+
+    .drawer-footer {
+        padding: 18px 20px 24px;
+        padding-bottom: max(24px, env(safe-area-inset-bottom, 24px));
+    }
+}
+
+
+/* ── 16. VERY SMALL MOBILE (< 400px) ──────────────────────── */
+
+@media (max-width: 399px) {
+    .nav-drawer {
+        --drawer-width: 70vw;
+        max-width: 70vw;
+    }
+}
+
+
+/* ── 17. REDUCED MOTION ────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .nav-drawer,
+    .nav-overlay,
+    .drawer-link-item,
+    .drawer-cta-wrap,
+    .drawer-footer {
+        transition-duration: 0.01ms !important;
+        transition-delay: 0ms !important;
+    }
+}
