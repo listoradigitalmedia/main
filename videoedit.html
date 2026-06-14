@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Editing & Reels — Listora Digital Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="anim.css">
+</head>
+
+<body>
+
+    <!-- Back Button -->
+    <button class="back-btn" onclick="history.back()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M12 5l-7 7 7 7" />
+        </svg>
+        Back
+    </button>
+
+    <!-- ═══════════════════════════════════════════════════
+         HERO SECTION — Premium Two-Column Layout
+    ════════════════════════════════════════════════════ -->
+    <section class="hero" data-animate="hero">
+
+        <!-- Background layers -->
+        <div class="hero-bg-grid"></div>
+        <div class="hero-bg-radial"></div>
+        <div class="hero-bg-noise"></div>
+
+        <div class="hero-layout container">
+
+            <!-- ── LEFT COLUMN: Content ───────────────── -->
+            <div class="hero-content">
+
+                <!-- Badge -->
+                <div class="hero-badge" data-hero-reveal="badge">
+                    <span class="hero-badge-dot"></span>
+                    <span>Video Editing & Reels</span>
+                    <span class="hero-badge-arrow">↗</span>
+                </div>
+
+                <!-- Heading -->
+                <h1 class="hero-title" data-hero-reveal="heading">
+                    <span class="hero-word">Video</span>
+                    <span class="hero-word">Content</span>
+                    <span class="hero-word hero-word--break">That</span>
+                    <span class="hero-word hero-word--accent">Stops</span>
+                    <span class="hero-word hero-word--accent">The Scroll</span>
+                </h1>
+
+                <!-- Description -->
+                <p class="hero-desc" data-hero-reveal="desc">
+                    Video is the most powerful way to capture attention, tell your story, and drive action.
+                    We transform your raw footage into high-quality videos and short-form content optimized
+                    for Instagram, Facebook, TikTok, YouTube Shorts, and LinkedIn — built to increase
+                    visibility, engagement, and conversions.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="hero-ctas" data-hero-reveal="ctas">
+                    <a href="#" class="hero-btn hero-btn--primary">
+                        <span>Book a Free Consultation</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="#" class="hero-btn hero-btn--secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none" />
+                        </svg>
+                        <span>See How It Works</span>
+                    </a>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="hero-trust" data-hero-reveal="trust">
+                    <div class="trust-divider"></div>
+                    <div class="trust-stats">
+                        <div class="trust-stat">
+                            <span class="trust-stat__number" data-count="500">0</span>
+                            <span class="trust-stat__suffix">+</span>
+                            <span class="trust-stat__label">Videos Edited</span>
+                        </div>
+                        <div class="trust-stat-sep"></div>
+                        <div class="trust-stat">
+                            <span class="trust-stat__number" data-count="100">0</span>
+                            <span class="trust-stat__suffix">+</span>
+                            <span class="trust-stat__label">Brands Served</span>
+                        </div>
+                        <div class="trust-stat-sep"></div>
+                        <div class="trust-stat">
+                            <span class="trust-stat__number" data-count="98">0</span>
+                            <span class="trust-stat__suffix">%</span>
+                            <span class="trust-stat__label">Client Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ── RIGHT COLUMN: Visuals ──────────────── -->
+            <div class="hero-visual" data-hero-reveal="visual">
+
+                <!-- Glow orbs behind image -->
+                <div class="hero-glow hero-glow--orange"></div>
+                <div class="hero-glow hero-glow--navy"></div>
+
+                <!-- Main hero image -->
+                <div class="hero-image-frame">
+                    <div class="hero-image-border"></div>
+                    <img src="s1.png" alt="Listora Digital Media" class="hero-main-image">
+                    <div class="hero-image-overlay"></div>
+                </div>
+
+                <!-- Floating card 1 — Engagement Rate -->
+                <div class="floating-card floating-1" data-hero-reveal="card1">
+                    <div class="floating-card__icon floating-card__icon--orange">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
+                    </div>
+                    <div class="floating-card__body">
+                        <div class="floating-card__text">
+                            <span class="floating-card__title">Engagement Rate</span>
+                            <span class="floating-card__sub">↑ 284% increase</span>
+                        </div>
+                    </div>
+                    <div class="floating-card__badge floating-card__badge--green">Live</div>
+                </div>
+
+                <!-- Floating card 2 — Edit Quality -->
+                <div class="floating-card floating-2" data-hero-reveal="card2">
+                    <div class="floating-card__icon floating-card__icon--blue">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <div class="floating-card__body">
+                        <div class="floating-card__text">
+                            <span class="floating-card__title">Edit Quality</span>
+                            <span class="floating-card__sub">98 / 100 score</span>
+                        </div>
+                    </div>
+                    <div class="floating-card__sparkline">
+                        <svg width="60" height="24" viewBox="0 0 60 24" fill="none">
+                            <polyline points="0,20 10,16 20,12 30,8 40,10 50,4 60,2" stroke="#ff6200" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Floating card 3 — Platform Ready -->
+                <div class="floating-card floating-3" data-hero-reveal="card3">
+                    <div class="floating-card__icon floating-card__icon--purple">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                            <line x1="12" y1="18" x2="12.01" y2="18" />
+                        </svg>
+                    </div>
+                    <div class="floating-card__body">
+                        <div class="floating-card__text">
+                            <span class="floating-card__title">Platform Ready</span>
+                            <span class="floating-card__sub">Published 2 days ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating card 4 — Views Growth -->
+                <div class="floating-card floating-4" data-hero-reveal="card4">
+                    <div class="floating-card__icon floating-card__icon--teal">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                    </div>
+                    <div class="floating-card__body">
+                        <div class="floating-card__text">
+                            <span class="floating-card__title">Views Growth</span>
+                            <span class="floating-card__sub">+9.3K views this month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decorative ring -->
+                <div class="hero-deco-ring hero-deco-ring--1" aria-hidden="true"></div>
+                <div class="hero-deco-ring hero-deco-ring--2" aria-hidden="true"></div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- What's in it for Me -->
+    <section class="benefits" data-animate="section">
+        <div class="container">
+            <div class="benefits-header">
+                <div class="benefits-header-text">
+                    <div class="section-tag" data-reveal>What's In It For You</div>
+                    <h2 class="section-title" data-reveal>Visual Storytelling That Drives Results</h2>
+                    <p class="section-intro" data-reveal>
+                        Today's consumers engage with video more than any other type of content.
+                        Professional Video Editing & Reels services help your business stand out and
+                        remain memorable long after the viewer scrolls away.
+                    </p>
+                </div>
+                <div class="benefits-header-image" data-reveal>
+                    <img src="s1.png" alt="Video Editing Benefits" class="section-feature-img">
+                    <div class="section-img-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
+                        Your always-on visual storyteller
+                    </div>
+                </div>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card" data-reveal data-delay="0">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                    </div>
+                    <h3>Increase Brand Visibility and Reach</h3>
+                    <p>Professionally edited video content gets seen by more people — extending your
+                        reach across platforms and putting your brand in front of new audiences every
+                        day.</p>
+                </div>
+                <div class="benefit-card" data-reveal data-delay="100">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                            <path d="M16 3.13a4 4 0 010 7.75" />
+                        </svg>
+                    </div>
+                    <h3>Generate More Leads and Inquiries</h3>
+                    <p>Engaging, attention-grabbing edits turn casual viewers into active leads —
+                        growing your pipeline as your content reaches more of the right people.</p>
+                </div>
+                <div class="benefit-card" data-reveal data-delay="200">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
+                    </div>
+                    <h3>Improve Engagement Across Platforms</h3>
+                    <p>Every cut, transition, and caption is crafted to capture attention within
+                        seconds — ensuring more of your audience watches, interacts, and shares.</p>
+                </div>
+                <div class="benefit-card" data-reveal data-delay="300">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                            <line x1="12" y1="18" x2="12.01" y2="18" />
+                        </svg>
+                    </div>
+                    <h3>Build Trust Through Professional Content</h3>
+                    <p>High-quality, polished videos signal credibility and care — giving viewers
+                        confidence in your brand before they even reach out.</p>
+                </div>
+                <div class="benefit-card" data-reveal data-delay="400">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <path d="M8 21h8M12 17v4" />
+                        </svg>
+                    </div>
+                    <h3>Strengthen Your Brand Identity</h3>
+                    <p>Consistent branding across every video — from colors to typography to tone —
+                        reinforces who you are and keeps your business top of mind.</p>
+                </div>
+                <div class="benefit-card" data-reveal data-delay="500">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <h3>Convert Viewers Into Customers</h3>
+                    <p>Stay relevant in a video-first digital landscape with content engineered to
+                        turn attention into action — converting more viewers into paying customers.</p>
+                </div>
+            </div><!-- /.benefits-grid -->
+        </div>
+    </section>
+
+    <!-- Problems It Solves -->
+    <section class="problems" data-animate="section">
+        <div class="container">
+            <div class="problems-top">
+                <div class="problems-top-text">
+                    <div class="section-tag light" data-reveal>What Problems It Solves</div>
+                    <h2 class="section-title light" data-reveal>Sound Familiar?</h2>
+                    <p class="section-intro light" data-reveal>
+                        Most businesses know video is essential — but creating consistent, high-quality
+                        content feels out of reach. These are the barriers we eliminate.
+                    </p>
+                </div>
+                <div class="problems-top-image" data-reveal>
+                    <img src="s1.png" alt="Common Video Content Problems"
+                        class="section-feature-img section-feature-img--light">
+                    <div class="section-img-badge section-img-badge--light">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="8" x2="12" y2="12" />
+                            <line x1="12" y1="16" x2="12.01" y2="16" />
+                        </svg>
+                        7 problems we eliminate for you
+                    </div>
+                </div>
+            </div>
+            <div class="problems-list">
+                <div class="problem-item" data-reveal data-delay="0">
+                    <div class="problem-number">01</div>
+                    <div class="problem-content">
+                        <h3>"Our social media posts aren't getting any engagement."</h3>
+                        <p>Low engagement is often a content quality problem. We craft videos and Reels
+                            designed to capture attention within seconds and keep viewers watching to
+                            the end.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="100">
+                    <div class="problem-number">02</div>
+                    <div class="problem-content">
+                        <h3>"Our footage looks unpolished and amateur."</h3>
+                        <p>Poor-quality video undermines your brand before viewers even hear your
+                            message. We transform raw footage into professionally edited content with
+                            motion graphics, transitions, and audio enhancement.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="200">
+                    <div class="problem-number">03</div>
+                    <div class="problem-content">
+                        <h3>"We don't have time to edit and post content consistently."</h3>
+                        <p>Lack of time is the biggest blocker to a consistent video presence. We
+                            handle the editing process end-to-end, so your content goes out on
+                            schedule without taking up your time.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="300">
+                    <div class="problem-number">04</div>
+                    <div class="problem-content">
+                        <h3>"Our branding feels inconsistent across our videos."</h3>
+                        <p>Mismatched colors, fonts, and tone weaken brand recognition. We integrate
+                            your branding into every edit, creating a cohesive look across all your
+                            content.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="400">
+                    <div class="problem-number">05</div>
+                    <div class="problem-content">
+                        <h3>"We can't seem to create content that goes viral."</h3>
+                        <p>Viral content follows patterns most businesses don't have time to study. We
+                            apply trend-aware, platform-specific strategies to short-form content
+                            designed to maximize reach.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="500">
+                    <div class="problem-number">06</div>
+                    <div class="problem-content">
+                        <h3>"We don't have the in-house expertise for video marketing."</h3>
+                        <p>Video marketing requires specialized skills most teams don't have. Our
+                            creative team brings storytelling, branding, and platform strategy
+                            together so you don't have to build that expertise yourself.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="600">
+                    <div class="problem-number">07</div>
+                    <div class="problem-content">
+                        <h3>"Our organic reach keeps declining."</h3>
+                        <p>Platforms reward content that keeps people watching. We create
+                            performance-focused edits and Reels built to work with the algorithm,
+                            not against it — helping rebuild your organic visibility.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="included" data-animate="section">
+        <div class="container">
+            <div class="included-header">
+                <div>
+                    <div class="section-tag" data-reveal>What's Included</div>
+                    <h2 class="section-title" data-reveal>A Complete Video Content System</h2>
+                    <p class="section-intro" data-reveal>
+                        Every component works together — editing, branding, optimization, and
+                        strategy — to create video content that doesn't just look exceptional, but
+                        actively drives engagement and business growth.
+                    </p>
+                </div>
+                <div class="included-header-image" data-reveal>
+                    <img src="s1.png" alt="Complete Video Editing System" class="section-feature-img">
+                    <div class="section-img-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        Everything you need, nothing you don't
+                    </div>
+                </div>
+            </div>
+            <div class="included-grid">
+                <div class="included-card" data-reveal data-delay="0">
+                    <div class="included-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff6200" stroke-width="1.8">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M3 9h18M9 21V9" />
+                        </svg>
+                    </div>
+                    <h3>Professional Video Editing</h3>
+                    <ul>
+                        <li>Full-length professional video editing</li>
+                        <li>Short-form Reels and Shorts creation</li>
+                        <li>Storytelling-driven edit structure</li>
+                        <li>Performance-focused editing approach</li>
+                        <li>Content repurposing across formats</li>
+                    </ul>
+                </div>
+                <div class="included-card" data-reveal data-delay="150">
+                    <div class="included-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff6200" stroke-width="1.8">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                            <line x1="12" y1="18" x2="12.01" y2="18" />
+                        </svg>
+                    </div>
+                    <h3>Motion Graphics & Visual Polish</h3>
+                    <ul>
+                        <li>Motion graphics and transitions</li>
+                        <li>Text overlays and captions</li>
+                        <li>Audio enhancement</li>
+                        <li>Thumbnail design</li>
+                        <li>Platform-specific formatting</li>
+                    </ul>
+                </div>
+                <div class="included-card" data-reveal data-delay="300">
+                    <div class="included-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff6200" stroke-width="1.8">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                            <path d="M16 3.13a4 4 0 010 7.75" />
+                        </svg>
+                    </div>
+                    <h3>Branding Integration</h3>
+                    <ul>
+                        <li>Brand-aligned colors, fonts, and tone</li>
+                        <li>Consistent visual identity across content</li>
+                        <li>Custom intros and outros</li>
+                        <li>Logo and watermark integration</li>
+                    </ul>
+                </div>
+                <div class="included-card" data-reveal data-delay="450">
+                    <div class="included-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff6200" stroke-width="1.8">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="M21 21l-4.35-4.35" />
+                        </svg>
+                    </div>
+                    <h3>Optimization & Growth Support</h3>
+                    <ul>
+                        <li>Platform optimization (Instagram, TikTok, YouTube, LinkedIn)</li>
+                        <li>Trend-aware content strategy</li>
+                        <li>Post-delivery quality assurance</li>
+                        <li>Fast turnaround times</li>
+                        <li>Growth-focused continuous improvements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Trust Listora -->
+    <section class="trust" data-animate="section">
+        <div class="container">
+            <div class="trust-inner">
+                <div class="trust-left" data-reveal>
+                    <div class="section-tag light">Why Listora Digital Media</div>
+                    <h2 class="section-title light">Built to Perform, Not Just Look Good</h2>
+                    <p class="trust-body light">
+                        We understand how modern audiences consume content. Our creative team combines
+                        storytelling, branding, and platform-specific strategies to create videos
+                        designed to maximize engagement and business impact.
+                    </p>
+                    <p class="trust-body light">
+                        We don't just edit videos — we craft content that helps achieve your business
+                        objectives. Every cut, caption, and transition is made with measurable growth
+                        in mind.
+                    </p>
+                    <div class="trust-left-image" data-reveal>
+                        <img src="s1.png" alt="Listora Digital Media Team" class="trust-img">
+                        <div class="trust-img-caption">
+                            <span class="trust-img-caption__icon">✦</span>
+                            Dedicated creatives, transparent results
+                        </div>
+                    </div>
+                </div>
+                <div class="trust-right">
+                    <div class="trust-pillar" data-reveal data-delay="0">
+                        <div class="pillar-dot"></div>
+                        <div>
+                            <h4>High-Quality Editing Standards</h4>
+                            <p>Every video is edited to a premium standard — combining sharp pacing,
+                                clean visuals, and polished audio to reflect well on your brand.</p>
+                        </div>
+                    </div>
+                    <div class="trust-pillar" data-reveal data-delay="100">
+                        <div class="pillar-dot"></div>
+                        <div>
+                            <h4>Trend-Aware Content Strategies</h4>
+                            <p>We stay on top of platform trends and algorithm shifts — applying what
+                                works now to keep your content relevant and high-performing.</p>
+                        </div>
+                    </div>
+                    <div class="trust-pillar" data-reveal data-delay="200">
+                        <div class="pillar-dot"></div>
+                        <div>
+                            <h4>Fast Turnaround Times</h4>
+                            <p>We deliver consistently and quickly, so your content calendar stays full
+                                and your momentum never stalls.</p>
+                        </div>
+                    </div>
+                    <div class="trust-pillar" data-reveal data-delay="300">
+                        <div class="pillar-dot"></div>
+                        <div>
+                            <h4>Focus on Measurable Growth</h4>
+                            <p>Every project is approached with a results-first mindset — ensuring your
+                                video content contributes directly to engagement, leads, and growth.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process" data-animate="section">
+        <div class="container">
+            <div class="process-header">
+                <div class="process-header-text">
+                    <div class="section-tag" data-reveal>How It Works</div>
+                    <h2 class="section-title" data-reveal>From Raw Footage to Scroll-Stopping Content</h2>
+                    <p class="section-intro" data-reveal>A clear, structured process that takes your footage
+                        from raw clips to polished, platform-ready videos — step by step.</p>
+                </div>
+                <div class="process-header-image" data-reveal>
+                    <img src="s1.png" alt="Our Process Overview" class="section-feature-img">
+                    <div class="section-img-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                        Professional delivery, on time
+                    </div>
+                </div>
+            </div>
+            <div class="process-layout">
+                <div class="process-steps">
+                    <div class="process-step" data-reveal data-delay="0">
+                        <div class="step-line"></div>
+                        <div class="step-num">1</div>
+                        <div class="step-body">
+                            <h3>Content Review</h3>
+                            <p>We analyze your footage and objectives — understanding what you have to
+                                work with and what you want your video content to achieve.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-reveal data-delay="150">
+                        <div class="step-line"></div>
+                        <div class="step-num">2</div>
+                        <div class="step-body">
+                            <h3>Creative Planning</h3>
+                            <p>Editing style, messaging, and goals are defined — creating a clear
+                                direction for each video before editing begins.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-reveal data-delay="300">
+                        <div class="step-line"></div>
+                        <div class="step-num">3</div>
+                        <div class="step-body">
+                            <h3>Professional Editing</h3>
+                            <p>Videos are edited for engagement and performance — combining strong
+                                pacing, transitions, and storytelling to keep viewers watching.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-reveal data-delay="450">
+                        <div class="step-line"></div>
+                        <div class="step-num">4</div>
+                        <div class="step-body">
+                            <h3>Branding & Optimization</h3>
+                            <p>Visual elements and platform requirements are applied — ensuring every
+                                video is on-brand and formatted correctly for its destination.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-reveal data-delay="600">
+                        <div class="step-line"></div>
+                        <div class="step-num">5</div>
+                        <div class="step-body">
+                            <h3>Quality Assurance</h3>
+                            <p>Every video undergoes detailed review — checking pacing, branding, audio,
+                                and platform specs before delivery.</p>
+                        </div>
+                    </div>
+                    <div class="process-step last" data-reveal data-delay="750">
+                        <div class="step-num">6</div>
+                        <div class="step-body">
+                            <h3>Delivery & Growth Support</h3>
+                            <p>Content is delivered ready for publishing and maximum impact — with
+                                ongoing support to keep refining what works as your channels grow.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" data-animate="section">
+        <div class="cta-grid-bg"></div>
+        <div class="container">
+            <div class="cta-inner">
+
+                <!-- Left: text + actions -->
+                <div class="cta-left" data-reveal>
+                    <div class="section-tag light">What Happens Next</div>
+                    <h2 class="cta-title">Ready to Turn Views Into Customers?</h2>
+                    <p class="cta-body">
+                        Your video content should be working around the clock — capturing attention,
+                        building trust, and driving business growth. A free consultation is the first
+                        step to making that a reality.
+                    </p>
+
+                    <!-- Trust micro-signals -->
+                    <ul class="cta-trust-list">
+                        <li>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            No commitment required
+                        </li>
+                        <li>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Free consultation call
+                        </li>
+                        <li>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Results-focused conversation
+                        </li>
+                    </ul>
+
+                    <div class="cta-actions">
+                        <a href="#" class="cta-btn primary">
+                            Book a Free Consultation Today
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="#" class="cta-btn secondary">Learn More About Our Services</a>
+                    </div>
+                    <p class="cta-note">Spots are limited — book yours today</p>
+                </div>
+
+                <!-- Right: image card -->
+                <div class="cta-right" data-reveal>
+                    <div class="cta-image-wrap">
+                        <img src="s1.png" alt="Free Video Content Consultation" class="cta-feature-img">
+                        <div class="cta-feature-overlay">
+                            <div class="cta-feature-stat">
+                                <span class="cta-feature-stat__number">30</span>
+                                <span class="cta-feature-stat__unit">min</span>
+                            </div>
+                            <span class="cta-feature-stat__label">Free consultation</span>
+                        </div>
+                    </div>
+
+                    <!-- Stats row below image -->
+                    <div class="cta-stats">
+                        <div class="cta-stat">
+                            <span class="cta-stat__num">500+</span>
+                            <span class="cta-stat__lbl">Videos Edited</span>
+                        </div>
+                        <div class="cta-stat-sep"></div>
+                        <div class="cta-stat">
+                            <span class="cta-stat__num">98%</span>
+                            <span class="cta-stat__lbl">Client Satisfaction</span>
+                        </div>
+                        <div class="cta-stat-sep"></div>
+                        <div class="cta-stat">
+                            <span class="cta-stat__num">100+</span>
+                            <span class="cta-stat__lbl">Brands Served</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="animations.js"></script>
+</body>
+
+</html>

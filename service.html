@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Listora Services — Lead generation, CRM automation, social media, transaction coordination, and more for real estate professionals.">
+    <title>Services | Listora Digital Media</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="drawer.css">
+    <link rel="stylesheet" href="service.css">
+
+    <!-- ── UNIFIED NAVBAR STYLES (contact.html reference) ── -->
+    <style>
+        .ct-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .ct-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            padding: 20px 5% 20px 2%;
+            background: transparent;
+            transition: background .35s ease, box-shadow .35s ease, padding .35s ease;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .ct-nav.scrolled {
+            background: rgba(255, 255, 255, .97);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 2px 24px rgba(3, 43, 102, .08);
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+
+        .ct-nav__logo img {
+            width: 62px;
+            height: auto;
+            transition: opacity .3s ease;
+        }
+
+        .ct-nav__links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-left: auto;
+            list-style: none;
+        }
+
+        /* Service hero is white bg — links start navy */
+        .ct-nav__links a {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            color: #032B66;
+            padding: 8px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background .25s ease, color .25s ease;
+        }
+
+        .ct-nav__links a:hover {
+            background: #e8eef8;
+            color: #032B66;
+        }
+
+        .ct-nav__links a.active {
+            color: #FF6600;
+            font-weight: 700;
+        }
+
+        .ct-nav.scrolled .ct-nav__links a {
+            color: #032B66;
+        }
+
+        .ct-nav.scrolled .ct-nav__links a:hover {
+            background: #e8eef8;
+        }
+
+        .ct-nav.scrolled .ct-nav__links a.active {
+            color: #FF6600;
+        }
+
+        .ct-nav__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 24px;
+            background: #FF6600;
+            color: #fff;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .04em;
+            text-decoration: none;
+            white-space: nowrap;
+            box-shadow: 0 4px 18px rgba(255, 102, 0, .30);
+            transition: background .3s ease, transform .4s cubic-bezier(.22, 1, .36, 1), box-shadow .4s ease;
+        }
+
+        .ct-nav__cta:hover {
+            background: #e05500;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 26px rgba(255, 102, 0, .40);
+        }
+
+        .ct-nav__burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 6px 4px;
+            border-radius: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .ct-nav__burger span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: #032B66;
+            border-radius: 20px;
+            transition: transform .3s ease, opacity .3s ease;
+        }
+
+        .ct-nav__burger[aria-expanded="true"] span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .ct-nav__burger[aria-expanded="true"] span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .ct-nav__burger[aria-expanded="true"] span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Hide old navbar — replaced by unified */
+        .svc-hero .navbar {
+            display: none !important;
+        }
+
+        /* Push svc-hero content below fixed header */
+        .svc-hero__inner {
+            padding-top: 160px !important;
+        }
+
+        @media (max-width: 991px) {
+
+            .ct-nav__links,
+            .ct-nav__cta {
+                display: none;
+            }
+
+            .ct-nav__burger {
+                display: flex;
+                margin-left: auto;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .svc-hero__inner {
+                padding-top: 130px !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .svc-hero__inner {
+                padding-top: 100px !important;
+            }
+
+            .ct-nav__logo img {
+                width: 52px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════
+         OVERLAY
+    ═══════════════════════════════════════════ -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
+    <!-- ═══════════════════════════════════════════
+         MOBILE DRAWER — exact copy from index.html
+         Active state: Services
+    ═══════════════════════════════════════════ -->
+    <nav class="nav-drawer" id="navDrawer" aria-label="Mobile navigation" aria-hidden="true">
+
+        <div class="drawer-header">
+            <a href="index.html" class="drawer-logo">
+                <img src="logo.png" alt="Listora">
+            </a>
+            <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close navigation">
+                <span class="drawer-close-icon">
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
+        </div>
+
+        <ul class="drawer-links" role="list">
+            <li class="drawer-link-item" style="--i:0">
+                <a href="index.html" class="drawer-link">
+                    <span class="drawer-link-num">01</span>
+                    <span class="drawer-link-text">Home</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:1">
+                <a href="about.html" class="drawer-link">
+                    <span class="drawer-link-num">02</span>
+                    <span class="drawer-link-text">About</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:2">
+                <a href="service.html" class="drawer-link active">
+                    <span class="drawer-link-num">03</span>
+                    <span class="drawer-link-text">Services</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:3">
+                <a href="portfolio.html" class="drawer-link">
+                    <span class="drawer-link-num">04</span>
+                    <span class="drawer-link-text">Portfolio</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:3">
+                <a href="casestudies.html" class="drawer-link">
+                    <span class="drawer-link-num">05</span>
+                    <span class="drawer-link-text">Case Studies</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li class="drawer-link-item" style="--i:4">
+                <a href="contact.html" class="drawer-link">
+                    <span class="drawer-link-num">06</span>
+                    <span class="drawer-link-text">Contact</span>
+                    <i class="fa-solid fa-arrow-right drawer-link-arrow" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+
+        <div class="drawer-cta-wrap" style="--i:5">
+            <a href="contact.html" class="drawer-cta-btn">
+                <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>
+                GET A GROWTH PLAN
+            </a>
+        </div>
+
+        <div class="drawer-footer" style="--i:6">
+            <p class="drawer-footer-text">Smart Marketing Agency for Real Estate Professionals</p>
+            <div class="drawer-social-links">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+        <div class="drawer-accent" aria-hidden="true"></div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════
+         SERVICE HERO — white bg, navbar inside
+    ═══════════════════════════════════════════ -->
+
+    <!-- UNIFIED NAVBAR -->
+    <header class="ct-header">
+        <nav class="ct-nav" id="ctNav" aria-label="Primary navigation">
+            <a href="index.html" class="ct-nav__logo">
+                <img src="logo.png" alt="Listora home">
+            </a>
+            <ul class="ct-nav__links" role="list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html" class="active" aria-current="page">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="casestudies.html">Case Studies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="ct-nav__cta">
+                <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>
+                GET A GROWTH PLAN
+            </a>
+            <button class="ct-nav__burger" id="menuBtn" aria-label="Open navigation" aria-expanded="false"
+                aria-controls="navDrawer">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <header class="svc-hero">
+
+        <!-- NAVBAR (hidden — replaced by unified navbar above) -->
+        <nav class="navbar" aria-label="Primary navigation" aria-hidden="true" style="display:none!important">
+        </nav>
+
+        <!-- HERO CONTENT -->
+        <div class="svc-hero__inner container">
+
+            <!-- Animated background shapes -->
+            <div class="svc-hero__bg" aria-hidden="true">
+                <div class="bg-shape bg-shape--1"></div>
+                <div class="bg-shape bg-shape--2"></div>
+                <div class="bg-shape bg-shape--3"></div>
+                <div class="bg-dots"></div>
+            </div>
+
+            <!-- Left: Text -->
+            <div class="svc-hero__content">
+                <h1 class="svc-hero__headline">
+                    Real Estate Growth Services That Help You
+                    <span class="svc-highlight">Scale Faster</span>
+                </h1>
+                <p class="svc-hero__sub">
+                    From lead generation and CRM automation to social media management and transaction coordination,
+                    Listora provides the systems and support real estate professionals need to grow efficiently.
+                </p>
+                <div class="svc-hero__trust">
+                    <div class="trust-item">
+                        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                        <span>Results Guaranteed</span>
+                    </div>
+                    <div class="trust-divider" aria-hidden="true"></div>
+                    <div class="trust-item">
+                        <i class="fa-solid fa-headset" aria-hidden="true"></i>
+                        <span>Dedicated Support</span>
+                    </div>
+                    <div class="trust-divider" aria-hidden="true"></div>
+                    <div class="trust-item">
+                        <i class="fa-solid fa-house-chimney" aria-hidden="true"></i>
+                        <span>Real Estate Focused</span>
+                    </div>
+                </div>
+                <div class="svc-hero__btns">
+                    <a href="#packages" class="btn btn--primary">
+                        Get Started
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <a href="contact.html" class="btn btn--outline">
+                        <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                        Schedule a Consultation
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right: Image -->
+            <div class="svc-hero__visual">
+                <div class="svc-hero__img-wrap">
+                    <img src="s4.png" alt="Real estate professional using Listora"
+                        class="svc-hero__img svc-img-reveal" />
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════
+         MAIN CONTENT
+    ═══════════════════════════════════════════ -->
+    <main>
+
+        <!-- ═══════════════════════════════════════════
+             BENTO GRID — ALL SERVICES OVERVIEW
+        ═══════════════════════════════════════════ -->
+        <section class="svc-bento section-pad bg-soft" id="all-services" aria-labelledby="bento-heading">
+            <div class="svc-bento__container">
+
+                <!-- Header -->
+                <div class="svc-bento__header svc-reveal">
+                    <span class="section-label">
+                        <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                        Our Services
+                    </span>
+                    <h2 class="section-title svc-heading" id="bento-heading">
+                        Everything You Need To <span class="svc-highlight">Grow &amp; Scale</span>
+                    </h2>
+                    <p class="section-sub svc-para">
+                        A complete suite of marketing, automation, design, and growth solutions designed to help
+                        businesses attract more customers, streamline operations, and increase revenue.
+                    </p>
+                </div>
+
+                <!-- Bento Grid -->
+                <div class="svc-bento__grid" role="list">
+
+                    <!-- ── LARGE: Lead Generation ── -->
+                    <article class="svc-bc svc-bc--lg svc-bc--accent svc-reveal" data-delay="0" role="listitem"
+                        tabindex="0" aria-label="Lead Generation">
+                        <div class="svc-bc__glow" aria-hidden="true"></div>
+                        <div class="svc-bc__icon svc-bc__icon--inv">
+                            <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+                        </div>
+                        <div class="svc-bc__tag">
+                            <i class="fa-solid fa-fire-flame-curved" aria-hidden="true"></i> Most Popular
+                        </div>
+                        <h3 class="svc-bc__title">Lead Generation</h3>
+                        <p class="svc-bc__desc">Generate high-quality leads that fuel consistent business growth.</p>
+                        <div class="svc-bc__stats" aria-hidden="true">
+                            <div class="svc-bc__stat">
+                                <span class="svc-bc__stat-num">340%</span>
+                                <span class="svc-bc__stat-lbl">Lead Uplift</span>
+                            </div>
+                            <div class="svc-bc__stat">
+                                <span class="svc-bc__stat-num">5×</span>
+                                <span class="svc-bc__stat-lbl">Avg ROI</span>
+                            </div>
+                        </div>
+                        <a href="leadgeneration.html" class="svc-bc__cta" aria-label="Explore Lead Generation">
+                            Explore Service <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <div class="svc-bc__border-glow" aria-hidden="true"></div>
+                    </article>
+
+                    <!-- ── LARGE: Website Design ── -->
+                    <article class="svc-bc svc-bc--lg svc-bc--navy svc-reveal" data-delay="60" role="listitem"
+                        tabindex="0" aria-label="Website Design and Landing Pages">
+                        <div class="svc-bc__glow" aria-hidden="true"></div>
+                        <div class="svc-bc__icon svc-bc__icon--orange">
+                            <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+                        </div>
+                        <div class="svc-bc__tag svc-bc__tag--light">
+                            <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Digital Presence
+                        </div>
+                        <h3 class="svc-bc__title svc-bc__title--light">Website Design &amp; Landing Pages</h3>
+                        <p class="svc-bc__desc svc-bc__desc--light">Build high-converting websites designed to turn
+                            visitors into customers.</p>
+                        <!-- Mini browser mockup -->
+                        <div class="svc-bc__mockup" aria-hidden="true">
+                            <div class="svc-bc__mockup-bar">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <div class="svc-bc__mockup-lines">
+                                <div class="svc-bc__ml svc-bc__ml--orange"></div>
+                                <div class="svc-bc__ml svc-bc__ml--short"></div>
+                                <div class="svc-bc__ml svc-bc__ml--full"></div>
+                                <div class="svc-bc__ml svc-bc__ml--med"></div>
+                            </div>
+                        </div>
+                        <a href="websitelanding.html" class="svc-bc__cta svc-bc__cta--light" aria-label="Get a Website">
+                            Get a Website <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <div class="svc-bc__border-glow" aria-hidden="true"></div>
+                    </article>
+
+                    <!-- ── LARGE: Local SEO ── -->
+                    <article class="svc-bc svc-bc--lg svc-bc--warm svc-reveal" data-delay="120" role="listitem"
+                        tabindex="0" aria-label="Local SEO and Google Business Profile">
+                        <div class="svc-bc__glow" aria-hidden="true"></div>
+                        <div class="svc-bc__icon svc-bc__icon--inv">
+                            <i class="fa-brands fa-google" aria-hidden="true"></i>
+                        </div>
+                        <div class="svc-bc__tag">
+                            <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Local SEO
+                        </div>
+                        <h3 class="svc-bc__title">Local SEO &amp; Google Business Profile</h3>
+                        <p class="svc-bc__desc">Get found by more local customers and dominate local search results.</p>
+                        <div class="svc-bc__stats" aria-hidden="true">
+                            <div class="svc-bc__stat">
+                                <span class="svc-bc__stat-num">#1</span>
+                                <span class="svc-bc__stat-lbl">Rankings</span>
+                            </div>
+                            <div class="svc-bc__stat">
+                                <span class="svc-bc__stat-num">3×</span>
+                                <span class="svc-bc__stat-lbl">Organic Leads</span>
+                            </div>
+                        </div>
+                        <a href="localseogoogle.html" class="svc-bc__cta" aria-label="Boost Local Rankings">
+                            Boost Rankings <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <div class="svc-bc__border-glow" aria-hidden="true"></div>
+                    </article>
+
+                    <!-- ── MEDIUM: CRM Management ── -->
+                    <article class="svc-bc svc-bc--md svc-reveal" data-delay="180" role="listitem" tabindex="0"
+                        aria-label="CRM Management and Automation">
+                        <div class="svc-bc__glow" aria-hidden="true"></div>
+                        <div class="svc-bc__icon svc-bc__icon--blue">
+                            <i class="fa-solid fa-gears" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="svc-bc__title">CRM Management &amp; Automation</h3>
+                        <p class="svc-bc__desc">Automate workflows and manage customer relationships efficiently.</p>
+                        <a href="crmmanagement.html" class="svc-bc__cta">
+                            Automate Now <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <div class="svc-bc__border-glow" aria-hidden="true"></div>
+                    </article>
+
+                    <!-- ── MEDIUM: Social Media ── -->
+                    <article class="svc-bc svc-bc--md svc-reveal" data-delay="240" role="listitem" tabindex="0"
+                        aria-label="Social Media Management">
+                        <div class="svc-bc__glow" aria-hidden="true"></div>
+                        <div class="svc-bc__icon svc-bc__icon--orange-soft">
+                            <i class="fa-solid fa-hashtag" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="svc-bc__title">Social Media Management</h3>
+                        <p class="svc-bc__desc">Grow your brand and engage your audience across social platforms.</p>
+                        <div class="svc-bc__chips" aria-hidden="true">
+                            <span><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</span>
+                            <span><i class="fa-brands fa-facebook-f" aria-hidden="true"></i> Facebook</span>
+                            <span><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn</span>
+                        </div>
+                        <a href="socialmanage.html" class="svc-bc__cta">
+                            Grow Brand <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <div class="svc-bc__border-glow" aria-hidden="true"></div>
+                    </article>
+
+                    <!-- ── MEDIUM: Video Editing ── -->
+                    <article class="svc-bc svc-bc--md svc-reveal" data-delay="300" role="listitem" tabindex="0"
+                        aria-label="Video Editing and Reels">
+                        <div class="svc-bc__glow" aria-hidden="true"></div>
+                        <div class="svc-bc__icon svc-bc__icon--blue">
+                            <i class="fa-solid fa-video" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="svc-bc__title">Video Editing &amp; Reels</h3>
+                        <p class="svc-bc__desc">Create engaging video content that captures attention and drives
+                            results.</p>
+                        <div class="svc-bc__chips" aria-hidden="true">
+                            <span><i class="fa-brands fa-instagram" aria-hidden="true"></i> Reels</span>
+                            <span><i class="fa-brands fa-youtube" aria-hidden="true"></i> YouTube</span>
+                        </div>
+                        <a href="videoedit.html" class="svc-bc__cta">
+                            Start Creating <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <div class="svc-bc__border-glow" aria-hidden="true"></div>
+                    </article>
+
+                    <!-- ── SMALL: Transaction Coordination ── -->
+                    <article class="svc-bc svc-bc--sm svc-reveal" data-delay="360" role="listitem" tabindex="0"
+                        aria-label="Transaction Coordination">
+                        <div class="svc-bc__glow" aria-hidden="true"></div>
+                        <div class="svc-bc__icon svc-bc__icon--blue-soft">
+                            <i class="fa-solid fa-file-signature" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="svc-bc__title">Transaction Coordination</h3>
+                        <p class="svc-bc__desc">Manage transactions smoothly from contract to closing.</p>
+                        <a href="transactioncoordination.html" class="svc-bc__cta">
+                            Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <div class="svc-bc__border-glow" aria-hidden="true"></div>
+                    </article>
+
+                    <!-- ── SMALL: MLS Listing ── -->
+                    <article class="svc-bc svc-bc--sm svc-reveal" data-delay="420" role="listitem" tabindex="0"
+                        aria-label="MLS Listing Management">
+                        <div class="svc-bc__glow" aria-hidden="true"></div>
+                        <div class="svc-bc__icon svc-bc__icon--orange-soft">
+                            <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="svc-bc__title">MLS Listing Management</h3>
+                        <p class="svc-bc__desc">Keep property listings accurate, optimized, and market-ready.</p>
+                        <a href="mlslisting.html" class="svc-bc__cta">
+                            Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <div class="svc-bc__border-glow" aria-hidden="true"></div>
+                    </article>
+
+                    <!-- ── SMALL: Virtual Assistant ── -->
+                    <article class="svc-bc svc-bc--sm svc-reveal" data-delay="480" role="listitem" tabindex="0"
+                        aria-label="Real Estate Virtual Assistant">
+                        <div class="svc-bc__glow" aria-hidden="true"></div>
+                        <div class="svc-bc__icon svc-bc__icon--blue-soft">
+                            <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="svc-bc__title">Real Estate Virtual Assistant</h3>
+                        <p class="svc-bc__desc">Get dedicated support for daily real estate operations.</p>
+                        <a href="virtualassistant.html" class="svc-bc__cta">
+                            Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <div class="svc-bc__border-glow" aria-hidden="true"></div>
+                    </article>
+
+                    <!-- ── SMALL: Email Marketing ── -->
+                    <article class="svc-bc svc-bc--sm svc-reveal" data-delay="540" role="listitem" tabindex="0"
+                        aria-label="Email Marketing">
+                        <div class="svc-bc__glow" aria-hidden="true"></div>
+                        <div class="svc-bc__icon svc-bc__icon--orange-soft">
+                            <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="svc-bc__title">Email Marketing</h3>
+                        <p class="svc-bc__desc">Convert subscribers into loyal customers with targeted email campaigns.
+                        </p>
+                        <a href="emailmarketing.html" class="svc-bc__cta">
+                            Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <div class="svc-bc__border-glow" aria-hidden="true"></div>
+                    </article>
+
+                </div><!-- /bento grid -->
+            </div><!-- /container -->
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             SECTION 1 — CORE REVENUE SERVICES
+        ═══════════════════════════════════════════ -->
+        <section class="services-core section-pad" id="core-services" aria-labelledby="core-heading">
+            <div class="container">
+                <div class="section-header svc-reveal">
+                    <span class="section-label">Core Services</span>
+                    <h2 class="section-title svc-heading" id="core-heading">Revenue-Driving Services<br>Built for
+                        Realtors</h2>
+                    <p class="section-sub svc-para">The three pillars that generate consistent, predictable business
+                        growth.</p>
+                </div>
+
+                <div class="core-grid">
+
+                    <article class="core-card svc-reveal" data-delay="0">
+                        <div class="core-card__top">
+                            <div class="core-card__icon card-icon-anim">
+                                <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+                            </div>
+                            <div class="core-card__badge">Most Popular</div>
+                        </div>
+                        <h3 class="core-card__title card-heading-anim">Lead Generation</h3>
+                        <p class="core-card__desc card-text-anim">Targeted paid advertising campaigns that deliver
+                            qualified buyer and
+                            seller leads directly to your pipeline.</p>
+                        <ul class="core-card__list card-text-anim">
+                            <li><i class="fa-brands fa-meta" aria-hidden="true"></i> Meta Ads (Facebook &amp; Instagram)
+                            </li>
+                            <li><i class="fa-brands fa-google" aria-hidden="true"></i> Google Ads &amp; Search Campaigns
+                            </li>
+                            <li><i class="fa-solid fa-file-contract" aria-hidden="true"></i> High-Converting Landing
+                                Pages</li>
+                            <li><i class="fa-solid fa-house-user" aria-hidden="true"></i> Buyer &amp; Seller Lead
+                                Funnels</li>
+                        </ul>
+                    </article>
+
+                    <article class="core-card svc-reveal" data-delay="150">
+                        <div class="core-card__top">
+                            <div class="core-card__icon card-icon-anim">
+                                <i class="fa-solid fa-gears" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <h3 class="core-card__title card-heading-anim">CRM Management &amp; Automation</h3>
+                        <p class="core-card__desc card-text-anim">Done-for-you CRM setup and automations that nurture
+                            leads, follow up
+                            consistently, and close more deals.</p>
+                        <ul class="core-card__list card-text-anim">
+                            <li><i class="fa-solid fa-seedling" aria-hidden="true"></i> Lead Nurturing Sequences</li>
+                            <li><i class="fa-solid fa-robot" aria-hidden="true"></i> Follow-Up Automations</li>
+                            <li><i class="fa-solid fa-diagram-project" aria-hidden="true"></i> Pipeline Management</li>
+                            <li><i class="fa-solid fa-circle-nodes" aria-hidden="true"></i> HubSpot / CRM Setup</li>
+                        </ul>
+                    </article>
+
+                    <article class="core-card svc-reveal" data-delay="300">
+                        <div class="core-card__top">
+                            <div class="core-card__icon card-icon-anim">
+                                <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <h3 class="core-card__title card-heading-anim">Email Marketing</h3>
+                        <p class="core-card__desc card-text-anim">Strategic email campaigns that keep your audience
+                            engaged, your brand
+                            top-of-mind, and your leads converting.</p>
+                        <ul class="core-card__list card-text-anim">
+                            <li><i class="fa-solid fa-droplet" aria-hidden="true"></i> Drip Campaigns &amp; Sequences
+                            </li>
+                            <li><i class="fa-solid fa-newspaper" aria-hidden="true"></i> Monthly Newsletters</li>
+                            <li><i class="fa-solid fa-reply" aria-hidden="true"></i> Automated Lead Follow-Ups</li>
+                            <li><i class="fa-solid fa-handshake" aria-hidden="true"></i> Past Client Engagement</li>
+                        </ul>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════
+             SECTION 2 — MARKETING & BRAND GROWTH
+        ═══════════════════════════════════════════ -->
+        <section class="marketing section-pad bg-soft" id="marketing" aria-labelledby="marketing-heading">
+            <div class="container">
+                <div class="section-header svc-reveal">
+                    <span class="section-label">Brand Growth</span>
+                    <h2 class="section-title svc-heading" id="marketing-heading">Marketing That Builds<br>Your Brand
+                        &amp; Authority</h2>
+                </div>
+
+                <!-- Block 1: Social Media -->
+                <div class="alt-block svc-reveal">
+                    <div class="alt-block__img">
+                        <img src="s1.png" alt="Social Media Management" class="svc-img-reveal" />
+                        <div class="alt-block__img-badge">
+                            <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                            <span>3x Engagement</span>
+                        </div>
+                    </div>
+                    <div class="alt-block__content">
+                        <div class="service-tag"><i class="fa-solid fa-hashtag" aria-hidden="true"></i> Social Media
+                        </div>
+                        <h3 class="svc-heading">Social Media Management</h3>
+                        <p class="svc-para">We handle your entire social media presence — creating, scheduling, and
+                            optimizing content
+                            that builds your personal brand and attracts clients.</p>
+                        <div class="service-chips">
+                            <span><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</span>
+                            <span><i class="fa-brands fa-facebook-f" aria-hidden="true"></i> Facebook</span>
+                            <span><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn</span>
+                            <span><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Content Scheduling</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Block 2: Video (reversed) -->
+                <div class="alt-block alt-block--reverse svc-reveal">
+                    <div class="alt-block__img">
+                        <img src="s2.png" alt="Video Editing and Reels" class="svc-img-reveal" />
+                        <div class="alt-block__img-badge alt-block__img-badge--right">
+                            <i class="fa-solid fa-video" aria-hidden="true"></i>
+                            <span>Viral-Ready Reels</span>
+                        </div>
+                    </div>
+                    <div class="alt-block__content">
+                        <div class="service-tag"><i class="fa-solid fa-film" aria-hidden="true"></i> Video Production
+                        </div>
+                        <h3 class="svc-heading">Video Editing &amp; Reels</h3>
+                        <p class="svc-para">Professional video content that showcases your listings, builds trust, and
+                            drives organic
+                            engagement across social platforms and YouTube.</p>
+                        <div class="service-chips">
+                            <span><i class="fa-solid fa-house" aria-hidden="true"></i> Property Tours</span>
+                            <span><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram Reels</span>
+                            <span><i class="fa-brands fa-youtube" aria-hidden="true"></i> YouTube Shorts</span>
+                            <span><i class="fa-solid fa-star" aria-hidden="true"></i> Testimonial Videos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Block 3: SEO -->
+                <div class="alt-block svc-reveal">
+                    <div class="alt-block__img">
+                        <img src="s3.png" alt="Local SEO and Google Business" class="svc-img-reveal" />
+                        <div class="alt-block__img-badge">
+                            <i class="fa-brands fa-google" aria-hidden="true"></i>
+                            <span>#1 Local Rankings</span>
+                        </div>
+                    </div>
+                    <div class="alt-block__content">
+                        <div class="service-tag"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Local
+                            SEO</div>
+                        <h3 class="svc-heading">Local SEO &amp; Google Business</h3>
+                        <p class="svc-para">Dominate local search results and Google Maps so qualified buyers and
+                            sellers find you first
+                            — before your competition.</p>
+                        <div class="service-chips">
+                            <span><i class="fa-brands fa-google" aria-hidden="true"></i> GBP Optimization</span>
+                            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Local Rankings</span>
+                            <span><i class="fa-solid fa-leaf" aria-hidden="true"></i> Organic Leads</span>
+                            <span><i class="fa-regular fa-star" aria-hidden="true"></i> Reputation Building</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════
+             SECTION 3 — OPERATIONS & ADMIN SUPPORT
+        ═══════════════════════════════════════════ -->
+        <section class="operations section-pad" id="operations" aria-labelledby="ops-heading">
+            <div class="container">
+                <div class="section-header svc-reveal">
+                    <span class="section-label">Operations</span>
+                    <h2 class="section-title svc-heading" id="ops-heading">Back-Office Support So You<br>Can Focus on
+                        Closing</h2>
+                    <p class="section-sub svc-para">We handle the administrative work that slows most realtors down.</p>
+                </div>
+
+                <div class="ops-grid">
+
+                    <article class="ops-card svc-reveal" data-delay="0">
+                        <div class="ops-card__header">
+                            <div class="ops-card__icon-wrap card-icon-anim">
+                                <i class="fa-solid fa-user-tie" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="card-heading-anim">Real Estate Virtual Assistant</h3>
+                        </div>
+                        <p class="card-text-anim">A dedicated VA who manages your daily operations, freeing up hours of
+                            your week.</p>
+                        <ul class="ops-list card-text-anim">
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> CRM Updates &amp; Data Entry</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Email &amp; Calendar Management
+                            </li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Appointment Scheduling</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> General Administrative Support</li>
+                        </ul>
+                    </article>
+
+                    <article class="ops-card ops-card--featured svc-reveal" data-delay="150">
+                        <div class="ops-card__header">
+                            <div class="ops-card__icon-wrap card-icon-anim">
+                                <i class="fa-solid fa-file-signature" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="card-heading-anim">Transaction Coordination</h3>
+                        </div>
+                        <p class="card-text-anim">Expert transaction management from contract to closing — nothing falls
+                            through the cracks.</p>
+                        <ul class="ops-list card-text-anim">
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Contract Management</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Closing Coordination</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Deadline &amp; Milestone Tracking
+                            </li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Document Organization</li>
+                        </ul>
+                    </article>
+
+                    <article class="ops-card svc-reveal" data-delay="300">
+                        <div class="ops-card__header">
+                            <div class="ops-card__icon-wrap card-icon-anim">
+                                <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="card-heading-anim">MLS Listing Management</h3>
+                        </div>
+                        <p class="card-text-anim">Professional listing management that keeps your properties accurate,
+                            compliant, and beautifully presented.</p>
+                        <ul class="ops-list card-text-anim">
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Listing Uploads &amp; Updates</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Property Detail Management</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Compliance Checks</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Media &amp; Photo Management</li>
+                        </ul>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════
+             SECTION 4 — DIGITAL ASSETS & WEBSITE SOLUTIONS
+        ═══════════════════════════════════════════ -->
+        <section class="websites section-pad bg-navy" id="websites" aria-labelledby="web-heading">
+            <div class="container">
+                <div class="websites-inner">
+
+                    <div class="websites-content svc-reveal">
+                        <span class="section-label section-label--light">Digital Presence</span>
+                        <h2 class="section-title section-title--light svc-heading" id="web-heading">
+                            Your Website Should Be<br>Your #1 Lead Machine
+                        </h2>
+                        <p class="websites-desc svc-para">We design and build high-converting realtor websites and
+                            landing pages
+                            that capture leads, showcase your brand, and work around the clock.</p>
+
+                        <div class="website-features">
+                            <div class="web-feat">
+                                <i class="fa-solid fa-house-laptop" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Realtor Websites</strong>
+                                    <span>Custom-built, branded sites</span>
+                                </div>
+                            </div>
+                            <div class="web-feat">
+                                <i class="fa-solid fa-rectangle-list" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Landing Pages</strong>
+                                    <span>High-conversion lead capture</span>
+                                </div>
+                            </div>
+                            <div class="web-feat">
+                                <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Mobile Optimized</strong>
+                                    <span>Perfect on every device</span>
+                                </div>
+                            </div>
+                            <div class="web-feat">
+                                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Fast &amp; Secure</strong>
+                                    <span>Built for performance</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#packages" class="btn btn--orange">
+                            View Packages
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </div>
+
+                    <div class="websites-visual svc-reveal">
+                        <div class="mockup-frame">
+                            <div class="mockup-bar" aria-hidden="true">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <img src="w.png" alt="Realtor Website Mockup" class="mockup-img svc-img-reveal" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════
+             SECTION 5 — HOW WE WORK (TIMELINE)
+        ═══════════════════════════════════════════ -->
+        <section class="timeline-section section-pad" id="process" aria-labelledby="process-heading">
+            <div class="container">
+                <div class="section-header svc-reveal">
+                    <span class="section-label">Our Process</span>
+                    <h2 class="section-title svc-heading" id="process-heading">How We Work</h2>
+                    <p class="section-sub svc-para">A proven 5-step system that gets you results fast.</p>
+                </div>
+
+                <div class="timeline" id="timeline">
+
+                    <div class="timeline-step" data-step="1">
+                        <div class="timeline-connector">
+                            <div class="timeline-dot"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i>
+                            </div>
+                            <div class="timeline-line" aria-hidden="true"></div>
+                        </div>
+                        <div class="timeline-card svc-reveal">
+                            <span class="tl-step-num">Step 01</span>
+                            <h3 class="svc-heading">Discovery &amp; Strategy</h3>
+                            <p class="svc-para">We start with a deep-dive consultation to understand your goals, market,
+                                ideal clients,
+                                and current systems. From this, we build a custom growth strategy.</p>
+                            <div class="tl-tags">
+                                <span>Goal Setting</span>
+                                <span>Market Analysis</span>
+                                <span>Custom Plan</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step" data-step="2">
+                        <div class="timeline-connector">
+                            <div class="timeline-dot"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+                            </div>
+                            <div class="timeline-line" aria-hidden="true"></div>
+                        </div>
+                        <div class="timeline-card svc-reveal">
+                            <span class="tl-step-num">Step 02</span>
+                            <h3 class="svc-heading">Setup &amp; Implementation</h3>
+                            <p class="svc-para">Our team configures your CRM, builds your funnels, sets up automations,
+                                and launches all
+                                digital systems — ready to generate results from day one.</p>
+                            <div class="tl-tags">
+                                <span>CRM Setup</span>
+                                <span>Funnel Build</span>
+                                <span>Automation Config</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step" data-step="3">
+                        <div class="timeline-connector">
+                            <div class="timeline-dot"><i class="fa-solid fa-rocket" aria-hidden="true"></i></div>
+                            <div class="timeline-line" aria-hidden="true"></div>
+                        </div>
+                        <div class="timeline-card svc-reveal">
+                            <span class="tl-step-num">Step 03</span>
+                            <h3 class="svc-heading">Lead Generation &amp; Marketing</h3>
+                            <p class="svc-para">Paid ads, social media, and SEO campaigns launch simultaneously —
+                                driving a consistent
+                                flow of qualified buyer and seller leads into your pipeline.</p>
+                            <div class="tl-tags">
+                                <span>Meta Ads</span>
+                                <span>Google Ads</span>
+                                <span>Social Media</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step" data-step="4">
+                        <div class="timeline-connector">
+                            <div class="timeline-dot"><i class="fa-solid fa-rotate" aria-hidden="true"></i></div>
+                            <div class="timeline-line" aria-hidden="true"></div>
+                        </div>
+                        <div class="timeline-card svc-reveal">
+                            <span class="tl-step-num">Step 04</span>
+                            <h3 class="svc-heading">CRM Automation &amp; Follow-Up</h3>
+                            <p class="svc-para">Automated nurture sequences and follow-up campaigns keep every lead
+                                engaged — so no
+                                opportunity is ever lost due to slow response times.</p>
+                            <div class="tl-tags">
+                                <span>Auto Follow-Up</span>
+                                <span>Lead Nurturing</span>
+                                <span>Pipeline Management</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step" data-step="5">
+                        <div class="timeline-connector">
+                            <div class="timeline-dot"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="timeline-card svc-reveal">
+                            <span class="tl-step-num">Step 05</span>
+                            <h3 class="svc-heading">Optimization &amp; Growth</h3>
+                            <p class="svc-para">Monthly reporting, A/B testing, and continuous optimization ensure your
+                                campaigns perform
+                                better every single month — compounding your results over time.</p>
+                            <div class="tl-tags">
+                                <span>Monthly Reports</span>
+                                <span>A/B Testing</span>
+                                <span>Continuous Growth</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════
+             SECTION 6 — WHY REALTORS CHOOSE LISTORA
+        ═══════════════════════════════════════════ -->
+        <section class="why-us section-pad bg-soft" id="why-us" aria-labelledby="why-heading">
+            <div class="container">
+                <div class="section-header svc-reveal">
+                    <span class="section-label">Why Listora</span>
+                    <h2 class="section-title svc-heading" id="why-heading">Built Exclusively for<br>Real Estate
+                        Professionals</h2>
+                </div>
+
+                <div class="why-grid">
+                    <article class="why-card svc-reveal" data-delay="0">
+                        <div class="why-card__icon card-icon-anim"><i class="fa-solid fa-arrow-trend-up"
+                                aria-hidden="true"></i></div>
+                        <div class="why-card__stat card-heading-anim">340%</div>
+                        <h3 class="card-heading-anim">Generate More Leads</h3>
+                        <p class="card-text-anim">Our targeted campaigns consistently deliver 3–5x more qualified leads
+                            compared to generic
+                            marketing agencies.</p>
+                    </article>
+                    <article class="why-card svc-reveal" data-delay="100">
+                        <div class="why-card__icon card-icon-anim"><i class="fa-solid fa-gears" aria-hidden="true"></i>
+                        </div>
+                        <div class="why-card__stat card-heading-anim">24/7</div>
+                        <h3 class="card-heading-anim">Automate Follow-Ups</h3>
+                        <p class="card-text-anim">Smart automations respond to every lead instantly — so you never lose
+                            a deal to a slow
+                            follow-up again.</p>
+                    </article>
+                    <article class="why-card svc-reveal" data-delay="200">
+                        <div class="why-card__icon card-icon-anim"><i class="fa-regular fa-clock"
+                                aria-hidden="true"></i></div>
+                        <div class="why-card__stat card-heading-anim">15 hrs</div>
+                        <h3 class="card-heading-anim">Save Valuable Time</h3>
+                        <p class="card-text-anim">Realtors using Listora reclaim an average of 15 hours per week from
+                            admin work, follow-ups,
+                            and marketing tasks.</p>
+                    </article>
+                    <article class="why-card svc-reveal" data-delay="300">
+                        <div class="why-card__icon card-icon-anim"><i class="fa-solid fa-house-circle-check"
+                                aria-hidden="true"></i></div>
+                        <div class="why-card__stat card-heading-anim">2x</div>
+                        <h3 class="card-heading-anim">Focus on Closing Deals</h3>
+                        <p class="card-text-anim">With your systems running on autopilot, you can spend more time
+                            showing homes, negotiating
+                            offers, and closing transactions.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════
+             SECTION 7 — SERVICE PACKAGES (PREMIUM REDESIGN)
+        ═══════════════════════════════════════════ -->
+        <section class="pkg-section" id="packages" aria-labelledby="pkg-heading">
+
+            <!-- Animated background blobs -->
+            <div class="pkg-bg" aria-hidden="true">
+                <div class="pkg-blob pkg-blob--1"></div>
+                <div class="pkg-blob pkg-blob--2"></div>
+                <div class="pkg-blob pkg-blob--3"></div>
+            </div>
+
+            <div class="container">
+
+                <!-- Section header -->
+                <div class="pkg-header svc-reveal">
+                    <span class="section-label">Packages</span>
+                    <h2 class="section-title svc-heading" id="pkg-heading">
+                        Invest in Growth.Choose Your Package.
+                    </h2>
+                    <p class="section-sub svc-para">
+                        Every package is built exclusively for real estate professionals.
+                        No contracts. Cancel anytime.
+                    </p>
+                </div>
+
+                <!-- Cards grid -->
+                <div class="pkg-grid">
+
+                    <!-- ── STARTER ───────────────────────── -->
+                    <article class="pkg-card-v2 pkg-starter svc-reveal" data-delay="0" aria-label="Starter package">
+                        <div class="pkg-card-v2__inner">
+                            <div class="pkg-tier-wrap">
+                                <span class="pkg-tier-badge pkg-tier-badge--starter">
+                                    <i class="fa-solid fa-seedling"></i> Starter
+                                </span>
+                            </div>
+                            <h3 class="pkg-name">Growth Essentials</h3>
+                            <p class="pkg-desc">Start generating leads and building your digital presence with a solid
+                                foundation.</p>
+
+                            <div class="pkg-price-wrap">
+                                <span class="pkg-price-label">Starting at</span>
+                                <div class="pkg-price">
+                                    <span class="pkg-price-dollar">$</span>
+                                    <span class="pkg-price-num" data-target="500">500</span>
+                                    <span class="pkg-price-per">/month</span>
+                                </div>
+                            </div>
+
+                            <ul class="pkg-features">
+                                <li class="pkg-feat--yes">
+                                    <span class="pkg-feat-icon"><i class="fa-solid fa-bullseye"></i></span>
+                                    <span>Lead Generation Campaigns</span>
+                                </li>
+                                <li class="pkg-feat--yes">
+                                    <span class="pkg-feat-icon"><i class="fa-solid fa-gears"></i></span>
+                                    <span>CRM Setup &amp; Basic Automations</span>
+                                </li>
+                                <li class="pkg-feat--yes">
+                                    <span class="pkg-feat-icon"><i class="fa-brands fa-instagram"></i></span>
+                                    <span>Social Media (2 platforms)</span>
+                                </li>
+                                <li class="pkg-feat--yes">
+                                    <span class="pkg-feat-icon"><i class="fa-solid fa-chart-bar"></i></span>
+                                    <span>Monthly Performance Report</span>
+                                </li>
+                                <li class="pkg-feat--no">
+                                    <span class="pkg-feat-icon"><i class="fa-solid fa-file-signature"></i></span>
+                                    <span>Transaction Coordination</span>
+                                </li>
+                                <li class="pkg-feat--no">
+                                    <span class="pkg-feat-icon"><i class="fa-solid fa-globe"></i></span>
+                                    <span>Website Build</span>
+                                </li>
+                                <li class="pkg-feat--no">
+                                    <span class="pkg-feat-icon"><i class="fa-solid fa-video"></i></span>
+                                    <span>Video Editing</span>
+                                </li>
+                            </ul>
+
+                            <a href="contact.html" class="pkg-cta pkg-cta--outline">
+                                Get Started
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- ── PROFESSIONAL (FEATURED) ──────── -->
+                    <article class="pkg-card-v2 pkg-featured svc-reveal" data-delay="120"
+                        aria-label="Professional package — most popular">
+
+                        <!-- Most Popular ribbon -->
+                        <div class="pkg-ribbon" aria-label="Most popular">
+                            <i class="fa-solid fa-fire-flame-curved"></i> Most Popular
+                        </div>
+
+                        <div class="pkg-card-v2__inner">
+                            <div class="pkg-tier-wrap">
+                                <span class="pkg-tier-badge pkg-tier-badge--pro">
+                                    <i class="fa-solid fa-rocket"></i> Professional
+                                </span>
+                            </div>
+                            <h3 class="pkg-name">Total Growth System</h3>
+                            <p class="pkg-desc">A complete done-for-you system combining marketing, automation, and
+                                operations.</p>
+
+                            <div class="pkg-price-wrap">
+                                <span class="pkg-price-label">Starting at</span>
+                                <div class="pkg-price">
+                                    <span class="pkg-price-dollar">$</span>
+                                    <span class="pkg-price-num" data-target="800">800</span>
+                                    <span class="pkg-price-per">/month</span>
+                                </div>
+                            </div>
+
+                            <ul class="pkg-features">
+                                <li class="pkg-feat--yes">
+                                    <span class="pkg-feat-icon"><i class="fa-solid fa-circle-check"></i></span>
+                                    <span>Everything in Starter</span>
+                                </li>
+                                <li class="pkg-feat--yes">
+                                    <span class="pkg-feat-icon"><i class="fa-solid fa-robot"></i></span>
+                                    <span>Advanced CRM Automations</span>
+                                </li>
+                                <li class="pkg-feat--yes">
+                                    <span class="pkg-feat-icon"><i class="fa-solid fa-hashtag"></i></span>
+                                    <span>Social Media (4 platforms)</span>
+                                </li>
+                                <li class="pkg-feat--yes">
+                                    <span class="pkg-feat-icon"><i class="fa-solid fa-file-signature"></i></span>
+                                    <span>Transaction Coordination</span>
+                                </li>
+                                <li class="pkg-feat--yes">
+                                    <span class="pkg-feat-icon"><i class="fa-solid fa-envelope-open-text"></i></span>
+                                    <span>Email Marketing Sequences</span>
+                                </li>
+                                <li class="pkg-feat--yes">
+                                    <span class="pkg-feat-icon"><i class="fa-solid fa-video"></i></span>
+                                    <span>Video Editing (4 videos/month)</span>
+                                </li>
+                                <li class="pkg-feat--no">
+                                    <span class="pkg-feat-icon"><i class="fa-solid fa-globe"></i></span>
+                                    <span>Custom Website Build</span>
+                                </li>
+                            </ul>
+
+                            <a href="contact.html" class="pkg-cta pkg-cta--primary">
+                                Get Started
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+
+                            <p class="pkg-note">
+                                <i class="fa-solid fa-users" aria-hidden="true"></i>
+                                Trusted by 120+ real estate professionals
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- ── PREMIUM ───────────────────────── -->
+                    <article class="pkg-card-v2 pkg-premium svc-reveal" data-delay="240" aria-label="Premium package">
+
+                        <!-- Best Value ribbon -->
+                        <div class="pkg-ribbon pkg-ribbon--gold" aria-label="Best value">
+                            <i class="fa-solid fa-crown"></i> Best Value
+                        </div>
+
+                        <div class="pkg-card-v2__inner">
+                            <div class="pkg-tier-wrap">
+                                <span class="pkg-tier-badge pkg-tier-badge--premium">
+                                    <i class="fa-solid fa-crown"></i> Premium
+                                </span>
+                            </div>
+                            <h3 class="pkg-name">Market Domination</h3>
+                            <p class="pkg-desc">The ultimate growth package for serious agents and top-producing teams
+                                ready to dominate.</p>
+
+                            <div class="pkg-price-wrap">
+                                <span class="pkg-price-label">Starting at</span>
+                                <div class="pkg-price">
+                                    <span class="pkg-price-dollar">$</span>
+                                    <span class="pkg-price-num" data-target="1100">1,100</span>
+                                    <span class="pkg-price-per">/month</span>
+                                </div>
+                            </div>
+
+                            <ul class="pkg-features">
+                                <li class="pkg-feat--yes">
+                                    <span class="pkg-feat-icon"><i class="fa-solid fa-circle-check"></i></span>
+                                    <span>Everything in Professional</span>
+                                </li>
+                                <li class="pkg-feat--yes">
+                                    <span class="pkg-feat-icon"><i class="fa-solid fa-globe"></i></span>
+                                    <span>Custom Website Build</span>
+                                </li>
+                                <li class="pkg-feat--yes">
+                                    <span class="pkg-feat-icon"><i class="fa-brands fa-google"></i></span>
+                                    <span>Local SEO &amp; Google Business</span>
+                                </li>
+                                <li class="pkg-feat--yes">
+                                    <span class="pkg-feat-icon"><i class="fa-solid fa-user-tie"></i></span>
+                                    <span>Dedicated Virtual Assistant</span>
+                                </li>
+                                <li class="pkg-feat--yes">
+                                    <span class="pkg-feat-icon"><i class="fa-solid fa-list-ul"></i></span>
+                                    <span>MLS Listing Management</span>
+                                </li>
+                                <li class="pkg-feat--yes">
+                                    <span class="pkg-feat-icon"><i class="fa-solid fa-video"></i></span>
+                                    <span>Video Editing (8 videos/month)</span>
+                                </li>
+                                <li class="pkg-feat--yes">
+                                    <span class="pkg-feat-icon"><i class="fa-solid fa-phone"></i></span>
+                                    <span>Weekly Strategy Calls</span>
+                                </li>
+                            </ul>
+
+                            <a href="contact.html" class="pkg-cta pkg-cta--outline-gold">
+                                Get Started
+                                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                </div><!-- /pkg-grid -->
+
+                <!-- Comparison note -->
+                <p class="pkg-compare-note svc-reveal">
+                    Not sure which plan fits you? <a href="contact.html">Book a free 30-min strategy call</a> and we'll
+                    recommend the right package for your goals.
+                </p>
+
+
+            </div>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════
+             SECTION 8 — FAQ
+        ═══════════════════════════════════════════ -->
+        <section class="faq section-pad bg-soft" id="faq" aria-labelledby="faq-heading">
+            <div class="container faq-container">
+                <div class="section-header svc-reveal">
+                    <span class="section-label">FAQ</span>
+                    <h2 class="section-title svc-heading" id="faq-heading">Frequently Asked Questions</h2>
+                </div>
+
+                <div class="faq-list svc-reveal">
+
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">
+                            <span>Do you work only with realtors?</span>
+                            <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-a">
+                            <p>Yes — Listora is built exclusively for real estate professionals. Every service, system,
+                                and strategy we
+                                offer is tailored to the unique needs of realtors, brokers, and real estate teams. This
+                                focused expertise
+                                is what allows us to deliver superior results.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">
+                            <span>Do you provide cold calling services?</span>
+                            <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-a">
+                            <p>We currently specialize in digital marketing, CRM automation, and operational support.
+                                While we don't
+                                provide cold calling, our lead generation systems create a consistent inbound flow of
+                                warm, qualified
+                                leads who are already interested in working with you.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">
+                            <span>Which CRM platforms do you support?</span>
+                            <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-a">
+                            <p>We work with all major CRM platforms including HubSpot, Follow Up Boss, KVCore, Lofty,
+                                GoHighLevel, and more. Our team configures and manages the CRM that best fits your
+                                workflow and existing systems.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">
+                            <span>How quickly can we get started?</span>
+                            <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-a">
+                            <p>Onboarding typically takes 5–7 business days. During this time, we complete your strategy
+                                session, set up
+                                all systems, and prepare your campaigns for launch. You'll be generating leads and
+                                running automations
+                                within your first two weeks.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-q" aria-expanded="false">
+                            <span>Do you manage ad campaigns on our behalf?</span>
+                            <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-a">
+                            <p>Absolutely. Our team fully manages your Meta and Google ad campaigns — from creative and
+                                copy to
+                                targeting, optimization, and reporting. You approve the strategy and budget; we handle
+                                all the execution
+                                and ongoing optimization to maximize your return.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER — exact copy from index.html
+    ═══════════════════════════════════════════ -->
+    <footer class="footer" aria-label="Site footer">
+        <div class="footer-inner">
+
+            <div class="footer-col footer-col--brand">
+                <a href="#" class="brand-logo" aria-label="Listora home">
+                    <img src="logo 2.png" alt="Listora">
+                </a>
+                <p class="footer-tagline">Smart Marketing Agency for Real Estate Professionals</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="casestudies.html">Case Studies <i
+                                class="fa-solid fa-arrow-up-right-from-square footer-arrow" aria-hidden="true"></i></a>
+                    </li>
+                    <li><a href="portfolio.html">Portfolio <i
+                                class="fa-solid fa-arrow-up-right-from-square footer-arrow" aria-hidden="true"></i></a>
+                    </li>
+                    <li><a href="contact.html">Contact Us <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                                aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Real Estate Marketing <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="#">Lead Generation <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="#">CRM Management <i class="fa-solid fa-arrow-up-right-from-square footer-arrow"
+                                aria-hidden="true"></i></a></li>
+                    <li><a href="#">Social Media Management <i
+                                class="fa-solid fa-arrow-up-right-from-square footer-arrow" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-col--newsletter">
+                <h4>Free Marketing Audit</h4>
+                <p class="newsletter-desc">Receive a personalised audit with expert recommendations to improve
+                    visibility, lead generation, and business growth.</p>
+                <div class="newsletter" role="group" aria-label="Email newsletter signup">
+                    <label for="email" class="sr-only">Your email address</label>
+                    <input type="email" id="email" placeholder="Enter your email..." autocomplete="email">
+                    <button id="sub-btn" aria-label="Subscribe">
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <p class="newsletter-msg" id="msg" role="status" aria-live="polite"></p>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Listora Digital Media &nbsp;&middot;&nbsp; All rights reserved</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="service.js"></script>
+
+    <!-- Unified navbar scroll + drawer handler -->
+    <script>
+        (function () {
+            var nav = document.getElementById('ctNav');
+            var burger = document.querySelector('.ct-nav__burger');
+            var drawer = document.getElementById('navDrawer');
+            var overlay = document.getElementById('navOverlay');
+            var closeBtn = document.getElementById('drawerCloseBtn');
+
+            /* Scroll state */
+            if (nav) {
+                function onScroll() {
+                    nav.classList.toggle('scrolled', window.scrollY > 50);
+                }
+                window.addEventListener('scroll', onScroll, { passive: true });
+                onScroll();
+            }
+
+            /* Drawer open / close */
+            function openDrawer() {
+                if (!drawer) return;
+                drawer.classList.add('is-open');
+                if (overlay) overlay.classList.add('is-open');
+                drawer.setAttribute('aria-hidden', 'false');
+                if (burger) burger.setAttribute('aria-expanded', 'true');
+                document.body.classList.add('drawer-open');
+            }
+
+            function closeDrawer() {
+                if (!drawer) return;
+                drawer.classList.remove('is-open');
+                if (overlay) overlay.classList.remove('is-open');
+                drawer.setAttribute('aria-hidden', 'true');
+                if (burger) burger.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('drawer-open');
+            }
+
+            if (burger) burger.addEventListener('click', openDrawer);
+            if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+            if (overlay) overlay.addEventListener('click', closeDrawer);
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeDrawer();
+            });
+        }());
+    </script>
+
+</body>
+
+</html>

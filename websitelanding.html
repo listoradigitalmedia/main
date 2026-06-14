@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Design & Landing Pages — Listora Digital Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="anim.css">
+</head>
+
+<body>
+
+    <!-- Back Button -->
+    <button class="back-btn" onclick="history.back()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M12 5l-7 7 7 7" />
+        </svg>
+        Back
+    </button>
+
+    <!-- ═══════════════════════════════════════════════════
+         HERO SECTION — Premium Two-Column Layout
+    ════════════════════════════════════════════════════ -->
+    <section class="hero" data-animate="hero">
+
+        <!-- Background layers -->
+        <div class="hero-bg-grid"></div>
+        <div class="hero-bg-radial"></div>
+        <div class="hero-bg-noise"></div>
+
+        <div class="hero-layout container">
+
+            <!-- ── LEFT COLUMN: Content ───────────────── -->
+            <div class="hero-content">
+
+                <!-- Badge -->
+                <div class="hero-badge" data-hero-reveal="badge">
+                    <span class="hero-badge-dot"></span>
+                    <span>Website Design & Landing Pages</span>
+                    <span class="hero-badge-arrow">↗</span>
+                </div>
+
+                <!-- Heading -->
+                <h1 class="hero-title" data-hero-reveal="heading">
+                    <span class="hero-word">A</span>
+                    <span class="hero-word">Website</span>
+                    <span class="hero-word hero-word--break">That</span>
+                    <span class="hero-word hero-word--accent">Actually</span>
+                    <span class="hero-word hero-word--accent">Converts</span>
+                </h1>
+
+                <!-- Description -->
+                <p class="hero-desc" data-hero-reveal="desc">
+                    Your website is often the first impression potential customers have of your business. We design
+                    modern, high-converting websites and landing pages that are strategically built to generate
+                    leads, increase conversions, and support long-term business growth.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="hero-ctas" data-hero-reveal="ctas">
+                    <a href="#" class="hero-btn hero-btn--primary">
+                        <span>Schedule a Free Strategy Call</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="#" class="hero-btn hero-btn--secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none" />
+                        </svg>
+                        <span>See How It Works</span>
+                    </a>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="hero-trust" data-hero-reveal="trust">
+                    <div class="trust-divider"></div>
+                    <div class="trust-stats">
+                        <div class="trust-stat">
+                            <span class="trust-stat__number" data-count="500">0</span>
+                            <span class="trust-stat__suffix">+</span>
+                            <span class="trust-stat__label">Leads Generated</span>
+                        </div>
+                        <div class="trust-stat-sep"></div>
+                        <div class="trust-stat">
+                            <span class="trust-stat__number" data-count="100">0</span>
+                            <span class="trust-stat__suffix">+</span>
+                            <span class="trust-stat__label">Projects Completed</span>
+                        </div>
+                        <div class="trust-stat-sep"></div>
+                        <div class="trust-stat">
+                            <span class="trust-stat__number" data-count="98">0</span>
+                            <span class="trust-stat__suffix">%</span>
+                            <span class="trust-stat__label">Client Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ── RIGHT COLUMN: Visuals ──────────────── -->
+            <div class="hero-visual" data-hero-reveal="visual">
+
+                <!-- Glow orbs behind image -->
+                <div class="hero-glow hero-glow--orange"></div>
+                <div class="hero-glow hero-glow--navy"></div>
+
+                <!-- Main hero image -->
+                <div class="hero-image-frame">
+                    <div class="hero-image-border"></div>
+                    <img src="s1.png" alt="Listora Digital Media" class="hero-main-image">
+                    <div class="hero-image-overlay"></div>
+                </div>
+
+                <!-- Floating card 1 — Conversion Rate -->
+                <div class="floating-card floating-1" data-hero-reveal="card1">
+                    <div class="floating-card__icon floating-card__icon--orange">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
+                    </div>
+                    <div class="floating-card__body">
+                        <div class="floating-card__text">
+                            <span class="floating-card__title">Conversion Rate</span>
+                            <span class="floating-card__sub">↑ 284% increase</span>
+                        </div>
+                    </div>
+                    <div class="floating-card__badge floating-card__badge--green">Live</div>
+                </div>
+
+                <!-- Floating card 2 — Page Speed -->
+                <div class="floating-card floating-2" data-hero-reveal="card2">
+                    <div class="floating-card__icon floating-card__icon--blue">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <div class="floating-card__body">
+                        <div class="floating-card__text">
+                            <span class="floating-card__title">Page Speed</span>
+                            <span class="floating-card__sub">98 / 100 score</span>
+                        </div>
+                    </div>
+                    <div class="floating-card__sparkline">
+                        <svg width="60" height="24" viewBox="0 0 60 24" fill="none">
+                            <polyline points="0,20 10,16 20,12 30,8 40,10 50,4 60,2" stroke="#ff6200" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Floating card 3 — Mobile Ready -->
+                <div class="floating-card floating-3" data-hero-reveal="card3">
+                    <div class="floating-card__icon floating-card__icon--purple">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                            <line x1="12" y1="18" x2="12.01" y2="18" />
+                        </svg>
+                    </div>
+                    <div class="floating-card__body">
+                        <div class="floating-card__text">
+                            <span class="floating-card__title">Mobile Ready</span>
+                            <span class="floating-card__sub">Launched 2 days ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating card 4 — Lead Capture -->
+                <div class="floating-card floating-4" data-hero-reveal="card4">
+                    <div class="floating-card__icon floating-card__icon--teal">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                    </div>
+                    <div class="floating-card__body">
+                        <div class="floating-card__text">
+                            <span class="floating-card__title">Lead Capture</span>
+                            <span class="floating-card__sub">+9.3K leads this month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decorative ring -->
+                <div class="hero-deco-ring hero-deco-ring--1" aria-hidden="true"></div>
+                <div class="hero-deco-ring hero-deco-ring--2" aria-hidden="true"></div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- What's in it for Me -->
+    <section class="benefits" data-animate="section">
+        <div class="container">
+            <div class="benefits-header">
+                <div class="benefits-header-text">
+                    <div class="section-tag" data-reveal>What's In It For You</div>
+                    <h2 class="section-title" data-reveal>Business Outcomes That Move the Needle</h2>
+                    <p class="section-intro" data-reveal>
+                        A professionally designed website isn't just about looking good — it's your most
+                        powerful 24/7 sales and marketing asset, working to generate leads and build
+                        credibility around the clock.
+                    </p>
+                </div>
+                <div class="benefits-header-image" data-reveal>
+                    <img src="s1.png" alt="Website Design Benefits" class="section-feature-img">
+                    <div class="section-img-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
+                        Your 24/7 sales and marketing asset
+                    </div>
+                </div>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card" data-reveal data-delay="0">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                    </div>
+                    <h3>Build Credibility and Trust</h3>
+                    <p>A modern, professional website signals legitimacy and authority — giving potential
+                        customers the confidence to choose your business over a competitor with a weaker
+                        online presence.</p>
+                </div>
+                <div class="benefit-card" data-reveal data-delay="100">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                            <path d="M16 3.13a4 4 0 010 7.75" />
+                        </svg>
+                    </div>
+                    <h3>Generate More Leads</h3>
+                    <p>Strategic layouts, compelling calls to action, and optimized lead capture forms
+                        turn passive visitors into active inquiries — growing your pipeline consistently
+                        without additional ad spend.</p>
+                </div>
+                <div class="benefit-card" data-reveal data-delay="200">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
+                    </div>
+                    <h3>Increase Conversion Rates</h3>
+                    <p>Every design decision — from page structure to button placement — is made with
+                        conversion in mind, ensuring more of your visitors take the action you need them
+                        to take.</p>
+                </div>
+                <div class="benefit-card" data-reveal data-delay="300">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                            <line x1="12" y1="18" x2="12.01" y2="18" />
+                        </svg>
+                    </div>
+                    <h3>Improve Customer Experience</h3>
+                    <p>A fast, intuitive, mobile-optimized website keeps visitors engaged and reduces
+                        frustration — creating a seamless digital experience that reflects positively
+                        on your brand.</p>
+                </div>
+                <div class="benefit-card" data-reveal data-delay="400">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <path d="M8 21h8M12 17v4" />
+                        </svg>
+                    </div>
+                    <h3>Strengthen Brand Authority</h3>
+                    <p>A cohesive, premium online presence reinforces your brand identity and positions
+                        your business as the credible, established choice in your market.</p>
+                </div>
+                <div class="benefit-card" data-reveal data-delay="500">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <h3>Create a Competitive Advantage</h3>
+                    <p>While competitors rely on outdated websites, a high-performing site puts you
+                        ahead — capturing the customers they're losing and establishing your business
+                        as the obvious, modern choice.</p>
+                </div>
+            </div><!-- /.benefits-grid -->
+        </div>
+    </section>
+
+    <!-- Problems It Solves -->
+    <section class="problems" data-animate="section">
+        <div class="container">
+            <div class="problems-top">
+                <div class="problems-top-text">
+                    <div class="section-tag light" data-reveal>What Problems It Solves</div>
+                    <h2 class="section-title light" data-reveal>Sound Familiar?</h2>
+                    <p class="section-intro light" data-reveal>
+                        Most businesses know their website isn't working as hard as it should — but
+                        aren't sure why. These are the barriers we eliminate.
+                    </p>
+                </div>
+                <div class="problems-top-image" data-reveal>
+                    <img src="s1.png" alt="Common Website Problems"
+                        class="section-feature-img section-feature-img--light">
+                    <div class="section-img-badge section-img-badge--light">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="8" x2="12" y2="12" />
+                            <line x1="12" y1="16" x2="12.01" y2="16" />
+                        </svg>
+                        6 problems we eliminate for you
+                    </div>
+                </div>
+            </div>
+            <div class="problems-list">
+                <div class="problem-item" data-reveal data-delay="0">
+                    <div class="problem-number">01</div>
+                    <div class="problem-content">
+                        <h3>"Our website looks outdated and doesn't reflect our brand."</h3>
+                        <p>An outdated website erodes trust before a visitor reads a single word. We
+                            redesign with modern aesthetics and premium presentation that immediately
+                            signals professionalism and credibility.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="100">
+                    <div class="problem-number">02</div>
+                    <div class="problem-content">
+                        <h3>"People visit our website but don't get in touch."</h3>
+                        <p>Traffic without conversions is a design problem. We build conversion-focused
+                            layouts with strategic calls to action and optimized lead capture forms that
+                            turn visitors into active inquiries.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="200">
+                    <div class="problem-number">03</div>
+                    <div class="problem-content">
+                        <h3>"Our website is slow and frustrating to navigate."</h3>
+                        <p>Slow load times and confusing navigation drive visitors away before they
+                            convert. We optimize speed and user experience to keep people engaged and
+                            moving toward the action you need them to take.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="300">
+                    <div class="problem-number">04</div>
+                    <div class="problem-content">
+                        <h3>"Our website doesn't work properly on mobile devices."</h3>
+                        <p>More than half of web traffic is mobile. A site that isn't optimized for
+                            smartphones and tablets loses those visitors immediately. Every site we
+                            build is fully responsive across all screen sizes.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="400">
+                    <div class="problem-number">05</div>
+                    <div class="problem-content">
+                        <h3>"Our landing pages aren't generating the leads we expected."</h3>
+                        <p>A generic landing page won't cut through in a competitive market. We design
+                            purpose-built landing pages with targeted messaging, trust signals, and
+                            conversion-optimized structures that deliver measurable results.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="500">
+                    <div class="problem-number">06</div>
+                    <div class="problem-content">
+                        <h3>"Our website isn't helping us rank on search engines."</h3>
+                        <p>A beautiful website that search engines can't find won't grow your business.
+                            We build with an SEO-friendly structure from the ground up — giving your
+                            site the technical foundation it needs to rank and be discovered.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="included" data-animate="section">
+        <div class="container">
+            <div class="included-header">
+                <div>
+                    <div class="section-tag" data-reveal>What's Included</div>
+                    <h2 class="section-title" data-reveal>A Complete Website Growth System</h2>
+                    <p class="section-intro" data-reveal>
+                        Every component works together — design, performance, conversion strategy, and
+                        SEO structure — to create a website that doesn't just look exceptional, but
+                        actively generates leads and supports business growth.
+                    </p>
+                </div>
+                <div class="included-header-image" data-reveal>
+                    <img src="s1.png" alt="Complete Website Design System" class="section-feature-img">
+                    <div class="section-img-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        Everything you need, nothing you don't
+                    </div>
+                </div>
+            </div>
+            <div class="included-grid">
+                <div class="included-card" data-reveal data-delay="0">
+                    <div class="included-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff6200" stroke-width="1.8">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M3 9h18M9 21V9" />
+                        </svg>
+                    </div>
+                    <h3>Website & Landing Page Design</h3>
+                    <ul>
+                        <li>Custom website design</li>
+                        <li>Conversion-focused landing page design</li>
+                        <li>Modern and premium aesthetics</li>
+                        <li>Brand-aligned visual identity</li>
+                        <li>Strategic call-to-action placement</li>
+                    </ul>
+                </div>
+                <div class="included-card" data-reveal data-delay="150">
+                    <div class="included-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff6200" stroke-width="1.8">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                            <line x1="12" y1="18" x2="12.01" y2="18" />
+                        </svg>
+                    </div>
+                    <h3>Performance & Mobile Optimization</h3>
+                    <ul>
+                        <li>Full mobile responsiveness</li>
+                        <li>Page speed optimization</li>
+                        <li>Cross-device and cross-browser testing</li>
+                        <li>User experience optimization</li>
+                        <li>Bounce rate reduction strategies</li>
+                    </ul>
+                </div>
+                <div class="included-card" data-reveal data-delay="300">
+                    <div class="included-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff6200" stroke-width="1.8">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                            <path d="M16 3.13a4 4 0 010 7.75" />
+                        </svg>
+                    </div>
+                    <h3>Lead Generation & Conversion</h3>
+                    <ul>
+                        <li>Lead capture form design and setup</li>
+                        <li>Conversion-optimized page layouts</li>
+                        <li>Trust signal integration</li>
+                        <li>Call-to-action strategy and copywriting</li>
+                    </ul>
+                </div>
+                <div class="included-card" data-reveal data-delay="450">
+                    <div class="included-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff6200" stroke-width="1.8">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="M21 21l-4.35-4.35" />
+                        </svg>
+                    </div>
+                    <h3>SEO Structure & Ongoing Support</h3>
+                    <ul>
+                        <li>SEO-friendly website structure</li>
+                        <li>Technical SEO foundations</li>
+                        <li>Post-launch review and refinements</li>
+                        <li>Ongoing support options</li>
+                        <li>Growth-focused continuous improvements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Trust Listora -->
+    <section class="trust" data-animate="section">
+        <div class="container">
+            <div class="trust-inner">
+                <div class="trust-left" data-reveal>
+                    <div class="section-tag light">Why Listora Digital Media</div>
+                    <h2 class="section-title light">Built to Perform, Not Just Impress</h2>
+                    <p class="trust-body light">
+                        We design websites with one goal in mind: business growth. Every site we build
+                        combines strategic thinking, modern aesthetics, and conversion optimization to
+                        create a powerful online presence that works as hard as you do.
+                    </p>
+                    <p class="trust-body light">
+                        We don't build websites that simply look good — we build websites that perform.
+                        Every decision, from layout to loading speed, is made to maximize the results
+                        your website delivers for your business.
+                    </p>
+                    <div class="trust-left-image" data-reveal>
+                        <img src="s1.png" alt="Listora Digital Media Team" class="trust-img">
+                        <div class="trust-img-caption">
+                            <span class="trust-img-caption__icon">✦</span>
+                            Dedicated experts, transparent results
+                        </div>
+                    </div>
+                </div>
+                <div class="trust-right">
+                    <div class="trust-pillar" data-reveal data-delay="0">
+                        <div class="pillar-dot"></div>
+                        <div>
+                            <h4>Conversion-Focused Design</h4>
+                            <p>Every layout, element, and call to action is designed to move visitors
+                                toward a specific outcome — generating more leads and inquiries from
+                                your existing traffic.</p>
+                        </div>
+                    </div>
+                    <div class="trust-pillar" data-reveal data-delay="100">
+                        <div class="pillar-dot"></div>
+                        <div>
+                            <h4>Modern, Premium Aesthetics</h4>
+                            <p>We build websites that look exceptional — combining contemporary design
+                                trends with your brand identity to create an online presence you're
+                                proud to send people to.</p>
+                        </div>
+                    </div>
+                    <div class="trust-pillar" data-reveal data-delay="200">
+                        <div class="pillar-dot"></div>
+                        <div>
+                            <h4>User-First Experience</h4>
+                            <p>We design around how real users think and behave — creating intuitive,
+                                frictionless journeys that keep visitors engaged and guide them toward
+                                conversion.</p>
+                        </div>
+                    </div>
+                    <div class="trust-pillar" data-reveal data-delay="300">
+                        <div class="pillar-dot"></div>
+                        <div>
+                            <h4>Strategic Planning</h4>
+                            <p>Every project begins with a deep understanding of your business goals
+                                — ensuring every design decision is aligned to what your website
+                                actually needs to achieve.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process" data-animate="section">
+        <div class="container">
+            <div class="process-header">
+                <div class="process-header-text">
+                    <div class="section-tag" data-reveal>How It Works</div>
+                    <h2 class="section-title" data-reveal>From Brief to High-Converting Website</h2>
+                    <p class="section-intro" data-reveal>A clear, structured process that takes your website
+                        from concept to a fully optimized, lead-generating asset — step by step.</p>
+                </div>
+                <div class="process-header-image" data-reveal>
+                    <img src="s1.png" alt="Our Process Overview" class="section-feature-img">
+                    <div class="section-img-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                        Professional delivery, on time
+                    </div>
+                </div>
+            </div>
+            <div class="process-layout">
+                <div class="process-steps">
+                    <div class="process-step" data-reveal data-delay="0">
+                        <div class="step-line"></div>
+                        <div class="step-num">1</div>
+                        <div class="step-body">
+                            <h3>Discovery & Consultation</h3>
+                            <p>We begin by understanding your business, your goals, your audience, and
+                                what you need your website to achieve — building a clear foundation
+                                before any design or development begins.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-reveal data-delay="150">
+                        <div class="step-line"></div>
+                        <div class="step-num">2</div>
+                        <div class="step-body">
+                            <h3>Planning & Wireframing</h3>
+                            <p>We map out the website structure, user journey, and page hierarchy —
+                                creating a clear blueprint that aligns your content, messaging, and
+                                conversion goals before a single design element is created.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-reveal data-delay="300">
+                        <div class="step-line"></div>
+                        <div class="step-num">3</div>
+                        <div class="step-body">
+                            <h3>Design & Development</h3>
+                            <p>Your website is professionally designed and built — combining modern
+                                aesthetics, brand alignment, and conversion-focused structure into a
+                                polished, high-performing digital presence.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-reveal data-delay="450">
+                        <div class="step-line"></div>
+                        <div class="step-num">4</div>
+                        <div class="step-body">
+                            <h3>Optimization</h3>
+                            <p>We optimize for speed, mobile responsiveness, and conversion performance
+                                — testing across devices and browsers to ensure every visitor has a
+                                seamless, fast, and engaging experience.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-reveal data-delay="600">
+                        <div class="step-line"></div>
+                        <div class="step-num">5</div>
+                        <div class="step-body">
+                            <h3>Review & Launch</h3>
+                            <p>We walk you through the completed site, incorporate final refinements,
+                                and manage a smooth, professional launch — ensuring everything is
+                                working perfectly before going live.</p>
+                        </div>
+                    </div>
+                    <div class="process-step last" data-reveal data-delay="750">
+                        <div class="step-num">6</div>
+                        <div class="step-body">
+                            <h3>Growth & Support</h3>
+                            <p>Post-launch, we provide ongoing support and continuous improvements —
+                                monitoring performance, refining what's working, and evolving your
+                                website as your business grows.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" data-animate="section">
+        <div class="cta-grid-bg"></div>
+        <div class="container">
+            <div class="cta-inner">
+
+                <!-- Left: text + actions -->
+                <div class="cta-left" data-reveal>
+                    <div class="section-tag light">What Happens Next</div>
+                    <h2 class="cta-title">Ready for a Website That Actually Converts?</h2>
+                    <p class="cta-body">
+                        Your website should be your most effective salesperson — working around the clock
+                        to build trust, generate leads, and grow your business. A free strategy call is
+                        the first step to making that a reality.
+                    </p>
+
+                    <!-- Trust micro-signals -->
+                    <ul class="cta-trust-list">
+                        <li>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            No commitment required
+                        </li>
+                        <li>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Free 30-minute strategy call
+                        </li>
+                        <li>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Results-focused conversation
+                        </li>
+                    </ul>
+
+                    <div class="cta-actions">
+                        <a href="#" class="cta-btn primary">
+                            Schedule a Free Strategy Call
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="#" class="cta-btn secondary">Learn More About Our Services</a>
+                    </div>
+                    <p class="cta-note">Spots are limited — book yours today</p>
+                </div>
+
+                <!-- Right: image card -->
+                <div class="cta-right" data-reveal>
+                    <div class="cta-image-wrap">
+                        <img src="s1.png" alt="Free Website Strategy Call" class="cta-feature-img">
+                        <div class="cta-feature-overlay">
+                            <div class="cta-feature-stat">
+                                <span class="cta-feature-stat__number">30</span>
+                                <span class="cta-feature-stat__unit">min</span>
+                            </div>
+                            <span class="cta-feature-stat__label">Free strategy call</span>
+                        </div>
+                    </div>
+
+                    <!-- Stats row below image -->
+                    <div class="cta-stats">
+                        <div class="cta-stat">
+                            <span class="cta-stat__num">500+</span>
+                            <span class="cta-stat__lbl">Leads Generated</span>
+                        </div>
+                        <div class="cta-stat-sep"></div>
+                        <div class="cta-stat">
+                            <span class="cta-stat__num">98%</span>
+                            <span class="cta-stat__lbl">Client Satisfaction</span>
+                        </div>
+                        <div class="cta-stat-sep"></div>
+                        <div class="cta-stat">
+                            <span class="cta-stat__num">100+</span>
+                            <span class="cta-stat__lbl">Projects Done</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="animations.js"></script>
+</body>
+
+</html>

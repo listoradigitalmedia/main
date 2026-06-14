@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Management — Listora Digital Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="anim.css">
+</head>
+
+<body>
+
+    <!-- Back Button -->
+    <button class="back-btn" onclick="history.back()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M12 5l-7 7 7 7" />
+        </svg>
+        Back
+    </button>
+
+    <!-- ═══════════════════════════════════════════════════
+         HERO SECTION — Premium Two-Column Layout
+    ════════════════════════════════════════════════════ -->
+    <section class="hero" data-animate="hero">
+
+        <!-- Background layers -->
+        <div class="hero-bg-grid"></div>
+        <div class="hero-bg-radial"></div>
+        <div class="hero-bg-noise"></div>
+
+        <div class="hero-layout container">
+
+            <!-- ── LEFT COLUMN: Content ───────────────── -->
+            <div class="hero-content">
+
+                <!-- Badge -->
+                <div class="hero-badge" data-hero-reveal="badge">
+                    <span class="hero-badge-dot"></span>
+                    <span>Social Media Management</span>
+                    <span class="hero-badge-arrow">↗</span>
+                </div>
+
+                <!-- Heading -->
+                <h1 class="hero-title" data-hero-reveal="heading">
+                    <span class="hero-word">A</span>
+                    <span class="hero-word">Social</span>
+                    <span class="hero-word hero-word--break">Presence</span>
+                    <span class="hero-word hero-word--accent">That</span>
+                    <span class="hero-word hero-word--accent">Builds Your Brand</span>
+                </h1>
+
+                <!-- Description -->
+                <p class="hero-desc" data-hero-reveal="desc">
+                    Your audience spends hours on social media every day — the question is whether
+                    they're seeing your business or your competitors. We create, publish, monitor, and
+                    optimize content across social platforms to build brand awareness, engage
+                    audiences, and generate real business opportunities.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="hero-ctas" data-hero-reveal="ctas">
+                    <a href="#" class="hero-btn hero-btn--primary">
+                        <span>Schedule a Strategy Call</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="#" class="hero-btn hero-btn--secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none" />
+                        </svg>
+                        <span>See How It Works</span>
+                    </a>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="hero-trust" data-hero-reveal="trust">
+                    <div class="trust-divider"></div>
+                    <div class="trust-stats">
+                        <div class="trust-stat">
+                            <span class="trust-stat__number" data-count="500">0</span>
+                            <span class="trust-stat__suffix">+</span>
+                            <span class="trust-stat__label">Leads Generated</span>
+                        </div>
+                        <div class="trust-stat-sep"></div>
+                        <div class="trust-stat">
+                            <span class="trust-stat__number" data-count="100">0</span>
+                            <span class="trust-stat__suffix">+</span>
+                            <span class="trust-stat__label">Brands Managed</span>
+                        </div>
+                        <div class="trust-stat-sep"></div>
+                        <div class="trust-stat">
+                            <span class="trust-stat__number" data-count="98">0</span>
+                            <span class="trust-stat__suffix">%</span>
+                            <span class="trust-stat__label">Client Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ── RIGHT COLUMN: Visuals ──────────────── -->
+            <div class="hero-visual" data-hero-reveal="visual">
+
+                <!-- Glow orbs behind image -->
+                <div class="hero-glow hero-glow--orange"></div>
+                <div class="hero-glow hero-glow--navy"></div>
+
+                <!-- Main hero image -->
+                <div class="hero-image-frame">
+                    <div class="hero-image-border"></div>
+                    <img src="s1.png" alt="Listora Digital Media" class="hero-main-image">
+                    <div class="hero-image-overlay"></div>
+                </div>
+
+                <!-- Floating card 1 — Engagement Rate -->
+                <div class="floating-card floating-1" data-hero-reveal="card1">
+                    <div class="floating-card__icon floating-card__icon--orange">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
+                    </div>
+                    <div class="floating-card__body">
+                        <div class="floating-card__text">
+                            <span class="floating-card__title">Engagement Rate</span>
+                            <span class="floating-card__sub">↑ 284% increase</span>
+                        </div>
+                    </div>
+                    <div class="floating-card__badge floating-card__badge--green">Live</div>
+                </div>
+
+                <!-- Floating card 2 — Audience Growth -->
+                <div class="floating-card floating-2" data-hero-reveal="card2">
+                    <div class="floating-card__icon floating-card__icon--blue">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <div class="floating-card__body">
+                        <div class="floating-card__text">
+                            <span class="floating-card__title">Audience Growth</span>
+                            <span class="floating-card__sub">98 / 100 score</span>
+                        </div>
+                    </div>
+                    <div class="floating-card__sparkline">
+                        <svg width="60" height="24" viewBox="0 0 60 24" fill="none">
+                            <polyline points="0,20 10,16 20,12 30,8 40,10 50,4 60,2" stroke="#ff6200" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Floating card 3 — Content Calendar -->
+                <div class="floating-card floating-3" data-hero-reveal="card3">
+                    <div class="floating-card__icon floating-card__icon--purple">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                            <line x1="12" y1="18" x2="12.01" y2="18" />
+                        </svg>
+                    </div>
+                    <div class="floating-card__body">
+                        <div class="floating-card__text">
+                            <span class="floating-card__title">Content Calendar</span>
+                            <span class="floating-card__sub">Updated 2 days ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating card 4 — Lead Capture -->
+                <div class="floating-card floating-4" data-hero-reveal="card4">
+                    <div class="floating-card__icon floating-card__icon--teal">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                    </div>
+                    <div class="floating-card__body">
+                        <div class="floating-card__text">
+                            <span class="floating-card__title">Lead Capture</span>
+                            <span class="floating-card__sub">+9.3K reach this month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decorative ring -->
+                <div class="hero-deco-ring hero-deco-ring--1" aria-hidden="true"></div>
+                <div class="hero-deco-ring hero-deco-ring--2" aria-hidden="true"></div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- What's in it for Me -->
+    <section class="benefits" data-animate="section">
+        <div class="container">
+            <div class="benefits-header">
+                <div class="benefits-header-text">
+                    <div class="section-tag" data-reveal>What's In It For You</div>
+                    <h2 class="section-title" data-reveal>A Social Presence That Works for Your Business</h2>
+                    <p class="section-intro" data-reveal>
+                        A professionally managed social presence does more than fill a feed — it
+                        builds brand recognition, engages your audience, and positions your business
+                        as the obvious choice in your market.
+                    </p>
+                </div>
+                <div class="benefits-header-image" data-reveal>
+                    <img src="s1.png" alt="Social Media Management Benefits" class="section-feature-img">
+                    <div class="section-img-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
+                        Your always-on growth channel
+                    </div>
+                </div>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card" data-reveal data-delay="0">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                    </div>
+                    <h3>Build Stronger Brand Recognition</h3>
+                    <p>Consistent, professionally crafted content keeps your brand visible and
+                        memorable — making your business instantly recognizable across every
+                        platform your audience uses.</p>
+                </div>
+                <div class="benefit-card" data-reveal data-delay="100">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                            <path d="M16 3.13a4 4 0 010 7.75" />
+                        </svg>
+                    </div>
+                    <h3>Increase Audience Engagement</h3>
+                    <p>Strategic content and active community management turn passive followers into
+                        engaged audiences — sparking conversations that strengthen your relationship
+                        with potential customers.</p>
+                </div>
+                <div class="benefit-card" data-reveal data-delay="200">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
+                    </div>
+                    <h3>Generate More Leads and Inquiries</h3>
+                    <p>Every post, caption, and call to action is planned with your business goals in
+                        mind — turning your social channels into a consistent source of new leads.</p>
+                </div>
+                <div class="benefit-card" data-reveal data-delay="300">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                            <line x1="12" y1="18" x2="12.01" y2="18" />
+                        </svg>
+                    </div>
+                    <h3>Establish Industry Authority</h3>
+                    <p>Sharing valuable, well-positioned content positions your business as a trusted
+                        voice in your industry — building credibility that converts into customer
+                        confidence.</p>
+                </div>
+                <div class="benefit-card" data-reveal data-delay="400">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <path d="M8 21h8M12 17v4" />
+                        </svg>
+                    </div>
+                    <h3>Grow a Loyal Online Community</h3>
+                    <p>Active engagement and consistent presence cultivate a community of followers
+                        who trust your brand — and are more likely to become repeat customers and
+                        advocates.</p>
+                </div>
+                <div class="benefit-card" data-reveal data-delay="500">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <h3>Stay Visible to Potential Customers</h3>
+                    <p>Consistent posting keeps your business top of mind — so when a potential
+                        customer is ready to buy, your brand is the one they already know and trust.</p>
+                </div>
+            </div><!-- /.benefits-grid -->
+        </div>
+    </section>
+
+    <!-- Problems It Solves -->
+    <section class="problems" data-animate="section">
+        <div class="container">
+            <div class="problems-top">
+                <div class="problems-top-text">
+                    <div class="section-tag light" data-reveal>What Problems It Solves</div>
+                    <h2 class="section-title light" data-reveal>Sound Familiar?</h2>
+                    <p class="section-intro light" data-reveal>
+                        Most businesses know social media matters — but keeping up with it
+                        consistently and effectively is another story. These are the barriers we
+                        eliminate.
+                    </p>
+                </div>
+                <div class="problems-top-image" data-reveal>
+                    <img src="s1.png" alt="Common Social Media Problems"
+                        class="section-feature-img section-feature-img--light">
+                    <div class="section-img-badge section-img-badge--light">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="8" x2="12" y2="12" />
+                            <line x1="12" y1="16" x2="12.01" y2="16" />
+                        </svg>
+                        7 problems we eliminate for you
+                    </div>
+                </div>
+            </div>
+            <div class="problems-list">
+                <div class="problem-item" data-reveal data-delay="0">
+                    <div class="problem-number">01</div>
+                    <div class="problem-content">
+                        <h3>"We post inconsistently and don't have a plan."</h3>
+                        <p>Inconsistent posting weakens visibility and trust. We build a structured
+                            content plan and publishing schedule so your brand shows up reliably,
+                            every time.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="100">
+                    <div class="problem-number">02</div>
+                    <div class="problem-content">
+                        <h3>"Our posts aren't getting any engagement."</h3>
+                        <p>Low engagement signals a content strategy problem. We design audience-focused
+                            content with strong visuals and captions that encourage interaction.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="200">
+                    <div class="problem-number">03</div>
+                    <div class="problem-content">
+                        <h3>"We never know what to post."</h3>
+                        <p>Running out of content ideas leads to gaps and stale feeds. We develop a
+                            content strategy and ongoing planning process that keeps your channels
+                            full of relevant, on-brand ideas.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="300">
+                    <div class="problem-number">04</div>
+                    <div class="problem-content">
+                        <h3>"Our brand isn't visible on social media."</h3>
+                        <p>Weak visibility means missed opportunities. We optimize your profiles and
+                            content presentation so your brand stands out and gets noticed.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="400">
+                    <div class="problem-number">05</div>
+                    <div class="problem-content">
+                        <h3>"Our follower growth has stalled."</h3>
+                        <p>Stagnant growth often comes down to inconsistent content and limited
+                            engagement. We combine strategic content with active community management
+                            to drive sustained audience growth.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="500">
+                    <div class="problem-number">06</div>
+                    <div class="problem-content">
+                        <h3>"We don't have time to manage social media ourselves."</h3>
+                        <p>Social media management takes daily attention most teams don't have. We
+                            handle strategy, content, scheduling, and engagement so you can focus on
+                            running your business.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="600">
+                    <div class="problem-number">07</div>
+                    <div class="problem-content">
+                        <h3>"Our followers don't turn into actual customers."</h3>
+                        <p>A large following means little without conversions. We design content with
+                            clear calls to action and a consistent strategy that moves followers
+                            toward becoming customers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="included" data-animate="section">
+        <div class="container">
+            <div class="included-header">
+                <div>
+                    <div class="section-tag" data-reveal>What's Included</div>
+                    <h2 class="section-title" data-reveal>A Complete Social Media Growth System</h2>
+                    <p class="section-intro" data-reveal>
+                        Every component works together — strategy, content, scheduling, and
+                        reporting — to create a social media presence that doesn't just look
+                        good, but actively builds your brand and drives results.
+                    </p>
+                </div>
+                <div class="included-header-image" data-reveal>
+                    <img src="s1.png" alt="Complete Social Media Management System" class="section-feature-img">
+                    <div class="section-img-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        Everything you need, nothing you don't
+                    </div>
+                </div>
+            </div>
+            <div class="included-grid">
+                <div class="included-card" data-reveal data-delay="0">
+                    <div class="included-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff6200" stroke-width="1.8">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M3 9h18M9 21V9" />
+                        </svg>
+                    </div>
+                    <h3>Strategy & Content Planning</h3>
+                    <ul>
+                        <li>Social media strategy</li>
+                        <li>Content planning</li>
+                        <li>Audience-focused messaging</li>
+                        <li>Brand-aligned content calendar</li>
+                        <li>Growth recommendations</li>
+                    </ul>
+                </div>
+                <div class="included-card" data-reveal data-delay="150">
+                    <div class="included-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff6200" stroke-width="1.8">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                            <line x1="12" y1="18" x2="12.01" y2="18" />
+                        </svg>
+                    </div>
+                    <h3>Content Creation</h3>
+                    <ul>
+                        <li>Graphic design</li>
+                        <li>Caption writing</li>
+                        <li>Brand-consistent visuals</li>
+                        <li>Platform-optimized formatting</li>
+                        <li>Content scheduling</li>
+                    </ul>
+                </div>
+                <div class="included-card" data-reveal data-delay="300">
+                    <div class="included-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff6200" stroke-width="1.8">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                            <path d="M16 3.13a4 4 0 010 7.75" />
+                        </svg>
+                    </div>
+                    <h3>Community Engagement</h3>
+                    <ul>
+                        <li>Community engagement</li>
+                        <li>Profile optimization</li>
+                        <li>Audience interaction management</li>
+                        <li>Trust-building responses</li>
+                    </ul>
+                </div>
+                <div class="included-card" data-reveal data-delay="450">
+                    <div class="included-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff6200" stroke-width="1.8">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="M21 21l-4.35-4.35" />
+                        </svg>
+                    </div>
+                    <h3>Monitoring & Reporting</h3>
+                    <ul>
+                        <li>Performance monitoring</li>
+                        <li>Monthly reporting</li>
+                        <li>Transparent results tracking</li>
+                        <li>Ongoing optimization</li>
+                        <li>Growth-focused continuous improvements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Trust Listora -->
+    <section class="trust" data-animate="section">
+        <div class="container">
+            <div class="trust-inner">
+                <div class="trust-left" data-reveal>
+                    <div class="section-tag light">Why Listora Digital Media</div>
+                    <h2 class="section-title light">Built to Perform, Not Just Look Good</h2>
+                    <p class="trust-body light">
+                        We combine creativity, strategy, and data-driven decision-making to create
+                        meaningful social media growth. Every channel we manage is treated as a
+                        business asset — not just a feed to fill.
+                    </p>
+                    <p class="trust-body light">
+                        We don't chase vanity metrics — we build a social presence that contributes
+                        to real business results, with custom strategies tailored to your goals and
+                        audience.
+                    </p>
+                    <div class="trust-left-image" data-reveal>
+                        <img src="s1.png" alt="Listora Digital Media Team" class="trust-img">
+                        <div class="trust-img-caption">
+                            <span class="trust-img-caption__icon">✦</span>
+                            Dedicated experts, transparent results
+                        </div>
+                    </div>
+                </div>
+                <div class="trust-right">
+                    <div class="trust-pillar" data-reveal data-delay="0">
+                        <div class="pillar-dot"></div>
+                        <div>
+                            <h4>Custom Content Strategies</h4>
+                            <p>Every account is managed with a strategy built around your specific
+                                business goals, audience, and industry — never a one-size-fits-all
+                                template.</p>
+                        </div>
+                    </div>
+                    <div class="trust-pillar" data-reveal data-delay="100">
+                        <div class="pillar-dot"></div>
+                        <div>
+                            <h4>Consistent Brand Messaging</h4>
+                            <p>We keep your voice, visuals, and tone consistent across every platform
+                                and post — reinforcing brand recognition with every piece of content.</p>
+                        </div>
+                    </div>
+                    <div class="trust-pillar" data-reveal data-delay="200">
+                        <div class="pillar-dot"></div>
+                        <div>
+                            <h4>Transparent Reporting</h4>
+                            <p>You'll always know what's working. Our monthly reporting gives you a
+                                clear view of performance and the decisions driving your growth.</p>
+                        </div>
+                    </div>
+                    <div class="trust-pillar" data-reveal data-delay="300">
+                        <div class="pillar-dot"></div>
+                        <div>
+                            <h4>Long-Term Growth Mindset</h4>
+                            <p>We approach social media as an ongoing growth channel — continuously
+                                refining strategy and content to compound results over time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process" data-animate="section">
+        <div class="container">
+            <div class="process-header">
+                <div class="process-header-text">
+                    <div class="section-tag" data-reveal>How It Works</div>
+                    <h2 class="section-title" data-reveal>From Strategy to Consistent Growth</h2>
+                    <p class="section-intro" data-reveal>A clear, structured process that takes your social
+                        media presence from inconsistent to a fully managed, growth-driving asset —
+                        step by step.</p>
+                </div>
+                <div class="process-header-image" data-reveal>
+                    <img src="s1.png" alt="Our Process Overview" class="section-feature-img">
+                    <div class="section-img-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                        Professional delivery, on time
+                    </div>
+                </div>
+            </div>
+            <div class="process-layout">
+                <div class="process-steps">
+                    <div class="process-step" data-reveal data-delay="0">
+                        <div class="step-line"></div>
+                        <div class="step-num">1</div>
+                        <div class="step-body">
+                            <h3>Brand Discovery</h3>
+                            <p>We learn your goals, audience, and positioning — building a clear
+                                understanding of your brand before any strategy or content is
+                                developed.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-reveal data-delay="150">
+                        <div class="step-line"></div>
+                        <div class="step-num">2</div>
+                        <div class="step-body">
+                            <h3>Strategy Development</h3>
+                            <p>A customized content strategy is created — aligning platforms,
+                                messaging, and goals to a clear plan for growth.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-reveal data-delay="300">
+                        <div class="step-line"></div>
+                        <div class="step-num">3</div>
+                        <div class="step-body">
+                            <h3>Content Creation</h3>
+                            <p>Professional content is designed and written — combining strong
+                                visuals, on-brand messaging, and audience-focused captions.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-reveal data-delay="450">
+                        <div class="step-line"></div>
+                        <div class="step-num">4</div>
+                        <div class="step-body">
+                            <h3>Publishing & Management</h3>
+                            <p>Content is scheduled and managed consistently — keeping your channels
+                                active and your brand visible without the day-to-day effort on your
+                                end.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-reveal data-delay="600">
+                        <div class="step-line"></div>
+                        <div class="step-num">5</div>
+                        <div class="step-body">
+                            <h3>Engagement & Monitoring</h3>
+                            <p>Audience interactions and performance are monitored — ensuring your
+                                community stays engaged and informing what comes next.</p>
+                        </div>
+                    </div>
+                    <div class="process-step last" data-reveal data-delay="750">
+                        <div class="step-num">6</div>
+                        <div class="step-body">
+                            <h3>Reporting & Growth</h3>
+                            <p>Continuous optimization improves results over time — with monthly
+                                reporting that keeps you informed and your strategy evolving.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" data-animate="section">
+        <div class="cta-grid-bg"></div>
+        <div class="container">
+            <div class="cta-inner">
+
+                <!-- Left: text + actions -->
+                <div class="cta-left" data-reveal>
+                    <div class="section-tag light">What Happens Next</div>
+                    <h2 class="cta-title">Ready to Grow Your Brand Online?</h2>
+                    <p class="cta-body">
+                        Your social media channels should be working around the clock — building
+                        authority, engagement, and consistent growth for your business. A strategy
+                        call is the first step to making that a reality.
+                    </p>
+
+                    <!-- Trust micro-signals -->
+                    <ul class="cta-trust-list">
+                        <li>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            No commitment required
+                        </li>
+                        <li>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Free 30-minute strategy call
+                        </li>
+                        <li>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Results-focused conversation
+                        </li>
+                    </ul>
+
+                    <div class="cta-actions">
+                        <a href="#" class="cta-btn primary">
+                            Schedule a Strategy Call Today
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="#" class="cta-btn secondary">Learn More About Our Services</a>
+                    </div>
+                    <p class="cta-note">Spots are limited — book yours today</p>
+                </div>
+
+                <!-- Right: image card -->
+                <div class="cta-right" data-reveal>
+                    <div class="cta-image-wrap">
+                        <img src="s1.png" alt="Free Social Media Strategy Call" class="cta-feature-img">
+                        <div class="cta-feature-overlay">
+                            <div class="cta-feature-stat">
+                                <span class="cta-feature-stat__number">30</span>
+                                <span class="cta-feature-stat__unit">min</span>
+                            </div>
+                            <span class="cta-feature-stat__label">Free strategy call</span>
+                        </div>
+                    </div>
+
+                    <!-- Stats row below image -->
+                    <div class="cta-stats">
+                        <div class="cta-stat">
+                            <span class="cta-stat__num">500+</span>
+                            <span class="cta-stat__lbl">Leads Generated</span>
+                        </div>
+                        <div class="cta-stat-sep"></div>
+                        <div class="cta-stat">
+                            <span class="cta-stat__num">98%</span>
+                            <span class="cta-stat__lbl">Client Satisfaction</span>
+                        </div>
+                        <div class="cta-stat-sep"></div>
+                        <div class="cta-stat">
+                            <span class="cta-stat__num">100+</span>
+                            <span class="cta-stat__lbl">Brands Managed</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="animations.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Virtual Assistant — Listora Digital Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="anim.css">
+</head>
+
+<body>
+
+    <!-- Back Button -->
+    <button class="back-btn" onclick="history.back()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 12H5M12 5l-7 7 7 7" />
+        </svg>
+        Back
+    </button>
+
+    <!-- ═══════════════════════════════════════════════════
+         HERO SECTION — Premium Two-Column Layout
+    ════════════════════════════════════════════════════ -->
+    <section class="hero" data-animate="hero">
+
+        <!-- Background layers -->
+        <div class="hero-bg-grid"></div>
+        <div class="hero-bg-radial"></div>
+        <div class="hero-bg-noise"></div>
+
+        <div class="hero-layout container">
+
+            <!-- ── LEFT COLUMN: Content ───────────────── -->
+            <div class="hero-content">
+
+                <!-- Badge -->
+                <div class="hero-badge" data-hero-reveal="badge">
+                    <span class="hero-badge-dot"></span>
+                    <span>Real Estate Virtual Assistant</span>
+                    <span class="hero-badge-arrow">↗</span>
+                </div>
+
+                <!-- Heading -->
+                <h1 class="hero-title" data-hero-reveal="heading">
+                    <span class="hero-word">Support</span>
+                    <span class="hero-word">That</span>
+                    <span class="hero-word hero-word--break">Lets</span>
+                    <span class="hero-word hero-word--accent">You</span>
+                    <span class="hero-word hero-word--accent">Close More Deals</span>
+                </h1>
+
+                <!-- Description -->
+                <p class="hero-desc" data-hero-reveal="desc">
+                    Your time is your most valuable asset. A Real Estate Virtual Assistant is a
+                    dedicated remote professional who supports your daily operations, administrative
+                    tasks, lead management, and client communications — helping you streamline
+                    operations, improve productivity, and free up time for revenue-generating
+                    activities.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="hero-ctas" data-hero-reveal="ctas">
+                    <a href="#" class="hero-btn hero-btn--primary">
+                        <span>Book a Free Discovery Call</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="#" class="hero-btn hero-btn--secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none" />
+                        </svg>
+                        <span>See How It Works</span>
+                    </a>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="hero-trust" data-hero-reveal="trust">
+                    <div class="trust-divider"></div>
+                    <div class="trust-stats">
+                        <div class="trust-stat">
+                            <span class="trust-stat__number" data-count="500">0</span>
+                            <span class="trust-stat__suffix">+</span>
+                            <span class="trust-stat__label">Tasks Completed</span>
+                        </div>
+                        <div class="trust-stat-sep"></div>
+                        <div class="trust-stat">
+                            <span class="trust-stat__number" data-count="100">0</span>
+                            <span class="trust-stat__suffix">+</span>
+                            <span class="trust-stat__label">Agents Supported</span>
+                        </div>
+                        <div class="trust-stat-sep"></div>
+                        <div class="trust-stat">
+                            <span class="trust-stat__number" data-count="98">0</span>
+                            <span class="trust-stat__suffix">%</span>
+                            <span class="trust-stat__label">Client Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ── RIGHT COLUMN: Visuals ──────────────── -->
+            <div class="hero-visual" data-hero-reveal="visual">
+
+                <!-- Glow orbs behind image -->
+                <div class="hero-glow hero-glow--orange"></div>
+                <div class="hero-glow hero-glow--navy"></div>
+
+                <!-- Main hero image -->
+                <div class="hero-image-frame">
+                    <div class="hero-image-border"></div>
+                    <img src="s1.png" alt="Listora Digital Media" class="hero-main-image">
+                    <div class="hero-image-overlay"></div>
+                </div>
+
+                <!-- Floating card 1 — Productivity -->
+                <div class="floating-card floating-1" data-hero-reveal="card1">
+                    <div class="floating-card__icon floating-card__icon--orange">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
+                    </div>
+                    <div class="floating-card__body">
+                        <div class="floating-card__text">
+                            <span class="floating-card__title">Productivity</span>
+                            <span class="floating-card__sub">↑ 284% increase</span>
+                        </div>
+                    </div>
+                    <div class="floating-card__badge floating-card__badge--green">Live</div>
+                </div>
+
+                <!-- Floating card 2 — Response Time -->
+                <div class="floating-card floating-2" data-hero-reveal="card2">
+                    <div class="floating-card__icon floating-card__icon--blue">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <div class="floating-card__body">
+                        <div class="floating-card__text">
+                            <span class="floating-card__title">Response Time</span>
+                            <span class="floating-card__sub">98 / 100 score</span>
+                        </div>
+                    </div>
+                    <div class="floating-card__sparkline">
+                        <svg width="60" height="24" viewBox="0 0 60 24" fill="none">
+                            <polyline points="0,20 10,16 20,12 30,8 40,10 50,4 60,2" stroke="#ff6200" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Floating card 3 — CRM Updated -->
+                <div class="floating-card floating-3" data-hero-reveal="card3">
+                    <div class="floating-card__icon floating-card__icon--purple">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                            <line x1="12" y1="18" x2="12.01" y2="18" />
+                        </svg>
+                    </div>
+                    <div class="floating-card__body">
+                        <div class="floating-card__text">
+                            <span class="floating-card__title">CRM Updated</span>
+                            <span class="floating-card__sub">Synced 2 days ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating card 4 — Lead Follow-Ups -->
+                <div class="floating-card floating-4" data-hero-reveal="card4">
+                    <div class="floating-card__icon floating-card__icon--teal">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                    </div>
+                    <div class="floating-card__body">
+                        <div class="floating-card__text">
+                            <span class="floating-card__title">Lead Follow-Ups</span>
+                            <span class="floating-card__sub">+9.3K leads tracked</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decorative ring -->
+                <div class="hero-deco-ring hero-deco-ring--1" aria-hidden="true"></div>
+                <div class="hero-deco-ring hero-deco-ring--2" aria-hidden="true"></div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- What's in it for Me -->
+    <section class="benefits" data-animate="section">
+        <div class="container">
+            <div class="benefits-header">
+                <div class="benefits-header-text">
+                    <div class="section-tag" data-reveal>What's In It For You</div>
+                    <h2 class="section-title" data-reveal>Get Your Time Back to Focus on Growth</h2>
+                    <p class="section-intro" data-reveal>
+                        Your time is your most valuable asset. A dedicated Virtual Assistant gives
+                        you the support of an experienced team member without the costs associated
+                        with hiring full-time staff — so you can focus on closing deals.
+                    </p>
+                </div>
+                <div class="benefits-header-image" data-reveal>
+                    <img src="s1.png" alt="Real Estate Virtual Assistant Benefits" class="section-feature-img">
+                    <div class="section-img-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
+                        Your dedicated remote support team
+                    </div>
+                </div>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card" data-reveal data-delay="0">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                    </div>
+                    <h3>Spend More Time Closing Deals</h3>
+                    <p>With administrative work handled for you, you can focus your energy where it
+                        matters most — meeting clients, negotiating deals, and growing your
+                        business.</p>
+                </div>
+                <div class="benefit-card" data-reveal data-delay="100">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                            <path d="M16 3.13a4 4 0 010 7.75" />
+                        </svg>
+                    </div>
+                    <h3>Reduce Administrative Workload</h3>
+                    <p>From data entry to email management, routine tasks are taken off your plate —
+                        lightening your daily load without sacrificing quality or accuracy.</p>
+                </div>
+                <div class="benefit-card" data-reveal data-delay="200">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
+                    </div>
+                    <h3>Improve Client Response Times</h3>
+                    <p>Faster communication keeps clients engaged and confident — strengthening
+                        relationships and improving the overall experience clients have with your
+                        business.</p>
+                </div>
+                <div class="benefit-card" data-reveal data-delay="300">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                            <line x1="12" y1="18" x2="12.01" y2="18" />
+                        </svg>
+                    </div>
+                    <h3>Stay Organized and Efficient</h3>
+                    <p>Calendars, CRMs, and follow-ups are kept up to date and running smoothly —
+                        giving you a clear, organized view of your business at all times.</p>
+                </div>
+                <div class="benefit-card" data-reveal data-delay="400">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <path d="M8 21h8M12 17v4" />
+                        </svg>
+                    </div>
+                    <h3>Scale Operations Without Increasing Overhead</h3>
+                    <p>Get the support you need to grow without the cost and commitment of hiring
+                        full-time staff — scaling your operations as your business expands.</p>
+                </div>
+                <div class="benefit-card" data-reveal data-delay="500">
+                    <div class="benefit-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <h3>Maintain Consistent Follow-Ups</h3>
+                    <p>No more dropped leads or forgotten check-ins. Reliable, ongoing follow-up
+                        coordination keeps every relationship moving forward.</p>
+                </div>
+            </div><!-- /.benefits-grid -->
+        </div>
+    </section>
+
+    <!-- Problems It Solves -->
+    <section class="problems" data-animate="section">
+        <div class="container">
+            <div class="problems-top">
+                <div class="problems-top-text">
+                    <div class="section-tag light" data-reveal>What Problems It Solves</div>
+                    <h2 class="section-title light" data-reveal>Sound Familiar?</h2>
+                    <p class="section-intro light" data-reveal>
+                        Most real estate professionals know administrative work is eating into their
+                        time — but finding reliable support feels like its own task. These are the
+                        barriers we eliminate.
+                    </p>
+                </div>
+                <div class="problems-top-image" data-reveal>
+                    <img src="s1.png" alt="Common Real Estate Operations Problems"
+                        class="section-feature-img section-feature-img--light">
+                    <div class="section-img-badge section-img-badge--light">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="8" x2="12" y2="12" />
+                            <line x1="12" y1="16" x2="12.01" y2="16" />
+                        </svg>
+                        7 problems we eliminate for you
+                    </div>
+                </div>
+            </div>
+            <div class="problems-list">
+                <div class="problem-item" data-reveal data-delay="0">
+                    <div class="problem-number">01</div>
+                    <div class="problem-content">
+                        <h3>"I'm buried in administrative work."</h3>
+                        <p>Administrative overload pulls your focus away from clients and deals. Our
+                            Virtual Assistants take on the day-to-day admin work so you can focus on
+                            what grows your business.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="100">
+                    <div class="problem-number">02</div>
+                    <div class="problem-content">
+                        <h3>"Leads slip through the cracks because I forget to follow up."</h3>
+                        <p>Missed follow-ups mean lost opportunities. We provide consistent follow-up
+                            coordination so every lead is tracked and nurtured.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="200">
+                    <div class="problem-number">03</div>
+                    <div class="problem-content">
+                        <h3>"My leads aren't being managed consistently."</h3>
+                        <p>Inconsistent lead management leads to missed sales. We handle lead
+                            management so every inquiry is tracked, organized, and moved forward.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="300">
+                    <div class="problem-number">04</div>
+                    <div class="problem-content">
+                        <h3>"My calendar is constantly double-booked or disorganized."</h3>
+                        <p>Scheduling conflicts create stress and missed opportunities. We manage your
+                            calendar and appointments so your schedule stays accurate and conflict-free.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="400">
+                    <div class="problem-number">05</div>
+                    <div class="problem-content">
+                        <h3>"My CRM is outdated and not being used properly."</h3>
+                        <p>A neglected CRM means lost data and missed insights. We keep your CRM
+                            updated and organized, so it actually works for you.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="500">
+                    <div class="problem-number">06</div>
+                    <div class="problem-content">
+                        <h3>"I never feel organized — everything is scattered."</h3>
+                        <p>Poor organization slows down your entire operation. We bring structure to
+                            your workflows, files, and communications so everything has its place.</p>
+                    </div>
+                </div>
+                <div class="problem-item" data-reveal data-delay="600">
+                    <div class="problem-number">07</div>
+                    <div class="problem-content">
+                        <h3>"I don't have enough time to focus on getting new clients."</h3>
+                        <p>Limited time for client acquisition stalls growth. By taking routine tasks
+                            off your plate, we free up the time you need to focus on bringing in new
+                            business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="included" data-animate="section">
+        <div class="container">
+            <div class="included-header">
+                <div>
+                    <div class="section-tag" data-reveal>What's Included</div>
+                    <h2 class="section-title" data-reveal>A Complete Virtual Support System</h2>
+                    <p class="section-intro" data-reveal>
+                        Every component works together — scheduling, lead management, CRM upkeep,
+                        and communication — to create a support system that doesn't just keep you
+                        organized, but actively frees up time for business growth.
+                    </p>
+                </div>
+                <div class="included-header-image" data-reveal>
+                    <img src="s1.png" alt="Complete Virtual Assistant Support System" class="section-feature-img">
+                    <div class="section-img-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                        Everything you need, nothing you don't
+                    </div>
+                </div>
+            </div>
+            <div class="included-grid">
+                <div class="included-card" data-reveal data-delay="0">
+                    <div class="included-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff6200" stroke-width="1.8">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M3 9h18M9 21V9" />
+                        </svg>
+                    </div>
+                    <h3>Scheduling & Administrative Support</h3>
+                    <ul>
+                        <li>Calendar and appointment management</li>
+                        <li>Email management</li>
+                        <li>Administrative support</li>
+                        <li>Data entry</li>
+                        <li>Market research</li>
+                    </ul>
+                </div>
+                <div class="included-card" data-reveal data-delay="150">
+                    <div class="included-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff6200" stroke-width="1.8">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                            <line x1="12" y1="18" x2="12.01" y2="18" />
+                        </svg>
+                    </div>
+                    <h3>Lead & Client Management</h3>
+                    <ul>
+                        <li>Lead management</li>
+                        <li>CRM updates</li>
+                        <li>Client communication support</li>
+                        <li>Follow-up coordination</li>
+                    </ul>
+                </div>
+                <div class="included-card" data-reveal data-delay="300">
+                    <div class="included-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff6200" stroke-width="1.8">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                            <path d="M16 3.13a4 4 0 010 7.75" />
+                        </svg>
+                    </div>
+                    <h3>Listing Assistance</h3>
+                    <ul>
+                        <li>Listing assistance</li>
+                        <li>Listing data updates</li>
+                        <li>Document and file organization</li>
+                        <li>Coordination with clients and vendors</li>
+                    </ul>
+                </div>
+                <div class="included-card" data-reveal data-delay="450">
+                    <div class="included-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff6200" stroke-width="1.8">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="M21 21l-4.35-4.35" />
+                        </svg>
+                    </div>
+                    <h3>Ongoing Support & Optimization</h3>
+                    <ul>
+                        <li>Daily task execution</li>
+                        <li>Performance monitoring</li>
+                        <li>Workflow optimization</li>
+                        <li>Scalable assistance as you grow</li>
+                        <li>Reliable, ongoing communication</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Trust Listora -->
+    <section class="trust" data-animate="section">
+        <div class="container">
+            <div class="trust-inner">
+                <div class="trust-left" data-reveal>
+                    <div class="section-tag light">Why Listora Digital Media</div>
+                    <h2 class="section-title light">Built to Perform, Not Just Look Good</h2>
+                    <p class="trust-body light">
+                        We understand the fast-paced nature of the real estate industry. Our Virtual
+                        Assistants are trained to support agents, brokers, and real estate teams with
+                        efficiency, professionalism, and reliability.
+                    </p>
+                    <p class="trust-body light">
+                        We don't just complete tasks — we become a valuable extension of your team,
+                        handling the details so you can focus on the relationships and deals that
+                        drive your business forward.
+                    </p>
+                    <div class="trust-left-image" data-reveal>
+                        <img src="s1.png" alt="Listora Digital Media Team" class="trust-img">
+                        <div class="trust-img-caption">
+                            <span class="trust-img-caption__icon">✦</span>
+                            Dedicated experts, transparent results
+                        </div>
+                    </div>
+                </div>
+                <div class="trust-right">
+                    <div class="trust-pillar" data-reveal data-delay="0">
+                        <div class="pillar-dot"></div>
+                        <div>
+                            <h4>Real Estate-Focused Expertise</h4>
+                            <p>Our Virtual Assistants understand real estate workflows, terminology,
+                                and tools — so they integrate seamlessly into how you already work.</p>
+                        </div>
+                    </div>
+                    <div class="trust-pillar" data-reveal data-delay="100">
+                        <div class="pillar-dot"></div>
+                        <div>
+                            <h4>Reliable, Confidential Support</h4>
+                            <p>Your data and client information are handled with care and
+                                confidentiality — giving you peace of mind as you delegate.</p>
+                        </div>
+                    </div>
+                    <div class="trust-pillar" data-reveal data-delay="200">
+                        <div class="pillar-dot"></div>
+                        <div>
+                            <h4>Efficient, Scalable Workflows</h4>
+                            <p>Workflows are built for efficiency from day one — and designed to scale
+                                smoothly as your business and task volume grow.</p>
+                        </div>
+                    </div>
+                    <div class="trust-pillar" data-reveal data-delay="300">
+                        <div class="pillar-dot"></div>
+                        <div>
+                            <h4>Results-Driven Approach</h4>
+                            <p>Every task is approached with your business outcomes in mind — ensuring
+                                support translates into real time saved and real results gained.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process" data-animate="section">
+        <div class="container">
+            <div class="process-header">
+                <div class="process-header-text">
+                    <div class="section-tag" data-reveal>How It Works</div>
+                    <h2 class="section-title" data-reveal>From Consultation to Reliable Daily Support</h2>
+                    <p class="section-intro" data-reveal>A clear, structured process that takes your
+                        operations from overloaded to fully supported — step by step.</p>
+                </div>
+                <div class="process-header-image" data-reveal>
+                    <img src="s1.png" alt="Our Process Overview" class="section-feature-img">
+                    <div class="section-img-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                        Professional delivery, on time
+                    </div>
+                </div>
+            </div>
+            <div class="process-layout">
+                <div class="process-steps">
+                    <div class="process-step" data-reveal data-delay="0">
+                        <div class="step-line"></div>
+                        <div class="step-num">1</div>
+                        <div class="step-body">
+                            <h3>Consultation</h3>
+                            <p>We identify your support requirements — understanding where your time
+                                goes and what tasks can be taken off your plate.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-reveal data-delay="150">
+                        <div class="step-line"></div>
+                        <div class="step-num">2</div>
+                        <div class="step-body">
+                            <h3>Task Planning</h3>
+                            <p>Workflows and responsibilities are outlined — creating a clear plan for
+                                how support will integrate with your business.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-reveal data-delay="300">
+                        <div class="step-line"></div>
+                        <div class="step-num">3</div>
+                        <div class="step-body">
+                            <h3>Assistant Assignment</h3>
+                            <p>A suitable Virtual Assistant is assigned — matched to your industry
+                                needs and working style.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-reveal data-delay="450">
+                        <div class="step-line"></div>
+                        <div class="step-num">4</div>
+                        <div class="step-body">
+                            <h3>Daily Execution</h3>
+                            <p>Tasks are completed according to your priorities — keeping your
+                                operations running smoothly day after day.</p>
+                        </div>
+                    </div>
+                    <div class="process-step" data-reveal data-delay="600">
+                        <div class="step-line"></div>
+                        <div class="step-num">5</div>
+                        <div class="step-body">
+                            <h3>Ongoing Support</h3>
+                            <p>Continuous communication and performance monitoring ensure tasks are
+                                completed to your standards and adjusted as needed.</p>
+                        </div>
+                    </div>
+                    <div class="process-step last" data-reveal data-delay="750">
+                        <div class="step-num">6</div>
+                        <div class="step-body">
+                            <h3>Growth & Optimization</h3>
+                            <p>Support scales as your business grows — expanding to match your
+                                increasing workload and evolving needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" data-animate="section">
+        <div class="cta-grid-bg"></div>
+        <div class="container">
+            <div class="cta-inner">
+
+                <!-- Left: text + actions -->
+                <div class="cta-left" data-reveal>
+                    <div class="section-tag light">What Happens Next</div>
+                    <h2 class="cta-title">Ready to Reclaim Your Time?</h2>
+                    <p class="cta-body">
+                        Stop spending valuable hours on repetitive tasks. Let Listora Digital Media
+                        provide professional virtual assistant support so you can focus on growing
+                        your real estate business. A discovery call is the first step to making that
+                        a reality.
+                    </p>
+
+                    <!-- Trust micro-signals -->
+                    <ul class="cta-trust-list">
+                        <li>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            No commitment required
+                        </li>
+                        <li>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Free discovery call
+                        </li>
+                        <li>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                            Results-focused conversation
+                        </li>
+                    </ul>
+
+                    <div class="cta-actions">
+                        <a href="#" class="cta-btn primary">
+                            Book a Free Discovery Call Today
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="#" class="cta-btn secondary">Learn More About Our Services</a>
+                    </div>
+                    <p class="cta-note">Spots are limited — book yours today</p>
+                </div>
+
+                <!-- Right: image card -->
+                <div class="cta-right" data-reveal>
+                    <div class="cta-image-wrap">
+                        <img src="s1.png" alt="Free Virtual Assistant Discovery Call" class="cta-feature-img">
+                        <div class="cta-feature-overlay">
+                            <div class="cta-feature-stat">
+                                <span class="cta-feature-stat__number">30</span>
+                                <span class="cta-feature-stat__unit">min</span>
+                            </div>
+                            <span class="cta-feature-stat__label">Free discovery call</span>
+                        </div>
+                    </div>
+
+                    <!-- Stats row below image -->
+                    <div class="cta-stats">
+                        <div class="cta-stat">
+                            <span class="cta-stat__num">500+</span>
+                            <span class="cta-stat__lbl">Tasks Completed</span>
+                        </div>
+                        <div class="cta-stat-sep"></div>
+                        <div class="cta-stat">
+                            <span class="cta-stat__num">98%</span>
+                            <span class="cta-stat__lbl">Client Satisfaction</span>
+                        </div>
+                        <div class="cta-stat-sep"></div>
+                        <div class="cta-stat">
+                            <span class="cta-stat__num">100+</span>
+                            <span class="cta-stat__lbl">Agents Supported</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="animations.js"></script>
+</body>
+
+</html>
